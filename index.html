@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sufyan Iftikhar - Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #0066cc;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section - Modern Gradient with Pattern */
+        .hero {
+            margin-top: 60px;
+            padding: 8rem 2rem 6rem;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-weight: 800;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.35rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-certifications {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .certification-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .certification-badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .certification-badge img {
+            height: 60px;
+            width: auto;
+        }
+
+        .microsoft-badge {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .microsoft-badge-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .microsoft-badge-text {
+            text-align: left;
+        }
+
+        .microsoft-badge-text .badge-title {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .microsoft-badge-text .badge-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .stat-item {
+            color: white;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .btn {
+            padding: 0.875rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-image-container {
+            position: relative;
+        }
+
+        .about-image {
+            background: var(--gradient-2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .about-image .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-2);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-items {
+            list-style: none;
+        }
+
+        .skill-items li {
+            padding: 0.75rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .skill-items li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-items li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 3rem;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-color), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 0 0 3px var(--bg-light);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-header h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            background: var(--bg-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .company {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Projects Gallery Section */
+        .projects-section {
+            background: var(--bg-light);
+            padding: 5rem 2rem;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            height: 220px;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .project-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 1rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: var(--bg-light);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: white;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--gradient-2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,102,204,0.3);
+        }
+
+        .contact-divider {
+            margin: 3rem 0 2rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .contact-divider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .contact-divider span {
+            background: var(--bg-white);
+            padding: 0 1rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-certifications {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#home" class="nav-brand">Sufyan Iftikhar</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sufyan Iftikhar</h1>
+            <p class="tagline">Transforming Complex Data into Strategic Business Intelligence</p>
+            
+            <div class="hero-certifications">
+                <div class="certification-badge">
+                    <div class="microsoft-badge">
+                        <div class="microsoft-badge-icon">🏆</div>
+                        <div class="microsoft-badge-text">
+                            <div class="badge-title">Microsoft Certified</div>
+                            <div class="badge-name">Power BI Data Analyst</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">£3B+</div>
+                    <div class="stat-label">Programme Value</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Dashboards Deployed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Time Saved</div>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects Gallery</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">From Engineering to Data Excellence</p>
+        
+        <div class="about-content">
+            <div class="about-image-container">
+                <div class="about-image">
+                    <div class="icon">📊</div>
+                    <h3>Data Analytics Expert</h3>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Driving Business Value Through Data</h3>
+                <p>
+                    I'm a Microsoft-certified BI & Data Analytics professional currently serving as Assistant Data and 
+                    Reporting Manager at Lloyds Banking Group - Lloyds Living, where I'm shaping the data strategy for 
+                    a rapidly growing portfolio of 3,500+ properties.
+                </p>
+                <p>
+                    With over 5 years of experience across infrastructure, utilities, and real estate finance, I specialize 
+                    in designing unified data models, creating self-service analytics tools, and automating complex reporting 
+                    workflows that save organizations hundreds of hours monthly.
+                </p>
+                <p>
+                    My unique journey from Civil Engineering (First Class Honours) to Data Analytics has equipped me with 
+                    both technical depth and business acumen, enabling me to bridge the gap between complex data systems 
+                    and actionable business insights.
+                </p>
+            </div>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>⚡ Technical Excellence</h4>
+                <ul class="skill-items">
+                    <li>Power BI (DAX, Power Query, Dataflows)</li>
+                    <li>SQL & Database Architecture</li>
+                    <li>Python for Data Science</li>
+                    <li>Power Automate & VBA</li>
+                    <li>ETL Pipeline Development</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h4>📈 Business Intelligence</h4>
+                <ul class="skill-items">
+                    <li>Data Modelling & Architecture</li>
+                    <li>KPI Design & Implementation</li>
+                    <li>Self-Service Analytics</li>
+                    <li>Executive Dashboard Development</li>
+                    <li>Real-time Performance Monitoring</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h4>🎯 Domain Expertise</h4>
+                <ul class="skill-items">
+                    <li>Real Estate Finance & Analytics</li>
+                    <li>Infrastructure Programme Management</li>
+                    <li>Contract Performance Analysis</li>
+                    <li>Regulatory Compliance Reporting</li>
+                    <li>Financial Planning & Analysis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Professional Journey</h2>
+        <p class="section-subtitle">Building data-driven solutions for enterprise challenges</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>Assistant Data and Reporting Manager</h3>
+                    <span class="timeline-date">May 2025 - Present</span>
+                </div>
+                <div class="company">Lloyds Banking Group - Lloyds Living | Leeds, UK</div>
+                <ul>
+                    <li>Designed unified Power BI data model serving as single source of truth for 3,500+ property portfolio</li>
+                    <li>Built scalable self-service dashboards reducing ad hoc reporting requests by 60%</li>
+                    <li>Automated data ingestion pipelines with external providers, improving reporting timeliness</li>
+                    <li>Led data strategy initiatives for finance, development, and operations teams</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>Performance and Reporting Analyst</h3>
+                    <span class="timeline-date">Apr 2024 - May 2025</span>
+                </div>
+                <div class="company">Turner and Townsend | Leeds, UK</div>
+                <ul>
+                    <li>Deployed 5 end-to-end Power BI dashboards for Northumbrian Water's £3 billion AMP7 Programme</li>
+                    <li>Automated reporting for 300+ contracts, reducing report generation time by 50%</li>
+                    <li>Optimized DAX calculations and Power Query workflows for enhanced performance</li>
+                    <li>Delivered training programs increasing team dashboard utilization by 40%</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3>Data Analyst and Solutions Engineer</h3>
+                    <span class="timeline-date">Mar 2023 - Mar 2024</span>
+                </div>
+                <div class="company">WSP | Remote, UK</div>
+                <ul>
+                    <li>Leveraged SQL to consolidate complex datasets ensuring comprehensive data integration</li>
+                    <li>Developed Python automation scripts achieving 100% data validation compliance</li>
+                    <li>Created interactive Tableau dashboards delivering real-time KPIs to management</li>
+                    <li>Streamlined project workflows through detailed process mapping</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-title">Projects Gallery</h2>
+            <p class="section-subtitle">Enterprise solutions that drive real business impact</p>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="analytics">Analytics</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/lloyds-portfolio.html'">
+                    <div class="project-image">
+                        <span class="project-type">Live Dashboard</span>
+                        🏢
+                    </div>
+                    <div class="project-content">
+                        <h3>Lloyds Living Property Portfolio</h3>
+                        <p>
+                            Unified Power BI solution providing real-time insights into 5,596 properties. 
+                            Features occupancy tracking, rental performance, and compliance monitoring.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">API Integration</span>
+                        </div>
+                        <a href="projects/lloyds-portfolio.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/nwg-contracts.html'">
+                    <div class="project-image">
+                        <span class="project-type">Enterprise Solution</span>
+                        📋
+                    </div>
+                    <div class="project-content">
+                        <h3>NWG Contract Management System</h3>
+                        <p>
+                            Comprehensive dashboard for £3B programme reducing overdue compensation events 
+                            by 30% and saving 10+ hours weekly in manual reporting.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Contract Bee API</span>
+                            <span class="tech-tag">Power Automate</span>
+                        </div>
+                        <a href="projects/nwg-contracts.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="analytics" onclick="window.location.href='projects/executive-dashboard.html'">
+                    <div class="project-image">
+                        <span class="project-type">Strategic Analytics</span>
+                        📊
+                    </div>
+                    <div class="project-content">
+                        <h3>Executive Performance Dashboard</h3>
+                        <p>
+                            C-level reporting solution consolidating KPIs, risk metrics, and financial 
+                            indicators across multiple portfolios for strategic decision-making.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="projects/executive-dashboard.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="automation" onclick="window.location.href='projects/financial-automation.html'">
+                    <div class="project-image">
+                        <span class="project-type">Process Automation</span>
+                        🔄
+                    </div>
+                    <div class="project-content">
+                        <h3>Financial Reporting Automation</h3>
+                        <p>
+                            End-to-end automation of monthly financial reporting reducing manual effort 
+                            by 70% and eliminating data entry errors.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power Automate</span>
+                            <span class="tech-tag">VBA</span>
+                            <span class="tech-tag">Excel</span>
+                        </div>
+                        <a href="projects/financial-automation.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="analytics" onclick="window.location.href='projects/project-controls.html'">
+                    <div class="project-image">
+                        <span class="project-type">Infrastructure</span>
+                        🏗️
+                    </div>
+                    <div class="project-content">
+                        <h3>Project Controls Platform</h3>
+                        <p>
+                            Integrated solution monitoring performance, budget variances, and schedule 
+                            adherence across £350M+ infrastructure projects.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="projects/project-controls.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/compliance-dashboard.html'">
+                    <div class="project-image">
+                        <span class="project-type">Compliance</span>
+                        ✅
+                    </div>
+                    <div class="project-content">
+                        <h3>Compliance & Risk Dashboard</h3>
+                        <p>
+                            Real-time regulatory compliance monitoring with automated certificate tracking 
+                            and risk assessment for property portfolios.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Dataflows</span>
+                        </div>
+                        <a href="projects/compliance-dashboard.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2 class="section-title">Latest Insights</h2>
+        <p class="section-subtitle">Sharing knowledge and best practices in data analytics</p>
+        
+        <div class="blog-grid">
+            <div class="blog-card">
+                <span class="blog-date">August 2025</span>
+                <h3>Building Scalable Data Models in Power BI</h3>
+                <p>
+                    Best practices for designing efficient data models that handle millions of rows 
+                    while maintaining optimal performance...
+                </p>
+                <a href="blog/scalable-data-models.html" class="read-more">Read More →</a>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-date">July 2025</span>
+                <h3>Automating Report Distribution with Power Automate</h3>
+                <p>
+                    Step-by-step guide to creating automated workflows that distribute Power BI reports 
+                    based on custom triggers...
+                </p>
+                <a href="blog/report-automation.html" class="read-more">Read More →</a>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-date">June 2025</span>
+                <h3>Advanced DAX Patterns for Financial Analysis</h3>
+                <p>
+                    Exploring complex DAX formulas for time intelligence, dynamic segmentation, and 
+                    variance analysis in financial reporting...
+                </p>
+                <a href="blog/dax-patterns.html" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to transform your data into strategic insights?</p>
+            
+            <!-- Contact Form -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <div class="contact-divider">
+                <span>Or connect via</span>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    💼 <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    📧 <a href="mailto:sufyaniftikhar1@gmail.com">Email Directly</a>
+                </div>
+                <div class="contact-item">
+                    📍 Bradford, West Yorkshire, UK
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 Sufyan Iftikhar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Project filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Add transition styles to project cards
+        projectCards.forEach(card => {
+            card.style.transition = 'opacity 0.3s, transform 0.3s';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 70;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Prevent form submission if using placeholder Formspree ID
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                if (this.action.includes('YOUR_FORM_ID')) {
+                    e.preventDefault();
+                    alert('Please set up your Formspree form ID first. Visit formspree.io to create a free form.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
