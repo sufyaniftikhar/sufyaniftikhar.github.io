@@ -212,7 +212,15 @@
             justify-content: center;
             gap: 3rem;
             margin: 3rem 0;
+            flex-wrap: wrap; /* ✅ allows wrapping */
             animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .stat-item {
+            flex: 1 1 120px; /* ✅ ensures items shrink and wrap nicely */
+            min-width: 120px;
+            color: white;
+            text-align: center;
         }
 
         .stat-item {
@@ -948,10 +956,15 @@
             <h1>Sufyan Iftikhar</h1>
             <p class="tagline">Transforming Complex Data into Strategic Business Intelligence</p>
             
-            <div class="hero-certifications">
-                <div class="certification-badge">
-                    <div class="microsoft-badge">
-                        <div class="microsoft-badge-icon">🏆</div>
+            
+<div class="hero-certifications">
+    <div class="certification-badge">
+        <a href="https://learn.microsoft.com/en-us/users/sufyaniftikhar-3613/credentials/c2f3a630fb8c5da2?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank">
+            <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Certified Power BI Data Analyst Associate">
+        </a>
+    </div>
+</div>
+
                         <div class="microsoft-badge-text">
                             <div class="badge-title">Microsoft Certified</div>
                             <div class="badge-name">Power BI Data Analyst</div>
