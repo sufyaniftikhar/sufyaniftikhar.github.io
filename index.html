@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sufyan Iftikhar - Data Analytics Portfolio</title>
+    <meta name="description" content="Sufyan Iftikhar's portfolio showcasing expertise in data analytics, Power BI, SQL, and Python for driving business value.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;800&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,7 +15,7 @@
         }
 
         :root {
-            --primary-color: #1a1a1a;
+            --primary-color: #1f2937;
             --accent-color: #0066cc;
             --text-dark: #1f2937;
             --text-light: #6b7280;
@@ -22,10 +25,11 @@
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #0066cc 0%, #004499 100%);
             --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            --section-padding: 6rem 2rem;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--bg-white);
@@ -40,6 +44,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: box-shadow 0.3s ease;
         }
 
         nav {
@@ -52,6 +57,7 @@
         }
 
         .nav-brand {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
@@ -95,6 +101,7 @@
             background: var(--gradient-dark);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .hero::before {
@@ -125,7 +132,6 @@
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
-            text-align: center;
             position: relative;
             z-index: 1;
         }
@@ -144,6 +150,7 @@
         }
 
         .hero h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 3.5rem;
             margin-bottom: 1rem;
             color: white;
@@ -159,73 +166,13 @@
             font-weight: 300;
             animation: fadeInUp 0.8s ease 0.3s both;
         }
-
+        
         .hero .credibility-line {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 2rem;
             font-style: italic;
             animation: fadeInUp 0.8s ease 0.35s both;
-        }
-
-        .hero-certifications {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin: 3rem 0;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .certification-badge {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .certification-badge:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .certification-badge img {
-            height: 60px;
-            width: auto;
-        }
-
-        .microsoft-badge {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: white;
-        }
-
-        .microsoft-badge-icon {
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .microsoft-badge-text {
-            text-align: left;
-        }
-
-        .microsoft-badge-text .badge-title {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
-
-        .microsoft-badge-text .badge-name {
-            font-size: 1.1rem;
-            font-weight: 600;
         }
 
         .hero-stats {
@@ -242,6 +189,7 @@
         }
 
         .stat-number {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             color: white;
@@ -295,12 +243,13 @@
 
         /* Section Styles */
         section {
-            padding: 5rem 2rem;
+            padding: var(--section-padding);
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1rem;
@@ -371,6 +320,52 @@
             margin-bottom: 1.5rem;
             color: var(--text-light);
             line-height: 1.8;
+        }
+        
+        .certification-badges-section {
+            padding: var(--section-padding);
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .certification-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certification-badge {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .certification-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .certification-badge img {
+            height: 80px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .certification-badge .badge-title {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .certification-badge .badge-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
         /* Skills Grid */
@@ -518,7 +513,7 @@
         /* Projects Gallery Section */
         .projects-section {
             background: var(--bg-light);
-            padding: 5rem 2rem;
+            padding: var(--section-padding);
         }
 
         .projects-container {
@@ -861,100 +856,90 @@
         }
 
         
-        /* Side Navigation */
-        .side-nav {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* Side Navigation - Left with Labels */
+.side-nav {
+    position: fixed;
+    left: 30px; /* moved to left */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-        .side-nav::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            width: 2px;
-            background: rgba(0, 102, 204, 0.1);
-            left: 50%;
-            transform: translateX(-50%);
-        }
+.side-nav::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: rgba(0, 102, 204, 0.1);
+    left: 6px; /* aligns with dots */
+}
 
-        .nav-dot {
-            position: relative;
-            margin: 20px 0;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 1;
-        }
+.side-nav .progress-line {
+    position: absolute;
+    top: 20px;
+    width: 2px;
+    background: var(--accent-color);
+    left: 6px; 
+    height: 0;
+    transition: height 0.3s;
+}
 
-        .nav-dot::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--accent-color);
-            display: block;
-            transition: all 0.3s;
-        }
+.nav-dot {
+    position: relative;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        .nav-dot:hover::before {
-            transform: scale(1.3);
-            background: var(--accent-color);
-        }
+.nav-dot::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--accent-color);
+    display: block;
+    transition: all 0.3s;
+}
 
-        .nav-dot.active::before {
-            background: var(--accent-color);
-            width: 16px;
-            height: 16px;
-            box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
-        }
+.nav-dot:hover::before {
+    transform: scale(1.3);
+    background: var(--accent-color);
+}
 
-        .nav-dot .nav-label {
-            position: absolute;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--primary-color);
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
+.nav-dot.active::before {
+    background: var(--accent-color);
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+}
 
-        .nav-dot:hover .nav-label {
-            opacity: 1;
-            visibility: visible;
-            right: 40px;
-        }
+.nav-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
 
-        /* Progress line that fills as you scroll */
-        .side-nav .progress-line {
-            position: absolute;
-            top: 20px;
-            width: 2px;
-            background: var(--accent-color);
-            left: 50%;
-            transform: translateX(-50%);
-            height: 0;
-            transition: height 0.3s;
-        }
+.nav-dot.active .nav-label {
+    color: var(--accent-color);
+    font-weight: 700;
+}
 
-        /* Hide side nav on mobile */
-        @media (max-width: 1024px) {
-            .side-nav {
-                display: none;
-            }
-        }
+/* Hide on mobile */
+@media (max-width: 1024px) {
+    .side-nav {
+        display: none;
+    }
+}
 
         /* Animations */
         @keyframes fadeInUp {
@@ -979,6 +964,7 @@
             align-items: center;
             gap: 3rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .logo-item {
@@ -1012,6 +998,7 @@
             justify-content: center;
             gap: 2rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .tool-card {
@@ -1146,41 +1133,10 @@
     </style>
 </head>
 <body>
-    
-    <!-- Side Navigation -->
-    <div class="side-nav" id="sideNav">
-        <div class="progress-line"></div>
-        <div class="nav-dot" data-section="home">
-            <span class="nav-label">Home</span>
-        </div>
-        <div class="nav-dot" data-section="about">
-            <span class="nav-label">About</span>
-        </div>
-        <div class="nav-dot" data-section="trusted-by">
-            <span class="nav-label">Trusted By</span>
-        </div>
-        <div class="nav-dot" data-section="tools">
-            <span class="nav-label">Tools</span>
-        </div>
-        <div class="nav-dot" data-section="experience">
-            <span class="nav-label">Experience</span>
-        </div>
-        <div class="nav-dot" data-section="projects">
-            <span class="nav-label">Projects</span>
-        </div>
-        <div class="nav-dot" data-section="blog">
-            <span class="nav-label">Blog</span>
-        </div>
-        <div class="nav-dot" data-section="contact">
-            <span class="nav-label">Contact</span>
-        </div>
-    </div>
-
-    <!-- Navigation -->
     <header>
         <nav>
             <a href="#home" class="nav-brand">Sufyan Iftikhar</a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1195,45 +1151,23 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-profile">
-                <img src="assets/profile-photo.jpg" alt="Sufyan Iftikhar">
+                <img src="assets/profile-photo.jpg" alt="Sufyan Iftikhar professional photo">
             </div>
             <h1>Sufyan Iftikhar</h1>
             <p class="tagline">Transforming Complex Data into Strategic Business Intelligence</p>
             <p class="credibility-line">Trusted by Lloyds Banking Group, Turner & Townsend, and leading UK enterprises</p>
             
-            
-<div class="hero-certifications">
-    <div class="certification-badge">
-        <a href="https://learn.microsoft.com/api/credentials/share/en-us/SufyanIftikhar-3613/C2F3A630FB8C5DA2?sharingId" target="_blank" style="text-decoration: none;">
-            <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Power BI Data Analyst" style="height: 120px; width: auto; display: block; margin: 0 auto;">
-            <div class="microsoft-badge-text" style="text-align: center; margin-top: 0.75rem; color: white;">
-                <div class="badge-title" style="font-size: 0.9rem; opacity: 0.9;">Microsoft Certified</div>
-                <div class="badge-name" style="font-size: 1.2rem; font-weight: 600;">Power BI Data Analyst</div>
-            </div>
-        </a>
-    </div>
-</div>
-
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">5+</div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">£3B+</div>
-                    <div class="stat-label">Programme Value</div>
-                </div>
-                <div class="stat-item">
                     <div class="stat-number">300+</div>
                     <div class="stat-label">Dashboards Deployed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50%</div>
-                    <div class="stat-label">Time Saved</div>
                 </div>
             </div>
 
@@ -1243,8 +1177,7 @@
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
+    
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">From Engineering to Data Excellence</p>
@@ -1259,6 +1192,11 @@
             <div class="about-text">
                 <h3>Driving Business Value Through Data</h3>
                 <p>
+                    My journey from Civil Engineering (First Class Honours) to Data Analytics has equipped me with 
+                    both technical depth and business acumen, enabling me to bridge the gap between complex data systems 
+                    and actionable business insights.
+                </p>
+                <p>
                     I'm a Microsoft-certified BI & Data Analytics professional currently serving as an Assistant Data and 
                     Reporting Manager at Lloyds Banking Group - Lloyds Living, where I'm shaping the data strategy for 
                     a rapidly growing portfolio of 5,500+ properties.
@@ -1268,14 +1206,9 @@
                     in designing unified data models, creating self-service analytics tools, and automating complex reporting 
                     workflows that save organisations hundreds of hours monthly.
                 </p>
-                <p>
-                    My unique journey from Civil Engineering (First Class Honours) to Data Analytics has equipped me with 
-                    both technical depth and business acumen, enabling me to bridge the gap between complex data systems 
-                    and actionable business insights.
-                </p>
             </div>
         </div>
-
+        
         <div class="skills-grid">
             <div class="skill-card">
                 <h4>⚡ Technical Excellence</h4>
@@ -1310,83 +1243,90 @@
         </div>
     </section>
 
-    <!-- Trusted By Section -->
+    <section id="certifications" class="certification-badges-section">
+        <h2 class="section-title">Professional Certifications</h2>
+        <p class="section-subtitle">Validated skills in Microsoft Business Intelligence</p>
+        
+        <div class="certification-grid">
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/SufyanIftikhar-3613/C2F3A630FB8C5DA2?sharingId" target="_blank" class="certification-badge">
+                <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Power BI Data Analyst Certification Badge">
+                <div class="badge-title">Microsoft Certified</div>
+                <div class="badge-name">Power BI Data Analyst</div>
+            </a>
+            </div>
+    </section>
+
     <section id="trusted-by" style="background: var(--bg-light); padding: 4rem 2rem;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Trusted By Leading Organizations</h2>
             <p class="section-subtitle">Delivering data solutions for enterprise clients</p>
             
             <div class="logos-container">
-                <!-- First row: 4 logos -->
                 <div class="logos-row">
                     <div class="logo-item">
-                        <img src="assets/logos/lloyds-banking-group.png" alt="Lloyds Banking Group" />
+                        <img src="assets/logos/lloyds-banking-group.png" alt="Lloyds Banking Group logo" />
                     </div>
                     <div class="logo-item">
-                        <img src="assets/logos/turner-townsend.png" alt="Turner & Townsend" />
+                        <img src="assets/logos/turner-townsend.png" alt="Turner & Townsend logo" />
                     </div>
                     <div class="logo-item">
-                        <img src="assets/logos/wsp.png" alt="WSP" />
+                        <img src="assets/logos/wsp.png" alt="WSP logo" />
                     </div>
                     <div class="logo-item">
-                        <img src="assets/logos/nwg.png" alt="Northumbrian Water Group" />
+                        <img src="assets/logos/nwg.png" alt="Northumbrian Water Group logo" />
                     </div>
                 </div>
-                <!-- Second row: 3 logos (centered) -->
                 <div class="logos-row">
                     <div class="logo-item">
-                        <img src="assets/logos/canal-river-trust.png" alt="Canal & River Trust" />
+                        <img src="assets/logos/canal-river-trust.png" alt="Canal & River Trust logo" />
                     </div>
                     <div class="logo-item">
-                        <img src="assets/logos/national-highways.png" alt="National Highways" />
+                        <img src="assets/logos/national-highways.png" alt="National Highways logo" />
                     </div>
                     <div class="logo-item">
-                        <img src="assets/logos/norfolk-council.png" alt="Norfolk County Council" />
+                        <img src="assets/logos/norfolk-council.png" alt="Norfolk County Council logo" />
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tools & Technologies Section -->
     <section id="tools" style="padding: 4rem 2rem;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Technologies & Tools</h2>
             <p class="section-subtitle">Leveraging industry-leading platforms for data excellence</p>
             
             <div class="tools-container">
-                <!-- First row: Power BI, SQL Server, Python -->
                 <div class="tools-row">
                     <div class="tool-card">
-                        <img src="assets/tools/powerbi.jpg" alt="Power BI" style="height: 80px;" />
+                        <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
                         <h4>Power BI</h4>
                         <p>Advanced DAX, Data Modelling, Custom Visuals</p>
                     </div>
                     <div class="tool-card">
-                        <img src="assets/tools/sql.png" alt="SQL" style="height: 60px;" />
+                        <img src="assets/tools/sql.png" alt="SQL Server logo" style="height: 60px;" />
                         <h4>SQL Server</h4>
                         <p>Database Design, Complex Queries, ETL</p>
                     </div>
                     <div class="tool-card">
-                        <img src="assets/tools/python.png" alt="Python" style="height: 60px;" />
+                        <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
                         <h4>Python</h4>
                         <p>Data Science, Automation, Analytics</p>
                     </div>
                 </div>
-                <!-- Second row: Tableau, Power Automate, Excel -->
                 <div class="tools-row">
                     <div class="tool-card">
-                        <img src="assets/tools/tableau.png" alt="Tableau" style="height: 60px;" />
+                        <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
                         <h4>Tableau</h4>
                         <p>Interactive Dashboards, Visual Analytics</p>
                     </div>
                     <div class="tool-card">
-                        <img src="assets/tools/power-automate.png" alt="Power Automate" style="height: 60px;" />
+                        <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
                         <h4>Power Automate</h4>
                         <p>Workflow Automation, Process Optimisation</p>
                     </div>
                     <div class="tool-card">
-                        <img src="assets/tools/excel.png" alt="Excel" style="height: 60px;" />
+                        <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
                         <h4>Excel & VBA</h4>
                         <p>Advanced Analytics, Macro Development</p>
                     </div>
@@ -1395,7 +1335,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <h2 class="section-title">Professional Journey</h2>
         <p class="section-subtitle">Building data-driven solutions for enterprise challenges</p>
@@ -1445,7 +1384,6 @@
         </div>
     </section>
 
-    <!-- Projects Gallery Section -->
     <section id="projects" class="projects-section">
         <div class="projects-container">
             <h2 class="section-title">Projects Gallery</h2>
@@ -1467,8 +1405,8 @@
                     <div class="project-content">
                         <h3>Lloyds Living Property Portfolio</h3>
                         <p>
-                            Unified Power BI solution providing real-time insights into 5,596 properties. 
-                            Features occupancy tracking, rental performance, and compliance monitoring.
+                            A unified Power BI solution providing real-time insights into a portfolio of 5,596 properties,
+                            featuring occupancy tracking, rental performance, and compliance monitoring.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Power BI</span>
@@ -1489,8 +1427,8 @@
                     <div class="project-content">
                         <h3>NWG Contract Management System</h3>
                         <p>
-                            Comprehensive dashboard for £3B programme reducing overdue compensation events 
-                            by 30% and saving 10+ hours weekly in manual reporting.
+                            A comprehensive dashboard for a £3B programme that reduced overdue compensation events 
+                            by 30% and saved over 10 hours weekly in manual reporting.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Power BI</span>
@@ -1511,8 +1449,8 @@
                     <div class="project-content">
                         <h3>Executive Performance Dashboard</h3>
                         <p>
-                            C-level reporting solution consolidating KPIs, risk metrics, and financial 
-                            indicators across multiple portfolios for strategic decision-making.
+                            A strategic C-level reporting solution consolidating KPIs, risk metrics, and financial 
+                            indicators across multiple portfolios for real-time decision-making.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Power BI</span>
@@ -1533,8 +1471,8 @@
                     <div class="project-content">
                         <h3>Financial Reporting Automation</h3>
                         <p>
-                            End-to-end automation of monthly financial reporting reducing manual effort 
-                            by 70% and eliminating data entry errors.
+                            An end-to-end automation of monthly financial reporting that reduced manual effort 
+                            by 70% and eliminated data entry errors.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Power Automate</span>
@@ -1555,8 +1493,8 @@
                     <div class="project-content">
                         <h3>Project Controls Platform</h3>
                         <p>
-                            Integrated solution monitoring performance, budget variances, and schedule 
-                            adherence across £350M+ infrastructure projects.
+                            An integrated solution monitoring performance, budget variances, and schedule 
+                            adherence across over £350M in infrastructure projects.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Tableau</span>
@@ -1577,7 +1515,7 @@
                     <div class="project-content">
                         <h3>Compliance & Risk Dashboard</h3>
                         <p>
-                            Real-time regulatory compliance monitoring with automated certificate tracking 
+                            A real-time regulatory compliance dashboard with automated certificate tracking 
                             and risk assessment for property portfolios.
                         </p>
                         <div class="project-tech">
@@ -1594,7 +1532,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
     <section id="blog">
         <h2 class="section-title">Latest Insights</h2>
         <p class="section-subtitle">Sharing knowledge and best practices in data analytics</p>
@@ -1604,8 +1541,8 @@
                 <span class="blog-date">August 2025</span>
                 <h3>Building Scalable Data Models in Power BI</h3>
                 <p>
-                    Best practices for designing efficient data models that handle millions of rows 
-                    while maintaining optimal performance...
+                    Tired of slow reports? Learn the best practices for designing efficient data models that handle 
+                    millions of rows while maintaining optimal performance.
                 </p>
                 <a href="blog/scalable-data-models.html" class="read-more">Read More →</a>
             </div>
@@ -1614,8 +1551,8 @@
                 <span class="blog-date">July 2025</span>
                 <h3>Automating Report Distribution with Power Automate</h3>
                 <p>
-                    Step-by-step guide to creating automated workflows that distribute Power BI reports 
-                    based on custom triggers...
+                    A step-by-step guide to creating automated workflows that distribute Power BI reports 
+                    to stakeholders based on custom triggers, saving you time and effort.
                 </p>
                 <a href="blog/report-automation.html" class="read-more">Read More →</a>
             </div>
@@ -1624,21 +1561,19 @@
                 <span class="blog-date">June 2025</span>
                 <h3>Advanced DAX Patterns for Financial Analysis</h3>
                 <p>
-                    Exploring complex DAX formulas for time intelligence, dynamic segmentation, and 
-                    variance analysis in financial reporting...
+                    Explore complex DAX formulas for time intelligence, dynamic segmentation, and variance 
+                    analysis to unlock deeper insights in your financial reporting.
                 </p>
                 <a href="blog/dax-patterns.html" class="read-more">Read More →</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="contact">
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-subtitle">Ready to transform your data into strategic insights?</p>
             
-            <!-- Contact Form -->
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -1673,7 +1608,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -1687,182 +1621,175 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navLinks = document.getElementById('navLinks');
 
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
             });
-        });
 
-        // Project filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+            // Project filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
 
-                const filter = btn.getAttribute('data-filter');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
 
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
+                    const filter = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            projectCards.forEach(card => {
+                card.style.transition = 'opacity 0.3s, transform 0.3s';
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 70;
+                        const elementPosition = target.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
                     }
                 });
             });
-        });
 
-        // Add transition styles to project cards
-        projectCards.forEach(card => {
-            card.style.transition = 'opacity 0.3s, transform 0.3s';
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 70;
-                    const elementPosition = target.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+            // Add scroll effect to header
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
                 }
             });
-        });
 
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card, .tool-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Prevent form submission if using placeholder Formspree ID
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    if (this.action.includes('YOUR_FORM_ID')) {
+                        e.preventDefault();
+                        alert('Please set up your Formspree form ID first. Visit formspree.io to create a free form.');
+                    }
+                });
             }
-        });
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and timeline items
-        document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Prevent form submission if using placeholder Formspree ID
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                if (this.action.includes('YOUR_FORM_ID')) {
-                    e.preventDefault();
-                    alert('Please set up your Formspree form ID first. Visit formspree.io to create a free form.');
-                }
-            });
-        }
-    
-// Side Navigation functionality
-const sideNav = document.getElementById('sideNav');
-const navDots = document.querySelectorAll('.nav-dot');
-const progressLine = document.querySelector('.progress-line');
-const sections = document.querySelectorAll('section[id], .hero');
-
-// Click navigation
-navDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        const targetSection = document.getElementById(dot.dataset.section);
-        if (targetSection) {
-            const headerOffset = 70;
-            const elementPosition = targetSection.offsetTop;
-            const offsetPosition = elementPosition - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Update active dot and progress line on scroll
-function updateSideNav() {
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercentage = (window.scrollY / totalHeight) * 100;
-
-    // Update progress line
-    const maxLineHeight = sideNav.offsetHeight - 40; // Account for top/bottom padding
-    progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
-
-    // Update active dot
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            navDots.forEach(dot => dot.classList.remove('active'));
+        
+            // Side Navigation functionality
+            const sideNav = document.getElementById('sideNav');
+            const navDots = document.querySelectorAll('.nav-dot');
+            const progressLine = document.querySelector('.progress-line');
+            const sections = document.querySelectorAll('section[id], .hero');
             
-            const activeDot = document.querySelector(`.nav-dot[data-section="${section.id}"]`);
-            if (activeDot) {
-                activeDot.classList.add('active');
+            navDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const targetSection = document.getElementById(dot.dataset.section);
+                    if (targetSection) {
+                        const headerOffset = 70;
+                        const elementPosition = targetSection.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            function updateSideNav() {
+                const scrollPosition = window.scrollY + window.innerHeight / 2;
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercentage = (window.scrollY / totalHeight) * 100;
+
+                const maxLineHeight = sideNav.offsetHeight - 40;
+                progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
+
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        navDots.forEach(dot => dot.classList.remove('active'));
+                        
+                        const activeDot = document.querySelector(`.nav-dot[data-section="${section.id}"]`);
+                        if (activeDot) {
+                            activeDot.classList.add('active');
+                        }
+                    }
+                });
             }
-        }
-    });
-}
 
-window.addEventListener('scroll', updateSideNav);
+            window.addEventListener('scroll', updateSideNav);
+        });
+    </script>
 
-</script>
-
-<div id="sideNav" class="side-nav">
-    <div class="progress-line"></div>
-    <div class="nav-dot" data-section="home"><span class="nav-label">Home</span></div>
-    <div class="nav-dot" data-section="about"><span class="nav-label">About</span></div>
-    <div class="nav-dot" data-section="experience"><span class="nav-label">Experience</span></div>
-    <div class="nav-dot" data-section="projects"><span class="nav-label">Projects</span></div>
-    <div class="nav-dot" data-section="blog"><span class="nav-label">Blog</span></div>
-    <div class="nav-dot" data-section="contact"><span class="nav-label">Contact</span></div>
-</div>
+    <div id="sideNav" class="side-nav">
+        <div class="progress-line"></div>
+        <a href="#home" class="nav-dot" data-section="home" aria-label="Go to Home section"><span class="nav-label">Home</span></a>
+        <a href="#about" class="nav-dot" data-section="about" aria-label="Go to About section"><span class="nav-label">About</span></a>
+        <a href="#experience" class="nav-dot" data-section="experience" aria-label="Go to Experience section"><span class="nav-label">Experience</span></a>
+        <a href="#projects" class="nav-dot" data-section="projects" aria-label="Go to Projects section"><span class="nav-label">Projects</span></a>
+        <a href="#blog" class="nav-dot" data-section="blog" aria-label="Go to Blog section"><span class="nav-label">Blog</span></a>
+        <a href="#contact" class="nav-dot" data-section="contact" aria-label="Go to Contact section"><span class="nav-label">Contact</span></a>
+    </div>
 
 </body>
 </html>
