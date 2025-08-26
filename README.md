@@ -8,7 +8,7 @@ Transforming complex data into strategic business intelligence.
 
 ## 🚀 About Me
 
-I’m a Microsoft-certified BI & Data Analytics professional currently serving as **Assistant Data and Reporting Manager** at **Lloyds Banking Group – Lloyds Living**, where I'm shaping the data strategy for a growing portfolio of **3,500+ properties**.
+I’m a Microsoft-certified BI & Data Analytics professional currently serving as **Assistant Data and Reporting Manager** at **Lloyds Banking Group – Lloyds Living**, where I'm shaping the data strategy for a growing portfolio of **5,500+ properties**.
 
 With over **5 years of experience** across infrastructure, utilities, and real estate finance, I design robust data models, build self-service analytics tools, and automate reporting workflows that deliver deep insights and drive efficiencies.
 
