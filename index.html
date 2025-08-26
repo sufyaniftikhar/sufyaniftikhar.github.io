@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sufyan Iftikhar - Data Analytics Portfolio</title>
-    <meta name="description" content="Sufyan Iftikhar's portfolio showcasing expertise in data analytics, Power BI, SQL, and Python for driving business value.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;800&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +12,7 @@
         }
 
         :root {
-            --primary-color: #1f2937;
+            --primary-color: #1a1a1a;
             --accent-color: #0066cc;
             --text-dark: #1f2937;
             --text-light: #6b7280;
@@ -25,11 +22,10 @@
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #0066cc 0%, #004499 100%);
             --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            --section-padding: 6rem 2rem;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--bg-white);
@@ -44,7 +40,6 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: box-shadow 0.3s ease;
         }
 
         nav {
@@ -57,7 +52,6 @@
         }
 
         .nav-brand {
-            font-family: 'Montserrat', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
@@ -101,7 +95,6 @@
             background: var(--gradient-dark);
             position: relative;
             overflow: hidden;
-            text-align: center;
         }
 
         .hero::before {
@@ -132,6 +125,7 @@
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
@@ -150,7 +144,6 @@
         }
 
         .hero h1 {
-            font-family: 'Montserrat', sans-serif;
             font-size: 3.5rem;
             margin-bottom: 1rem;
             color: white;
@@ -166,13 +159,73 @@
             font-weight: 300;
             animation: fadeInUp 0.8s ease 0.3s both;
         }
-        
+
         .hero .credibility-line {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 2rem;
             font-style: italic;
             animation: fadeInUp 0.8s ease 0.35s both;
+        }
+
+        .hero-certifications {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .certification-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .certification-badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .certification-badge img {
+            height: 60px;
+            width: auto;
+        }
+
+        .microsoft-badge {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .microsoft-badge-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .microsoft-badge-text {
+            text-align: left;
+        }
+
+        .microsoft-badge-text .badge-title {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .microsoft-badge-text .badge-name {
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .hero-stats {
@@ -189,7 +242,6 @@
         }
 
         .stat-number {
-            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             color: white;
@@ -243,13 +295,12 @@
 
         /* Section Styles */
         section {
-            padding: var(--section-padding);
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1rem;
@@ -320,52 +371,6 @@
             margin-bottom: 1.5rem;
             color: var(--text-light);
             line-height: 1.8;
-        }
-        
-        .certification-badges-section {
-            padding: var(--section-padding);
-            background: var(--bg-light);
-            text-align: center;
-        }
-
-        .certification-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .certification-badge {
-            background: var(--bg-white);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .certification-badge:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .certification-badge img {
-            height: 80px;
-            width: auto;
-            margin-bottom: 1rem;
-        }
-        
-        .certification-badge .badge-title {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .certification-badge .badge-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
         }
 
         /* Skills Grid */
@@ -513,7 +518,7 @@
         /* Projects Gallery Section */
         .projects-section {
             background: var(--bg-light);
-            padding: var(--section-padding);
+            padding: 5rem 2rem;
         }
 
         .projects-container {
@@ -855,91 +860,90 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        
-/* Side Navigation - Left with Labels */
-.side-nav {
-    position: fixed;
-    left: 30px; /* moved to left */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+        /* Side Navigation - Left with Labels */
+        .side-nav {
+            position: fixed;
+            left: 30px; /* moved to left */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-.side-nav::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    bottom: 20px;
-    width: 2px;
-    background: rgba(0, 102, 204, 0.1);
-    left: 6px; /* aligns with dots */
-}
+        .side-nav::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: rgba(0, 102, 204, 0.1);
+            left: 6px; /* aligns with dots */
+        }
 
-.side-nav .progress-line {
-    position: absolute;
-    top: 20px;
-    width: 2px;
-    background: var(--accent-color);
-    left: 6px; 
-    height: 0;
-    transition: height 0.3s;
-}
+        .side-nav .progress-line {
+            position: absolute;
+            top: 20px;
+            width: 2px;
+            background: var(--accent-color);
+            left: 6px;
+            height: 0;
+            transition: height 0.3s;
+        }
 
-.nav-dot {
-    position: relative;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        .nav-dot {
+            position: relative;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.nav-dot::before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid var(--accent-color);
-    display: block;
-    transition: all 0.3s;
-}
+        .nav-dot::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--accent-color);
+            display: block;
+            transition: all 0.3s;
+        }
 
-.nav-dot:hover::before {
-    transform: scale(1.3);
-    background: var(--accent-color);
-}
+        .nav-dot:hover::before {
+            transform: scale(1.3);
+            background: var(--accent-color);
+        }
 
-.nav-dot.active::before {
-    background: var(--accent-color);
-    width: 16px;
-    height: 16px;
-    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
-}
+        .nav-dot.active::before {
+            background: var(--accent-color);
+            width: 16px;
+            height: 16px;
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+        }
 
-.nav-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-light);
-    transition: all 0.3s;
-}
+        .nav-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
 
-.nav-dot.active .nav-label {
-    color: var(--accent-color);
-    font-weight: 700;
-}
+        .nav-dot.active .nav-label {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
 
-/* Hide on mobile */
-@media (max-width: 1024px) {
-    .side-nav {
-        display: none;
-    }
-}
+        /* Hide on mobile */
+        @media (max-width: 1024px) {
+            .side-nav {
+                display: none;
+            }
+        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -964,7 +968,6 @@
             align-items: center;
             gap: 3rem;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
         }
 
         .logo-item {
@@ -993,117 +996,88 @@
             margin: 3rem 0;
         }
 
-        .tools-row {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
         }
 
         .tool-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg-white);
-            border-radius: 16px;
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
             transition: all 0.3s;
-            flex: 1;
-            max-width: 280px;
         }
 
         .tool-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
-        .tool-card img {
-            margin-bottom: 1rem;
-            width: auto;
-            max-width: 100%;
-        }
-
-        .tool-card h4 {
+        .tool-card h5 {
+            font-size: 1.1rem;
             color: var(--primary-color);
-            margin: 1rem 0 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .tool-card p {
-            color: var(--text-light);
             font-size: 0.9rem;
+            color: var(--text-light);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .logos-row {
-                flex-wrap: wrap;
-            }
-            
-            .logo-item {
-                flex: 1 1 45%;
-                margin-bottom: 1rem;
-            }
-            
-            .logos-row .logo-item:nth-child(5) {
-                margin-left: 0;
-            }
-            
-            .tools-row {
-                flex-wrap: wrap;
-            }
-            
-            .tool-card {
-                flex: 1 1 45%;
-                max-width: none;
-                margin-bottom: 1rem;
-            }
-            
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
 
-            .mobile-menu-toggle {
-                display: block;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
             }
 
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
                 flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                transition: all 0.3s ease-in-out;
             }
 
             .nav-links.active {
                 display: flex;
             }
 
+            .nav-links a {
+                display: block;
+                padding: 1rem 1.5rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 1rem 4rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-certifications {
-                flex-direction: column;
-            }
-
-            .hero-stats {
-                gap: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
+            .hero .tagline {
+                font-size: 1.1rem;
             }
 
             .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1111,471 +1085,265 @@
                 grid-template-columns: 1fr;
             }
 
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                width: 100%;
-                padding: 0 1rem;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
             .contact-info {
                 flex-direction: column;
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav>
-            <a href="#home" class="nav-brand">Sufyan Iftikhar</a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+            <a href="#" class="nav-brand">Sufyan Iftikhar</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-profile">
-                <img src="assets/profile-photo.jpg" alt="Sufyan Iftikhar professional photo">
+                <img src="profile.jpeg" alt="Sufyan Iftikhar Profile">
             </div>
-            <h1>Sufyan Iftikhar</h1>
-            <p class="tagline">Transforming Complex Data into Strategic Business Intelligence</p>
-            <p class="credibility-line">A Microsoft-certified BI and Data Analytics specialist with 5+ years of experience transforming complex data into actionable insights.</p>
-            <p class="credibility-line">Trusted by Lloyds Banking Group, Turner & Townsend, and leading UK enterprises</p>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Hours Saved Monthly</div>
-                </div>
-            </div>
-
+            <h1 id="user-name">Sufyan Iftikhar</h1>
+            <p id="user-tagline" class="tagline">Microsoft Certified BI & Data Analytics Professional</p>
+            <p id="user-credibility" class="credibility-line">Leveraging data to drive insights and business growth</p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects Gallery</a>
-                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="Sufyan Iftikhar CV.docx" class="btn btn-secondary">Download CV</a>
+            </div>
+            <div class="hero-certifications">
+                <div class="certification-badge">
+                    <img src="microsoft.png" alt="Microsoft Certification">
+                </div>
             </div>
         </div>
     </section>
     
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">From Engineering to Data Excellence</p>
-        
+        <p class="section-subtitle">
+            A Microsoft-certified professional with a passion for data and its power to transform businesses.
+        </p>
         <div class="about-content">
             <div class="about-image-container">
                 <div class="about-image">
-                    <div class="icon">📊</div>
-                    <h3>Data Analytics Expert</h3>
+                    <i class="fas fa-chart-line icon"></i>
+                    <p>Microsoft Certified BI & Data Analytics professional with 5+ years of experience delivering scalable, insight-led solutions across infrastructure, utilities, and real estate finance. Skilled in Power BI (DAX, Power Query), SQL, Python, and automation (Power Automate, VBA). Proven track record of streamlining reporting, unifying data models, and enabling self-service analytics for stakeholders. </p>
                 </div>
             </div>
             <div class="about-text">
-                <h3>Driving Business Value Through Data</h3>
-                <p>
-                    My journey from Civil Engineering (First Class Honours) to Data Analytics has equipped me with 
-                    both technical depth and business acumen, enabling me to bridge the gap between complex data systems 
-                    and actionable business insights.
-                </p>
-                <p>
-                    I'm a Microsoft-certified BI & Data Analytics professional currently serving as an Assistant Data and 
-                    Reporting Manager at Lloyds Banking Group - Lloyds Living, where I'm shaping the data strategy for 
-                    a rapidly growing portfolio of 5,500+ properties.
-                </p>
-                <p>
-                    With over 5 years of experience across infrastructure, utilities, and real estate finance, I specialise 
-                    in designing unified data models, creating self-service analytics tools, and automating complex reporting 
-                    workflows that save organisations hundreds of hours monthly.
-                </p>
+                <h3>My Data-Driven Journey</h3>
+                <p>I am a data analytics professional with a strong background in engineering. My career has focused on using data to create actionable insights and improve project performance. I specialize in building interactive dashboards and reports with tools like **Power BI** and **SQL**, and I'm adept at identifying and resolving data quality issues to ensure reliability.</p>
+                <p>I am passionate about empowering stakeholders to make informed decisions by transforming complex data into clear, understandable visuals. My experience spans across various sectors, where I have successfully implemented solutions that streamline reporting, automate workflows, and enhance overall operational efficiency.</p>
+            </div>
+        </div>
+
+        <div class="logos-container">
+            <h3 class="section-subtitle">Companies I've Worked With</h3>
+            <div class="logos-row">
+                <div class="logo-item"><img src="nwg.png" alt="Northumbrian Water Group"></div>
+                <div class="logo-item"><img src="lbg.png" alt="Lloyds Banking Group"></div>
+                <div class="logo-item"><img src="WSP.png" alt="WSP"></div>
+                <div class="logo-item"><img src="T&T.png" alt="Turner and Townsend"></div>
             </div>
         </div>
         
+        <h3 class="section-title">Core Skills & Tools</h3>
+        <p class="section-subtitle">A comprehensive overview of the technical and soft skills that define my expertise.</p>
         <div class="skills-grid">
             <div class="skill-card">
-                <h4>⚡ Technical Excellence</h4>
+                <h4><i class="fas fa-database"></i>Data & Analytics</h4>
                 <ul class="skill-items">
-                    <li>Power BI (DAX, Power Query, Dataflows)</li>
-                    <li>SQL & Database Architecture</li>
-                    <li>Python for Data Science</li>
-                    <li>Power Automate & VBA</li>
-                    <li>ETL Pipeline Development</li>
+                    <li>Power BI (DAX, Power Query)</li>
+                    <li>SQL & Database Management</li>
+                    <li>Data Modelling & ETL Pipelines</li>
+                    <li>KPI Reporting & Visualisation</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h4>📈 Business Intelligence</h4>
+                <h4><i class="fas fa-cogs"></i>Automation & Programming</h4>
                 <ul class="skill-items">
-                    <li>Data Modelling & Architecture</li>
-                    <li>KPI Design & Implementation</li>
-                    <li>Self-Service Analytics</li>
-                    <li>Executive Dashboard Development</li>
-                    <li>Real-time Performance Monitoring</li>
+                    <li>Python & VBA</li>
+                    <li>Process & Workflow Automation</li>
+                    <li>Data Integration & APIs</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h4>🎯 Domain Expertise</h4>
+                <h4><i class="fas fa-project-diagram"></i>Project & Strategy</h4>
                 <ul class="skill-items">
-                    <li>Real Estate Finance & Analytics</li>
-                    <li>Infrastructure Programme Management</li>
-                    <li>Contract Performance Analysis</li>
-                    <li>Regulatory Compliance Reporting</li>
-                    <li>Financial Planning & Analysis</li>
+                    <li>Reporting Strategy & Design</li>
+                    <li>Data Governance & Quality</li>
+                    <li>Stakeholder Engagement</li>
+                    <li>Change Management</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="certification-badges-section">
-        <h2 class="section-title">Professional Certifications</h2>
-        <p class="section-subtitle">Validated skills in Microsoft Business Intelligence</p>
-        
-        <div class="certification-grid">
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/SufyanIftikhar-3613/C2F3A630FB8C5DA2?sharingId" target="_blank" class="certification-badge">
-                <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Power BI Data Analyst Certification Badge">
-                <div class="badge-title">Microsoft Certified</div>
-                <div class="badge-name">Power BI Data Analyst</div>
-            </a>
-            </div>
-    </section>
-
-    <section id="trusted-by" style="background: var(--bg-light); padding: 4rem 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Trusted By Leading Organizations</h2>
-            <p class="section-subtitle">Delivering data solutions for enterprise clients</p>
-            
-            <div class="logos-container">
-                <div class="logos-row">
-                    <div class="logo-item">
-                        <img src="assets/logos/lloyds-banking-group.png" alt="Lloyds Banking Group logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/turner-townsend.png" alt="Turner & Townsend logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/wsp.png" alt="WSP logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/nwg.png" alt="Northumbrian Water Group logo" />
-                    </div>
-                </div>
-                <div class="logos-row">
-                    <div class="logo-item">
-                        <img src="assets/logos/canal-river-trust.png" alt="Canal & River Trust logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/national-highways.png" alt="National Highways logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/norfolk-council.png" alt="Norfolk County Council logo" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" style="padding: 4rem 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Technologies & Tools</h2>
-            <p class="section-subtitle">Leveraging industry-leading platforms for data excellence</p>
-            
-            <div class="tools-container">
-                <div class="tools-row">
-                    <div class="tool-card">
-                        <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
-                        <h4>Power BI</h4>
-                        <p>Advanced DAX, Data Modelling, Custom Visuals</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/sql.png" alt="SQL Server logo" style="height: 60px;" />
-                        <h4>SQL Server</h4>
-                        <p>Database Design, Complex Queries, ETL</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
-                        <h4>Python</h4>
-                        <p>Data Science, Automation, Analytics</p>
-                    </div>
-                </div>
-                <div class="tools-row">
-                    <div class="tool-card">
-                        <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
-                        <h4>Tableau</h4>
-                        <p>Interactive Dashboards, Visual Analytics</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
-                        <h4>Power Automate</h4>
-                        <p>Workflow Automation, Process Optimisation</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
-                        <h4>Excel & VBA</h4>
-                        <p>Advanced Analytics, Macro Development</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title">Professional Journey</h2>
-        <p class="section-subtitle">Building data-driven solutions for enterprise challenges</p>
-        
+    <section id="experience" class="projects-section">
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">
+            My professional journey across key roles and projects.
+        </p>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-header">
-                    <h3>Assistant Data and Reporting Manager</h3>
-                    <span class="timeline-date">May 2025 - Present</span>
+                    <div>
+                        <h3>Assistant Data and Reporting Manager</h3>
+                        <p class="company">Lloyds Banking Group – Lloyds Living</p>
+                    </div>
+                    <span class="timeline-date">May 2025 – Present</span>
                 </div>
-                <div class="company">Lloyds Banking Group - Lloyds Living | Leeds, UK</div>
                 <ul>
-                    <li>Designed unified Power BI data model serving as single source of truth for 3,500+ property portfolio</li>
-                    <li>Built scalable self-service dashboards enabling stakeholders to independently generate insights, reducing ad hoc reporting requests by 60%</li>
-                    <li>Automated data ingestion pipelines with external providers, improving reporting timeliness</li>
-                    <li>Led data strategy initiatives for finance, development, and operations teams</li>
+                    <li>Designed and delivered a unified Power BI data model, creating a single source of truth that enhanced data consistency across finance, development and operations teams.</li>
+                    <li>Built scalable self-service dashboards enabling stakeholders to independently generate insights, reducing ad hoc reporting requests.</li>
+                    <li>Collaborated with external data providers and IT teams to establish a robust data architecture.</li>
+                    <li>Identified and led automation projects, including migrating manual excel processes to Power Automate.</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-header">
-                    <h3>Performance and Reporting Analyst</h3>
-                    <span class="timeline-date">Apr 2024 - May 2025</span>
+                    <div>
+                        <h3>Assistant Project Manager</h3>
+                        <p class="company">WSP</p>
+                    </div>
+                    <span class="timeline-date">Oct 2021 – Mar 2023</span>
                 </div>
-                <div class="company">Turner and Townsend | Leeds, UK</div>
                 <ul>
-                    <li>Deployed 5 end-to-end Power BI dashboards for Northumbrian Water's £3 billion AMP7 Programme</li>
-                    <li>Automated reporting for 300+ contracts, reducing report generation time by 50%</li>
-                    <li>Optimized DAX calculations and Power Query workflows for enhanced performance</li>
-                    <li>Delivered training programs increasing team dashboard utilization by 40%</li>
+                    <li>Managed financial oversight for five major National Highway schemes, reducing budget variances to under 5%.</li>
+                    <li>Oversaw change management processes for the £36 million A629 Salterhebble Scheme, ensuring timely submissions and adherence to NEC contract requirements.</li>
+                    <li>Acted as the primary client contact for the NCC PI Programme (£350k), efficiently addressing inquiries and driving solutions.</li>
+                    <li>Led bi-weekly coordination meetings with project managers and directors, enhancing communication and delivery standards.</li>
+                    <li>Managed an international team of 10, consistently meeting deadlines and maintaining high-quality output.</li>
                 </ul>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <h3>Data Analyst and Solutions Engineer</h3>
-                    <span class="timeline-date">Mar 2023 - Mar 2024</span>
-                </div>
-                <div class="company">WSP | Remote, UK</div>
-                <ul>
-                    <li>Leveraged SQL to consolidate complex datasets ensuring comprehensive data integration</li>
-                    <li>Developed Python automation scripts achieving 100% data validation compliance</li>
-                    <li>Created interactive Tableau dashboards delivering real-time KPIs to management</li>
-                    <li>Streamlined project workflows through detailed process mapping</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <div class="projects-container">
-            <h2 class="section-title">Projects Gallery</h2>
-            <p class="section-subtitle">Enterprise solutions that drive real business impact</p>
             
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="powerbi">Power BI</button>
-                <button class="filter-btn" data-filter="automation">Automation</button>
-                <button class="filter-btn" data-filter="analytics">Analytics</button>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3>Asset Manager</h3>
+                        <p class="company">Canal & River Trust</p>
+                    </div>
+                    <span class="timeline-date">Sep 2020 - Oct 2021</span>
+                </div>
+                <ul>
+                    <li>Played a key role in the development and implementation of asset management strategies.</li>
+                    <li>Carried out principal inspections, providing recommendations on necessary work, ensuring the structural integrity and safety of assets.</li>
+                    <li>Advised colleagues at all levels on technical matters related to highway assets.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+            A selection of key projects showcasing my skills in data analytics, reporting, and dashboard development.
+        </p>
+
+        <div class="projects-grid">
+            <div class="project-card" data-category="Power BI">
+                <div class="project-image">
+                    <img src="nwg-contracts-dashboard.png" alt="NWG Contracts Overview Dashboard">
+                    <span class="project-type">Power BI</span>
+                </div>
+                <div class="project-content">
+                    <h3>NWG Contracts Overview Dashboard</h3>
+                    <p>Developed a Power BI dashboard to provide advanced visualization and filtering of contract data, addressing the client's challenge of limited data analysis capabilities in their existing system. </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Contract Bee API</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                    <a href="Contract Bee NWG Dashboard.pdf" class="project-link">
+                        View Case Study <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/lloyds-portfolio.html'">
-                    <div class="project-image">
-                        <span class="project-type">Live Dashboard</span>
-                        🏢
-                    </div>
-                    <div class="project-content">
-                        <h3>Lloyds Living Property Portfolio</h3>
-                        <p>
-                            A unified Power BI solution providing real-time insights into a portfolio of 5,596 properties,
-                            featuring occupancy tracking, rental performance, and compliance monitoring.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">DAX</span>
-                            <span class="tech-tag">API Integration</span>
-                        </div>
-                        <a href="projects/lloyds-portfolio.html" class="project-link">
-                            View Case Study →
-                        </a>
-                    </div>
+            <div class="project-card" data-category="Power BI">
+                <div class="project-image">
+                    <img src="nwg-executive-dashboard.png" alt="NWG Executive Summary Dashboard">
+                    <span class="project-type">Power BI</span>
                 </div>
-
-                <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/nwg-contracts.html'">
-                    <div class="project-image">
-                        <span class="project-type">Enterprise Solution</span>
-                        📋
+                <div class="project-content">
+                    <h3>NWG Executive Summary Dashboard</h3>
+                    <p>Created a high-level contract overview dashboard with time-based analysis, enabling executives to get a summarised view of project health and key performance indicators.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">KPIs</span>
                     </div>
-                    <div class="project-content">
-                        <h3>NWG Contract Management System</h3>
-                        <p>
-                            A comprehensive dashboard for a £3B programme that reduced overdue compensation events 
-                            by 30% and saved over 10 hours weekly in manual reporting.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Contract Bee API</span>
-                            <span class="tech-tag">Power Automate</span>
-                        </div>
-                        <a href="projects/nwg-contracts.html" class="project-link">
-                            View Case Study →
-                        </a>
-                    </div>
+                    <a href="NWG Performance Reporting Case Study.docx" class="project-link">
+                        View Case Study <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
+            </div>
 
-                <div class="project-card" data-category="analytics" onclick="window.location.href='projects/executive-dashboard.html'">
-                    <div class="project-image">
-                        <span class="project-type">Strategic Analytics</span>
-                        📊
-                    </div>
-                    <div class="project-content">
-                        <h3>Executive Performance Dashboard</h3>
-                        <p>
-                            A strategic C-level reporting solution consolidating KPIs, risk metrics, and financial 
-                            indicators across multiple portfolios for real-time decision-making.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <a href="projects/executive-dashboard.html" class="project-link">
-                            View Case Study →
-                        </a>
-                    </div>
+            <div class="project-card" data-category="Power BI">
+                <div class="project-image">
+                    <img src="lloyds-living-dashboard.png" alt="Lloyds Living Property Portfolio Dashboard">
+                    <span class="project-type">Power BI</span>
                 </div>
-
-                <div class="project-card" data-category="automation" onclick="window.location.href='projects/financial-automation.html'">
-                    <div class="project-image">
-                        <span class="project-type">Process Automation</span>
-                        🔄
+                <div class="project-content">
+                    <h3>Lloyds Living Property Portfolio</h3>
+                    <p>Designed a comprehensive dashboard to provide the client with a clear view of their property portfolio, including total properties, occupancy status, and key performance metrics.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Data Modelling</span>
+                        <span class="tech-tag">Real Estate</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Financial Reporting Automation</h3>
-                        <p>
-                            An end-to-end automation of monthly financial reporting that reduced manual effort 
-                            by 70% and eliminated data entry errors.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Power Automate</span>
-                            <span class="tech-tag">VBA</span>
-                            <span class="tech-tag">Excel</span>
-                        </div>
-                        <a href="projects/financial-automation.html" class="project-link">
-                            View Case Study →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="analytics" onclick="window.location.href='projects/project-controls.html'">
-                    <div class="project-image">
-                        <span class="project-type">Infrastructure</span>
-                        🏗️
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Controls Platform</h3>
-                        <p>
-                            An integrated solution monitoring performance, budget variances, and schedule 
-                            adherence across over £350M in infrastructure projects.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Tableau</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <a href="projects/project-controls.html" class="project-link">
-                            View Case Study →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/compliance-dashboard.html'">
-                    <div class="project-image">
-                        <span class="project-type">Compliance</span>
-                        ✅
-                    </div>
-                    <div class="project-content">
-                        <h3>Compliance & Risk Dashboard</h3>
-                        <p>
-                            A real-time regulatory compliance dashboard with automated certificate tracking 
-                            and risk assessment for property portfolios.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">DAX</span>
-                            <span class="tech-tag">Dataflows</span>
-                        </div>
-                        <a href="projects/compliance-dashboard.html" class="project-link">
-                            View Case Study →
-                        </a>
-                    </div>
+                    <a href="Technical Exercise.pdf" class="project-link">
+                        View Case Study <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog">
-        <h2 class="section-title">Latest Insights</h2>
-        <p class="section-subtitle">Sharing knowledge and best practices in data analytics</p>
-        
-        <div class="blog-grid">
-            <div class="blog-card">
-                <span class="blog-date">August 2025</span>
-                <h3>Building Scalable Data Models in Power BI</h3>
-                <p>
-                    Tired of slow reports? Learn the best practices for designing efficient data models that handle 
-                    millions of rows while maintaining optimal performance.
-                </p>
-                <a href="blog/scalable-data-models.html" class="read-more">Read More →</a>
+    <section id="contact" class="projects-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">
+            I'm always open to discussing new opportunities, collaborations, or data-driven projects.
+        </p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="tel:07895846487">
+                    <img src="phone.png" alt="Phone Icon" style="width:24px;height:24px;">
+                    <span>07895 846487</span>
+                </a>
             </div>
-
-            <div class="blog-card">
-                <span class="blog-date">July 2025</span>
-                <h3>Automating Report Distribution with Power Automate</h3>
-                <p>
-                    A step-by-step guide to creating automated workflows that distribute Power BI reports 
-                    to stakeholders based on custom triggers, saving you time and effort.
-                </p>
-                <a href="blog/report-automation.html" class="read-more">Read More →</a>
+            <div class="contact-item">
+                <a href="mailto:sufyaniftikhar1@gmail.com">
+                    <img src="email.png" alt="Email Icon" style="width:24px;height:24px;">
+                    <span>sufyaniftikhar1@gmail.com</span>
+                </a>
             </div>
-
-            <div class="blog-card">
-                <span class="blog-date">June 2025</span>
-                <h3>Advanced DAX Patterns for Financial Analysis</h3>
-                <p>
-                    Explore complex DAX formulas for time intelligence, dynamic segmentation, and variance 
-                    analysis to unlock deeper insights in your financial reporting.
-                </p>
-                <a href="blog/dax-patterns.html" class="read-more">Read More →</a>
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn Icon" style="width:24px;height:24px;">
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </div>
-    </section>
-
-    <section id="contact">
+        <div class="contact-divider"><span>or</span></div>
         <div class="contact">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Ready to transform your data into strategic insights?</p>
-            
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+            <h3>Send me a message</h3>
+            <form class="contact-form" action="https://formspree.io/f/mqazqjzo" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -1583,214 +1351,75 @@
                     <input type="email" name="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group">
                     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit">Send Message</button>
             </form>
-
-            <div class="contact-divider">
-                <span>Or connect via</span>
-            </div>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    💼 <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn Profile</a>
-                </div>
-                <div class="contact-item">
-                    📧 <a href="mailto:sufyaniftikhar1@gmail.com">Email</a>
-                </div>
-                <div class="contact-item">
-                    📍 Leeds, West Yorkshire, UK
-                </div>
-            </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#blog">Blog</a>
-                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
-            </div>
-            <p>&copy; 2025 Sufyan Iftikhar. All rights reserved.</p>
+            <p>&copy; 2024 Sufyan Iftikhar. All Rights Reserved.</p>
         </div>
     </footer>
-
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navLinks = document.getElementById('navLinks');
-
-            mobileMenuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-
-            // Project filtering
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    projectCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
-                            }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.95)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-
-            projectCards.forEach(card => {
-                card.style.transition = 'opacity 0.3s, transform 0.3s';
-            });
-
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        const headerOffset = 70;
-                        const elementPosition = target.offsetTop;
-                        const offsetPosition = elementPosition - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
 
-            // Add scroll effect to header
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 100) {
-                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-                } else {
-                    header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
-                }
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
             });
 
-            // Animate elements on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card, .tool-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-
-            // Prevent form submission if using placeholder Formspree ID
-            const contactForm = document.querySelector('.contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    if (this.action.includes('YOUR_FORM_ID')) {
-                        e.preventDefault();
-                        alert('Please set up your Formspree form ID first. Visit formspree.io to create a free form.');
-                    }
-                });
-            }
-        
-            // Side Navigation functionality
+            // Side Navigation Logic
             const sideNav = document.getElementById('sideNav');
-            const navDots = document.querySelectorAll('.nav-dot');
             const progressLine = document.querySelector('.progress-line');
-            const sections = document.querySelectorAll('section[id], .hero');
-            
-            navDots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const targetSection = document.getElementById(dot.dataset.section);
-                    if (targetSection) {
-                        const headerOffset = 70;
-                        const elementPosition = target.offsetTop;
-                        const offsetPosition = elementPosition - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+            const navDots = document.querySelectorAll('.nav-dot');
+            const sections = document.querySelectorAll('section');
 
             function updateSideNav() {
-                const scrollPosition = window.scrollY + window.innerHeight / 2;
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercentage = (window.scrollY / totalHeight) * 100;
-
-                const maxLineHeight = sideNav.offsetHeight - 40;
-                progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
+                const scrollPosition = window.scrollY + 100; // Offset for fixed header
 
                 sections.forEach((section) => {
                     const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.id;
 
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                         navDots.forEach(dot => dot.classList.remove('active'));
-                        
-                        const activeDot = document.querySelector(`.nav-dot[data-section="${section.id}"]`);
+                        const activeDot = document.querySelector(`.nav-dot[data-section="${sectionId}"]`);
                         if (activeDot) {
                             activeDot.classList.add('active');
                         }
                     }
                 });
+
+                // Update progress line
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercentage = (window.scrollY / totalHeight) * 100;
+
+                const maxLineHeight = sideNav.offsetHeight - 40; // Account for top/bottom padding
+                progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
             }
 
             window.addEventListener('scroll', updateSideNav);
+            updateSideNav(); // Initial call to set state on page load
         });
     </script>
-
-    <div id="sideNav" class="side-nav">
-        <div class="progress-line"></div>
-        <a href="#home" class="nav-dot" data-section="home" aria-label="Go to Home section"><span class="nav-label">Home</span></a>
-        <a href="#about" class="nav-dot" data-section="about" aria-label="Go to About section"><span class="nav-label">About</span></a>
-        <a href="#experience" class="nav-dot" data-section="experience" aria-label="Go to Experience section"><span class="nav-label">Experience</span></a>
-        <a href="#projects" class="nav-dot" data-section="projects" aria-label="Go to Projects section"><span class="nav-label">Projects</span></a>
-        <a href="#blog" class="nav-dot" data-section="blog" aria-label="Go to Blog section"><span class="nav-label">Blog</span></a>
-        <a href="#contact" class="nav-dot" data-section="contact" aria-label="Go to Contact section"><span class="nav-label">Contact</span></a>
-    </div>
-
 </body>
 </html>
