@@ -70,8 +70,8 @@ Explore enterprise-grade solutions powered by data:
 
 | Project | Description |
 |---------|-------------|
-| **Lloyds Living Property Portfolio** | Unified Power BI solution delivering insights on 5,596 properties—tracking occupancy, rental performance, and compliance. |
-| **NWG Contract Management System** | Dashboard for a £3 billion programme—reduced overdue compensations by 30% and saved 10+ hours weekly. |
+| **Lloyds Living Property Portfolio** | Unified Power BI solution delivering insights on 5,500+ properties—tracking occupancy, rental performance, and compliance. |
+| **NWG Contract Management System** | Dashboard for a £3 billion programme—reduced overdue compensations by 30% and saved 10+ hours monthly. |
 | **Executive Performance Dashboard** | C-level reporting dashboard consolidating KPIs, risk metrics, and financial data across multiple portfolios. |
 | **Financial Reporting Automation** | Automated monthly financial reports—reduced manual effort by 70% and minimised data entry errors. |
 | **Project Controls Platform** | Tableau-based solution monitoring performance, budget, and schedule across £350 million+ infrastructure projects. |
@@ -107,7 +107,7 @@ Ready to turn your data into insights?
 
 - [LinkedIn](https://www.linkedin.com/in/sufyaniftikhar)  
 - Email: sufyaniftikhar1@gmail.com  
-- Location: Bradford, West Yorkshire, UK
+- Location: Leeds, West Yorkshire, UK
 
 ---
 
