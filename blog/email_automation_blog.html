@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Inbox to Insights: Building an Automated Data Pipeline with Power Automate, SharePoint & Power BI | Sufyan Iftikhar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-white: #ffffff;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --code-bg: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 16px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 3rem 0 1.5rem 0;
+            position: relative;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .highlight-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--accent-color);
+            background: #fef3c7;
+        }
+
+        .highlight-box.tip {
+            border-left-color: #10b981;
+            background: #ecfdf5;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .step-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .workflow-diagram {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .workflow-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .workflow-item {
+            background: var(--bg-white);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .workflow-arrow {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .benefit-description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+        
+        <article>
+            <header class="article-header">
+                <h1 class="article-title">From Inbox to Insights: Building an Automated Data Pipeline with Power Automate, SharePoint & Power BI</h1>
+                <p class="article-subtitle">Transform email attachments into actionable business intelligence with zero manual intervention</p>
+                <div class="article-meta">
+                    <span>📅 August 2025</span>
+                    <span>⏱️ 8 min read</span>
+                    <span>🏷️ Automation, Power Platform</span>
+                </div>
+            </header>
+
+            <div class="content">
+                <p>
+                    How many hours does your team spend manually processing data files sent via email? If you're like most organizations, stakeholders regularly send critical business data through email attachments—sales reports, customer feedback, financial updates—that require manual downloading, organizing, and processing before they can be analyzed.
+                </p>
+
+                <p>
+                    In this article, I'll walk you through building a complete automated pipeline that transforms your email inbox into an intelligent data processing system using Microsoft Power Automate, SharePoint, and Power BI. By the end, you'll have a solution that automatically captures, validates, and transforms email attachments into ready-to-analyze datasets.
+                </p>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Power Automate</span>
+                    <span class="tech-tag">SharePoint</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Power Query</span>
+                    <span class="tech-tag">Outlook</span>
+                </div>
+
+                <h2>The Business Challenge</h2>
+                
+                <p>
+                    Picture this scenario: Your regional sales managers send monthly performance reports via email with subjects like "Monthly Sales Report - North Region" and attach files named "Sales_Data_North_202508.xlsx". Currently, someone manually:
+                </p>
+
+                <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                    <li>Downloads each attachment</li>
+                    <li>Saves files to the correct folder</li>
+                    <li>Opens Power BI to refresh data</li>
+                    <li>Manually combines multiple files</li>
+                    <li>Updates dashboards for stakeholder review</li>
+                </ul>
+
+                <p>
+                    This process is time-consuming, error-prone, and prevents real-time insights. Let's automate it completely.
+                </p>
+
+                <h2>Solution Architecture Overview</h2>
+
+                <div class="workflow-diagram">
+                    <h3 style="margin-bottom: 2rem; color: var(--text-dark);">Automated Data Pipeline Flow</h3>
+                    <div class="workflow-steps">
+                        <div class="workflow-item">📧 Email Received</div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-item">🔍 Power Automate Trigger</div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-item">✅ Validation Checks</div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-item">📁 SharePoint Storage</div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-item">📊 Power BI Processing</div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-item">📈 Updated Dashboard</div>
+                    </div>
+                </div>
+
+                <h2>Step 1: Setting Up Power Automate Email Processing</h2>
+
+                <p>
+                    We'll start by creating a Power Automate flow that monitors your inbox for specific email patterns. Our flow will look for emails containing "Monthly Sales Report" in the subject line and validate that attachments follow the naming convention "Sales_Data_[Region]_[YYYYMM].xlsx".
+                </p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Email Trigger</h3>
+                        <p class="step-description">
+                            Set up the "When a new email arrives (V3)" trigger with condition: Subject contains "Monthly Sales Report"
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Attachment Check</h3>
+                        <p class="step-description">
+                            Add condition to verify email has attachments and that attachment count is greater than 0
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">File Name Validation</h3>
+                        <p class="step-description">
+                            Use regex or contains function to validate filename pattern matches "Sales_Data_*_*.xlsx"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="code-block">
+Subject Contains: "Monthly Sales Report"
+Has Attachments: Yes
+Attachment Name Contains: "Sales_Data_"
+Attachment Extension: ".xlsx"
+                </div>
+
+                <div class="highlight-box warning">
+                    <strong>Pro Tip:</strong> Use the "Apply to each" action when processing attachments, as emails might contain multiple files. This ensures each attachment is processed individually and properly validated.
+                </div>
+
+                <h2>Step 2: Implementing Smart File Validation</h2>
+
+                <p>
+                    Before saving files to SharePoint, we need robust validation to ensure data quality and prevent processing errors. Our validation logic checks multiple criteria:
+                </p>
+
+                <h3>Validation Criteria Implementation</h3>
+
+                <div class="code-block">
+// Subject Line Validation
+contains(triggerOutputs()?['subject'], 'Monthly Sales Report')
+
+// File Name Pattern Validation
+and(
+    contains(triggerOutputs()?['attachments'][0]['name'], 'Sales_Data_'),
+    endsWith(triggerOutputs()?['attachments'][0]['name'], '.xlsx'),
+    greater(length(triggerOutputs()?['attachments'][0]['name']), 20)
+)
+
+// File Size Validation (prevent empty files)
+greater(triggerOutputs()?['attachments'][0]['size'], 1024)
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Why This Matters:</strong> Proper validation prevents downstream errors in Power BI and ensures only valid data files are processed. This saves hours of troubleshooting and maintains data integrity across your pipeline.
+                </div>
+
+                <h2>Step 3: SharePoint Integration & File Management</h2>
+
+                <p>
+                    Once validation passes, we'll save the attachment to a designated SharePoint folder. SharePoint serves as our centralized data lake where Power BI can automatically detect and process new files.
+                </p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">SharePoint Connection</h3>
+                        <p class="step-description">
+                            Use "Create file" action to save attachment to SharePoint document library with dynamic naming
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Folder Organization</h3>
+                        <p class="step-description">
+                            Organize files by date and region: /SalesData/2025/08/North/Sales_Data_North_202508.xlsx
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Metadata Capture</h3>
+                        <p class="step-description">
+                            Extract region and date from filename to populate SharePoint columns for better tracking
+                        </p>
+                    </div>
+                </div>
+
+                <div class="code-block">
+// Dynamic folder path
+concat('/SalesData/', formatDateTime(utcNow(), 'yyyy'), '/', 
+       formatDateTime(utcNow(), 'MM'), '/', 
+       split(items('Apply_to_each')?['name'], '_')[2])
+
+// File naming with timestamp
+concat(split(items('Apply_to_each')?['name'], '.')[0], 
+       '_', formatDateTime(utcNow(), 'yyyyMMdd_HHmmss'), '.xlsx')
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>Best Practice:</strong> Always append timestamps to prevent file overwrites and maintain a complete audit trail of data submissions. This is crucial for compliance and troubleshooting.
+                </div>
+
+                <h2>Step 4: Power BI Folder Connector Setup</h2>
+
+                <p>
+                    Now comes the Power BI magic. We'll use the SharePoint folder connector to automatically detect and process all files in our designated folder. When Power Query combines files from a folder, it creates a transformation file that applies the same steps to all files.
+                </p>
+
+                <h3>Setting Up the Folder Connection</h3>
+
+                <p>
+                    In Power BI Desktop, use the SharePoint folder connector and point it to your sales data folder. Power BI will automatically detect the file structure and create a transformation file.
+                </p>
+
+                <div class="code-block">
+// Power Query M code for folder processing
+let
+    Source = SharePoint.Files("https://yourcompany.sharepoint.com/sites/DataHub", 
+                             [ApiVersion = 15]),
+    FilteredFolders = Table.SelectRows(Source, 
+                      each Text.Contains([Folder Path], "SalesData")),
+    FilterExcelFiles = Table.SelectRows(FilteredFolders, 
+                       each Text.EndsWith([Name], ".xlsx")),
+    TransformFiles = Table.TransformColumns(FilterExcelFiles, 
+                     {"Content", each Excel.Workbook(_)})
+in
+    TransformFiles
+                </div>
+
+                <h2>Step 5: Power Query Transformation Magic</h2>
+
+                <p>
+                    The transformer file is where the real power lies. Every transformation you apply here automatically applies to all files in the folder—both existing and future files that get added through your automation.
+                </p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Standard Transformations</h3>
+                        <p class="step-description">
+                            Data type corrections, column standardization, and header cleanup that applies to all files
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">File Metadata</h3>
+                        <p class="step-description">
+                            Extract region, date, and source information from filename and folder path for analysis
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Data Quality Checks</h3>
+                        <p class="step-description">
+                            Remove blank rows, validate required fields, and flag data quality issues for review
+                        </p>
+                    </div>
+                </div>
+
+                <div class="code-block">
+// Example transformation steps applied to all files
+let
+    // Standard cleanup
+    RemoveBlankRows = Table.SelectRows(Source, each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+    
+    // Extract metadata from filename
+    AddRegion = Table.AddColumn(RemoveBlankRows, "Region", 
+                each Text.Split(Text.Split([Source.Name], "_"){2}, "."){0}),
+    
+    // Data type corrections
+    ChangeTypes = Table.TransformColumnTypes(AddRegion, 
+                  {{"Sales Amount", Currency.Type}, 
+                   {"Date", type date},
+                   {"Quantity", Int64.Type}})
+in
+    ChangeTypes
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Key Insight:</strong> The transformer file approach means you set up your data transformations once, and they automatically apply to every new file that arrives through your automated pipeline. This ensures consistency and eliminates manual data preparation.
+                </div>
+
+                <h2>Step 6: Automated Refresh & Notifications</h2>
+
+                <p>
+                    Complete the automation by setting up scheduled refreshes and notifications to keep stakeholders informed of new data availability.
+                </p>
+
+                <h3>Power BI Service Configuration</h3>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Scheduled Refresh</h3>
+                        <p class="step-description">
+                            Configure Power BI Service to refresh dataset every 2 hours during business hours
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Success Notifications</h3>
+                        <p class="step-description">
+                            Add Power Automate action to notify stakeholders when new data is successfully processed
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Error Handling</h3>
+                        <p class="step-description">
+                            Implement error notifications and logging for failed validations or processing issues
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Business Benefits & Results</h2>
+
+                <p>
+                    This automated pipeline delivers significant operational improvements and cost savings:
+                </p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⏰</div>
+                        <h3 class="benefit-title">Time Savings</h3>
+                        <p class="benefit-description">
+                            Eliminates 2-3 hours of manual processing per month per data source
+                        </p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3 class="benefit-title">Data Accuracy</h3>
+                        <p class="benefit-description">
+                            Standardized validation and processing reduces human error by 95%
+                        </p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h3 class="benefit-title">Real-time Insights</h3>
+                        <p class="benefit-description">
+                            Dashboards update automatically within hours of email receipt
+                        </p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔒</div>
+                        <h3 class="benefit-title">Audit Trail</h3>
+                        <p class="benefit-description">
+                            Complete tracking of data lineage from email to dashboard
+                        </p>
+                    </div>
+                </div>
+
+                <h2>Common Pitfalls & Solutions</h2>
+
+                <div class="highlight-box warning">
+                    <strong>File Size Limits:</strong> SharePoint has file size limits. For large files, consider using Azure Blob Storage with Power Automate Premium connectors.
+                </div>
+
+                <div class="highlight-box warning">
+                    <strong>Power Automate Limitations:</strong> Free tier has monthly run limits. Monitor usage and consider upgrading for high-volume scenarios.
+                </div>
+
+                <div class="highlight-box tip">
+                    <strong>Performance Tip:</strong> Use incremental refresh in Power BI for datasets that grow large over time. This reduces processing time and improves user experience.
+                </div>
+
+                <h2>Taking It Further</h2>
+
+                <p>
+                    Once you have this foundation, consider these advanced enhancements:
+                </p>
+
+                <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                    <li><strong>AI Builder Integration:</strong> Use AI Builder to extract data from PDFs and images</li>
+                    <li><strong>Multi-format Support:</strong> Extend to handle CSV, JSON, and other data formats</li>
+                    <li><strong>Data Quality Scoring:</strong> Implement automatic data quality assessment and scoring</li>
+                    <li><strong>Advanced Notifications:</strong> Create rich notification emails with data summaries and trends</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+
+                <p>
+                    By combining Power Automate, SharePoint, and Power BI, we've created a robust automated pipeline that transforms email attachments into business intelligence with zero manual intervention. This solution scales across multiple data sources and can be adapted for various business scenarios.
+                </p>
+
+                <p>
+                    The key to success lies in proper validation, consistent file organization, and leveraging Power Query's transformer file capabilities. Once implemented, this automation will save your team countless hours while providing more timely, accurate insights for decision-making.
+                </p>
+
+                <div class="highlight-box tip">
+                    <strong>Next Steps:</strong> Start with a single data source to prove the concept, then gradually expand to additional email patterns and file types. Document your validation rules and share the solution across your organization for maximum impact.
+                </div>
+
+                <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); color: var(--text-light); font-style: italic;">
+                    Have you implemented similar automation solutions? I'd love to hear about your experiences and any creative adaptations you've made. Connect with me on LinkedIn to continue the conversation!
+                </p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
