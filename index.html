@@ -907,11 +907,15 @@
         }
 
         /* Tools Grid */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+        .tools-container {
             margin: 3rem 0;
+        }
+
+        .tools-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .tool-card {
@@ -921,6 +925,8 @@
             border-radius: 16px;
             border: 1px solid var(--border-color);
             transition: all 0.3s;
+            flex: 1;
+            max-width: 280px;
         }
 
         .tool-card:hover {
@@ -930,9 +936,9 @@
         }
 
         .tool-card img {
-            height: 60px;
-            width: auto;
             margin-bottom: 1rem;
+            width: auto;
+            max-width: 100%;
         }
 
         .tool-card h4 {
@@ -958,6 +964,16 @@
             
             .logos-row .logo-item:nth-child(5) {
                 margin-left: 0;
+            }
+            
+            .tools-row {
+                flex-wrap: wrap;
+            }
+            
+            .tool-card {
+                flex: 1 1 45%;
+                max-width: none;
+                margin-bottom: 1rem;
             }
             
             .tools-grid {
@@ -1211,36 +1227,42 @@
             <h2 class="section-title">Technologies & Tools</h2>
             <p class="section-subtitle">Leveraging industry-leading platforms for data excellence</p>
             
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <img src="assets/tools/powerbi.png" alt="Power BI" style="height: 60px;" />
-                    <h4>Power BI</h4>
-                    <p>Advanced DAX, Data Modeling, Custom Visuals</p>
+            <div class="tools-container">
+                <!-- First row: Power BI, SQL Server, Python -->
+                <div class="tools-row">
+                    <div class="tool-card">
+                        <img src="assets/tools/powerbi.png" alt="Power BI" style="height: 80px;" />
+                        <h4>Power BI</h4>
+                        <p>Advanced DAX, Data Modeling, Custom Visuals</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/sql.png" alt="SQL" style="height: 60px;" />
+                        <h4>SQL Server</h4>
+                        <p>Database Design, Complex Queries, ETL</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/python.png" alt="Python" style="height: 60px;" />
+                        <h4>Python</h4>
+                        <p>Data Science, Automation, Analytics</p>
+                    </div>
                 </div>
-                <div class="tool-card">
-                    <img src="assets/tools/python.png" alt="Python" style="height: 60px;" />
-                    <h4>Python</h4>
-                    <p>Data Science, Automation, Analytics</p>
-                </div>
-                <div class="tool-card">
-                    <img src="assets/tools/sql.png" alt="SQL" style="height: 60px;" />
-                    <h4>SQL Server</h4>
-                    <p>Database Design, Complex Queries, ETL</p>
-                </div>
-                <div class="tool-card">
-                    <img src="assets/tools/tableau.png" alt="Tableau" style="height: 60px;" />
-                    <h4>Tableau</h4>
-                    <p>Interactive Dashboards, Visual Analytics</p>
-                </div>
-                <div class="tool-card">
-                    <img src="assets/tools/power-automate.png" alt="Power Automate" style="height: 60px;" />
-                    <h4>Power Automate</h4>
-                    <p>Workflow Automation, Process Optimization</p>
-                </div>
-                <div class="tool-card">
-                    <img src="assets/tools/excel.png" alt="Excel" style="height: 60px;" />
-                    <h4>Excel & VBA</h4>
-                    <p>Advanced Analytics, Macro Development</p>
+                <!-- Second row: Tableau, Power Automate, Excel -->
+                <div class="tools-row">
+                    <div class="tool-card">
+                        <img src="assets/tools/tableau.png" alt="Tableau" style="height: 45px;" />
+                        <h4>Tableau</h4>
+                        <p>Interactive Dashboards, Visual Analytics</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/power-automate.png" alt="Power Automate" style="height: 60px;" />
+                        <h4>Power Automate</h4>
+                        <p>Workflow Automation, Process Optimization</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/excel.png" alt="Excel" style="height: 60px;" />
+                        <h4>Excel & VBA</h4>
+                        <p>Advanced Analytics, Macro Development</p>
+                    </div>
                 </div>
             </div>
         </div>
