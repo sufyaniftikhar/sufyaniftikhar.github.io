@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWG Contract Management System | Sufyan Iftikhar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-white: #ffffff;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --section-padding: 5rem 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 16px;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .phase-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .phase-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .phase-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .phase-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .phase-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .challenges-list {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .challenges-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .challenges-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .challenges-list li:last-child {
+            border-bottom: none;
+        }
+
+        .challenges-list li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="project-header">
+            <h1 class="project-title">NWG Contract Management System</h1>
+            <p class="project-subtitle">Transforming contract oversight for a £3 billion water infrastructure programme through automated Power BI dashboards</p>
+        </div>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <div class="meta-label">Client</div>
+                <div class="meta-value">Northumbrian Water Group</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Programme Value</div>
+                <div class="meta-value">£3 Billion</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Development Time</div>
+                <div class="meta-value">12 Weeks</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Contracts Managed</div>
+                <div class="meta-value">300+</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="content-text">
+                Northumbrian Water Group (NWG) required enhanced visibility into their contract performance across their AMP7 (2020-2025) and AMP8 (2025-2030) Asset Management Periods. While their existing Contract Bee system captured comprehensive contract data, it lacked the analytical depth and custom visualisation capabilities needed for strategic decision-making.
+            </p>
+            <p class="content-text">
+                As the lead data analyst, I designed and deployed a comprehensive Power BI solution that transformed how NWG's commercial teams monitor contract performance, manage compensation events, and ensure regulatory compliance across their £3 billion infrastructure programme.
+            </p>
+            
+            <div class="highlight-box">
+                <strong>Business Challenge:</strong> Contract Bee's standard reporting couldn't provide the custom analytics, interactive filtering, and real-time insights needed by commercial managers, project teams, and compliance officers to effectively oversee 300+ active contracts.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Architecture</h2>
+            <p class="content-text">
+                The solution leveraged Contract Bee's API for real-time data integration, eliminating manual export processes and ensuring stakeholders always accessed current contract information.
+            </p>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Contract Bee API</span>
+                <span class="tech-tag">Power Query</span>
+                <span class="tech-tag">DAX</span>
+                <span class="tech-tag">Power Automate</span>
+                <span class="tech-tag">Power Platform</span>
+            </div>
+
+            <div class="challenges-list">
+                <h3 style="margin-bottom: 1rem; color: var(--text-dark);">Technical Challenges Addressed</h3>
+                <ul>
+                    <li>API rate limiting and connection optimization for real-time data refresh</li>
+                    <li>Complex data relationships across multiple contract lifecycle stages</li>
+                    <li>Performance optimization for large datasets (300+ contracts with historical data)</li>
+                    <li>Custom DAX calculations for contract-specific KPIs and variance analysis</li>
+                    <li>Multi-user access controls and workspace security implementation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Development Methodology</h2>
+            <p class="content-text">
+                Following agile principles, the project was delivered through a structured five-phase approach, ensuring stakeholder engagement and iterative refinement throughout the development lifecycle.
+            </p>
+            
+            <div class="phase-grid">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3 class="phase-title">Requirements Gathering</h3>
+                    <p class="phase-description">
+                        Conducted stakeholder workshops with Senior Commercial Managers and Project Managers to define reporting requirements, identify key metrics, and establish success criteria for the dashboard solution.
+                    </p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3 class="phase-title">Data Integration & Modeling</h3>
+                    <p class="phase-description">
+                        Established Contract Bee API connectivity, designed optimal data models with proper relationships, and created custom DAX measures for contract performance calculations and variance analysis.
+                    </p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">3</div>
+                    <h3 class="phase-title">Dashboard Development</h3>
+                    <p class="phase-description">
+                        Built interactive visualizations with advanced filtering capabilities, drill-down analysis features, and responsive design optimized for both desktop and mobile access across different user roles.
+                    </p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">4</div>
+                    <h3 class="phase-title">User Testing & Refinement</h3>
+                    <p class="phase-description">
+                        Conducted iterative testing sessions with end-users, gathered feedback on usability and performance, and implemented optimizations to enhance user experience and system responsiveness.
+                    </p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">5</div>
+                    <h3 class="phase-title">Deployment & Training</h3>
+                    <p class="phase-description">
+                        Deployed the solution to NWG's Commercial Function workspace, implemented security controls, and delivered comprehensive training programs to ensure successful adoption across all user groups.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Features Delivered</h2>
+            <p class="content-text">
+                The final solution provided comprehensive contract oversight capabilities tailored to NWG's operational requirements:
+            </p>
+            
+            <div class="highlight-box">
+                <strong>Contract Performance Tracking:</strong> Real-time monitoring of contract status, financial commitments, and milestone progress with automated alerts for overdue actions and compensation events.
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Financial Analysis:</strong> Dynamic variance analysis comparing contracted values against actual spend, with detailed breakdown of compensation events and their financial impact on programme budgets.
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Risk Management:</strong> Automated identification of contracts with overdue early warnings, pending compensation events, and compliance issues requiring immediate management attention.
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Interactive Analytics:</strong> Advanced filtering by contractor, project manager, contract type, and timeline with drill-through capabilities for detailed contract investigation and root cause analysis.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Measurable Business Impact</h2>
+            <p class="content-text">
+                The implementation delivered significant operational improvements and cost savings across NWG's commercial operations:
+            </p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">50%</div>
+                    <div class="result-label">Reduction in Report Generation Time</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-number">30%</div>
+                    <div class="result-label">Decrease in Overdue Compensation Events</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-number">12+</div>
+                    <div class="result-label">Hours Saved Weekly in Manual Reporting</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-number">300+</div>
+                    <div class="result-label">Contracts Automated</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-number">95%</div>
+                    <div class="result-label">User Adoption Rate</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-number">100%</div>
+                    <div class="result-label">Real-time Data Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Innovation</h2>
+            <p class="content-text">
+                The project showcased advanced Power BI capabilities and data engineering best practices:
+            </p>
+            
+            <div class="challenges-list">
+                <h3 style="margin-bottom: 1rem; color: var(--text-dark);">Advanced Implementation Features</h3>
+                <ul>
+                    <li>Custom DAX time intelligence functions for contract lifecycle analysis</li>
+                    <li>Optimized Power Query transformations for API data processing</li>
+                    <li>Dynamic row-level security implementation for multi-tenant access</li>
+                    <li>Automated data refresh scheduling with error handling and notifications</li>
+                    <li>Mobile-responsive design with conditional formatting for different screen sizes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Stakeholder Feedback</h2>
+            <div class="highlight-box">
+                <p class="content-text" style="font-style: italic; margin-bottom: 0;">
+                    "The Contract Management Dashboard has transformed how our commercial team operates. What previously took hours of manual reporting now happens automatically, and the insights we're getting are helping us proactively manage contract performance across the entire programme. The real-time visibility into compensation events has been particularly valuable for maintaining programme budgets."
+                </p>
+                <p style="text-align: right; margin-top: 1rem; font-weight: 600; color: var(--primary-color);">
+                    - Senior Commercial Manager, NWG AMP7 Programme
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Lessons Learned & Future Enhancements</h2>
+            <p class="content-text">
+                This project reinforced the importance of stakeholder engagement throughout the development process and demonstrated the power of API-driven solutions for real-time business intelligence. Future enhancements being considered include predictive analytics for contract performance forecasting and integration with additional NWG systems for comprehensive programme oversight.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
