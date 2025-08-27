@@ -82,7 +82,7 @@ Explore enterprise-grade solutions and technical articles powered by data:
 
 | Project                         | Description                                                                                                                   |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Property Portfolio Management** | Unified Power BI solution delivering insights on 5,500+ properties—tracking occupancy, rental performance, and compliance.      |
+| **Property Portfolio Management** | Unified Power BI solution delivering insights on 5,500+ properties - tracking occupancy, rental performance, and compliance.      |
 | **NWG Contract Management System** | Dashboard for a £3 billion programme—reduced overdue compensations by 30% and saved 10+ hours monthly.                        |
 | **AI-Powered Documentation** | An innovative solution using AI to automatically generate intelligent data dictionaries for Power BI models.                  |
 | **Automated Email Data Pipeline** | An end-to-end pipeline that captures, validates, and processes email attachments into actionable BI.                          |
