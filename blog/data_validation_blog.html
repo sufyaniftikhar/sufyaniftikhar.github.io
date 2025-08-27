@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Data Validation with Python - Sufyan Iftikhar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
+                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+
+            <!-- Project Title -->
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Automated Data Validation Framework</h2>
+            <p class="text-xl text-gray-600 mb-8">A Python-based solution that uses a centralized Excel data dictionary to automate data quality checks and generate actionable error reports.</p>
+
+            <!-- Project Meta -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Project Type</h4>
+                    <p class="text-lg font-bold text-gray-900">Data Governance & Automation</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Role</h4>
+                    <p class="text-lg font-bold text-gray-900">Data Analyst</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Core Technologies</h4>
+                    <p class="text-lg font-bold text-gray-900">Python, Pandas, JSON, Excel</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Impact</h4>
+                    <p class="text-lg font-bold text-gray-900">Streamlined Data Quality Reporting</p>
+                </div>
+            </div>
+
+            <!-- The Business Challenge -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Maintaining data quality is a constant struggle for any data-driven organization. When new data is ingested, it must be validated against a set of business rules to ensure its integrity. This process is often manual, involving data managers visually inspecting files, which is not scalable and is highly susceptible to errors.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    The core challenge was to create a flexible and automated data validation process that could be easily managed by non-technical users. The system needed a central place to define data rules (a data dictionary) and a script to apply these rules to incoming data, flagging any issues for correction.
+                </p>
+            </section>
+
+            <!-- The Solution -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Solution: A Dictionary-Driven Validation Script</h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    I developed a Python-based solution that uses a simple, human-readable Excel file as a data dictionary to drive the validation logic. This approach empowers data managers to define and update data quality rules without touching any code.
+                </p>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">The Four-Step Process:</h4>
+                    <div class="space-y-6">
+                        
+                        <div class="p-4 border-l-4 border-blue-600">
+                            <h5 class="text-xl font-semibold mb-2">1. The Excel Data Dictionary</h5>
+                            <p class="text-gray-600">A structured Excel file is created where each row defines the validation rules for a specific data field. This includes data type, min/max values, and a comma-separated list of allowable values or patterns.</p>
+                        </div>
+
+                        <div class="p-4 border-l-4 border-green-600">
+                            <h5 class="text-xl font-semibold mb-2">2. Conversion to JSON</h5>
+                            <p class="text-gray-600">The Excel dictionary is converted into a JSON format. JSON is a machine-readable format that is easy for the Python script to parse and use as a set of instructions.</p>
+                        </div>
+
+                        <div class="p-4 border-l-4 border-yellow-600">
+                            <h5 class="text-xl font-semibold mb-2">3. Automated Python Validation</h5>
+                            <p class="text-gray-600">A Python script reads the JSON dictionary and the data file to be validated. It then iterates through each row of the data, applying the rules defined in the dictionary to each field.</p>
+                        </div>
+                        
+                        <div class="p-4 border-l-4 border-purple-600">
+                            <h5 class="text-xl font-semibold mb-2">4. Actionable Error Reporting</h5>
+                            <p class="text-gray-600">The script generates a new Excel report that flags all data quality issues. Invalid cells are highlighted, and a separate sheet details all the rows that passed and failed validation, making it easy for data managers to identify and correct errors.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <!-- A Simple Example -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">A Practical Example</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Let's walk through the process with a simple dataset of employee information.
+                </p>
+                <h5 class="text-xl font-semibold mb-2">1. The Data Dictionary (Excel)</h5>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300">
+                        <thead class="bg-gray-800 text-white">
+                            <tr>
+                                <th class="py-2 px-4 border">Field Name</th>
+                                <th class="py-2 px-4 border">Data Type</th>
+                                <th class="py-2 px-4 border">Min Value</th>
+                                <th class="py-2 px-4 border">Max Value</th>
+                                <th class="py-2 px-4 border">Allowable Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">EmployeeID</td>
+                                <td class="py-2 px-4 border">integer</td>
+                                <td class="py-2 px-4 border">1000</td>
+                                <td class="py-2 px-4 border">9999</td>
+                                <td class="py-2 px-4 border"></td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">Department</td>
+                                <td class="py-2 px-4 border">string</td>
+                                <td class="py-2 px-4 border"></td>
+                                <td class="py-2 px-4 border"></td>
+                                <td class="py-2 px-4 border">Sales,Marketing,IT,HR</td>
+                            </tr>
+                             <tr>
+                                <td class="py-2 px-4 border">Salary</td>
+                                <td class="py-2 px-4 border">integer</td>
+                                <td class="py-2 px-4 border">30000</td>
+                                <td class="py-2 px-4 border">150000</td>
+                                <td class="py-2 px-4 border"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h5 class="text-xl font-semibold my-4">2. Converted to JSON</h5>
+                 <div class="bg-gray-800 text-white p-4 rounded-lg font-mono text-sm">
+                    <pre><code>{
+    "EmployeeID": { "data_type": "integer", "min_value": 1000, "max_value": 9999 },
+    "Department": { "data_type": "string", "allowable_values": ["Sales", "Marketing", "IT", "HR"] },
+    "Salary": { "data_type": "integer", "min_value": 30000, "max_value": 150000 }
+}</code></pre>
+                </div>
+                
+                <h5 class="text-xl font-semibold my-4">3. The Python Validation Script</h5>
+                <div class="bg-gray-800 text-white p-4 rounded-lg font-mono text-sm">
+                    <pre><code>import pandas as pd
+import json
+
+def validate_row(row, rules):
+    """Applies a set of rules to a single row of data."""
+    errors = []
+    for column, ruleset in rules.items():
+        value = row[column]
+        
+        # Check for allowable values
+        if 'allowable_values' in ruleset and value not in ruleset['allowable_values']:
+            errors.append(f"'{value}' is not an allowable value for {column}.")
+            
+        # Check for min/max values
+        if 'min_value' in ruleset and value < ruleset['min_value']:
+            errors.append(f"{column} value {value} is below minimum of {ruleset['min_value']}.")
+            
+    return errors if errors else None
+
+# --- Main Script ---
+# 1. Load dictionary and data
+with open('data_dictionary.json', 'r') as f:
+    validation_rules = json.load(f)
+data_df = pd.read_excel('employee_data.xlsx')
+
+# 2. Validate data
+error_log = []
+valid_rows_indices = []
+
+for index, row in data_df.iterrows():
+    row_errors = validate_row(row, validation_rules)
+    if row_errors:
+        for error in row_errors:
+            error_log.append({'Row': index + 2, 'Error': error})
+    else:
+        valid_rows_indices.append(index)
+
+# 3. Create report
+error_df = pd.DataFrame(error_log)
+valid_df = data_df.iloc[valid_rows_indices]
+
+with pd.ExcelWriter('validation_report.xlsx') as writer:
+    error_df.to_excel(writer, sheet_name='Errors', index=False)
+    valid_df.to_excel(writer, sheet_name='Valid Data', index=False)</code></pre>
+                </div>
+
+                <h5 class="text-xl font-semibold my-4">4. The Final Validation Report (Excel Output)</h5>
+                <p class="text-gray-600 mb-2">The script would produce an Excel file. The "Errors" sheet would look like this, pinpointing the exact issues for data managers:</p>
+                 <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300">
+                        <thead class="bg-red-700 text-white">
+                            <tr>
+                                <th class="py-2 px-4 border">Row</th>
+                                <th class="py-2 px-4 border">Error</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">'Finance' is not an allowable value for Department.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">5</td>
+                                <td class="py-2 px-4 border">Salary value 25000 is below minimum of 30000.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+            <!-- Key Outcomes -->
+            <section>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Outcomes & Business Impact</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
+                    <li><strong class="font-semibold text-gray-900">Empowerment of Non-Technical Users:</strong> Data managers can now control complex data validation rules from a simple Excel file, without any need for coding.</li>
+                    <li><strong class="font-semibold text-gray-900">Improved Data Quality:</strong> The automated process ensures that all incoming data is systematically checked, leading to a significant improvement in data integrity.</li>
+                    <li><strong class="font-semibold text-gray-900">Increased Efficiency:</strong> The script automates a previously manual and time-consuming task, allowing the data team to focus on more strategic initiatives.</li>
+                    <li><strong class="font-semibold text-gray-900">Clear and Actionable Reporting:</strong> The generated error reports make it easy to pinpoint and fix data quality issues, streamlining the data cleansing process.</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6">
+        <div class="container mx-auto text-center text-gray-500">
+            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
