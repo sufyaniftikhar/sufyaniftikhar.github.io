@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Email Data Pipeline - Sufyan Iftikhar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
+                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+
+            <!-- Project Title -->
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">From Inbox to Insights: Automated Email Data Pipeline</h2>
+            <p class="text-xl text-gray-600 mb-8">An end-to-end automated data pipeline that captures, validates, and processes email attachments into actionable business intelligence.</p>
+
+            <!-- Project Meta -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Project Type</h4>
+                    <p class="text-lg font-bold text-gray-900">Automation & ETL</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Role</h4>
+                    <p class="text-lg font-bold text-gray-900">Data Solutions Architect</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Core Technologies</h4>
+                    <p class="text-lg font-bold text-gray-900">Power Automate, SharePoint, Power BI</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Impact</h4>
+                    <p class="text-lg font-bold text-gray-900">95% Reduction in Manual Effort</p>
+                </div>
+            </div>
+
+            <!-- The Business Challenge -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Many organizations rely on email to exchange critical business data, such as monthly sales reports, financial updates, or operational logs. This manual process is inefficient and prone to human error. A typical workflow involves an analyst manually downloading attachments, saving them to a specific folder, cleaning the data, and refreshing a BI report.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    This approach creates significant bottlenecks, delays access to timely insights, and introduces a high risk of data inconsistency. The challenge was to design a hands-free system that could intelligently process this flow of information from the moment an email arrives.
+                </p>
+            </section>
+
+            <!-- The Solution -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Solution: An Automated Data Pipeline</h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    I engineered an end-to-end automated data pipeline using the Microsoft Power Platform. The solution monitors an inbox for specific emails, validates the attachments, stores them in a centralised SharePoint repository, and automatically triggers a data refresh in Power BI, making insights available with zero manual intervention.
+                </p>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Pipeline Architecture:</h4>
+                    <div class="space-y-6">
+                        
+                        <div class="p-4 border-l-4 border-blue-600">
+                            <h5 class="text-xl font-semibold mb-2">1. Email Ingestion (Power Automate)</h5>
+                            <p class="text-gray-600">A Power Automate flow continuously monitors an Outlook inbox. It's configured to trigger only when an email arrives with a specific subject line (e.g., "Monthly Sales Report") and has attachments.</p>
+                        </div>
+
+                        <div class="p-4 border-l-4 border-green-600">
+                            <h5 class="text-xl font-semibold mb-2">2. Smart Validation & Error Handling</h5>
+                            <p class="text-gray-600">The flow validates attachment names against a predefined naming convention (e.g., "Sales_Data_Region_YYYYMM.xlsx"). If validation fails, an alert is sent to the sender; otherwise, the process continues.</p>
+                        </div>
+
+                        <div class="p-4 border-l-4 border-yellow-600">
+                            <h5 class="text-xl font-semibold mb-2">3. Centralised Storage (SharePoint)</h5>
+                            <p class="text-gray-600">Validated attachments are automatically saved to a structured SharePoint document library, which acts as a data source for Power BI. Files are organized into folders by year and month for clarity.</p>
+                        </div>
+                        
+                        <div class="p-4 border-l-4 border-purple-600">
+                            <h5 class="text-xl font-semibold mb-2">4. Data Transformation & Refresh (Power BI)</h5>
+                            <p class="text-gray-600">Power BI is connected to the SharePoint folder. Using Power Query, it automatically combines all files, applies data transformation steps, and performs a scheduled refresh of the dataset, ensuring the dashboard always reflects the latest data.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Outcomes -->
+            <section>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Outcomes & Business Impact</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
+                    <li><strong class="font-semibold text-gray-900">Drastic Time Savings:</strong> Eliminated several hours of manual data processing each month, freeing up analysts to focus on higher-value strategic analysis.</li>
+                    <li><strong class="font-semibold text-gray-900">Real-Time Decision-Making:</strong> Stakeholders no longer have to wait for manual report updates. Dashboards are refreshed automatically within hours of data being sent, enabling more agile and informed decisions.</li>
+                    <li><strong class="font-semibold text-gray-900">Scalability and Governance:</strong> The solution is easily scalable to handle new data sources or email types. It also provides a clear audit trail, tracking data from the inbox to the final report.</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6">
+        <div class="container mx-auto text-center text-gray-500">
+            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
