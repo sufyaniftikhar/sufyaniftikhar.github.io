@@ -207,6 +207,7 @@
             gap: 1rem;
             justify-content: center;
             animation: fadeInUp 0.8s ease 0.8s both;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -268,7 +269,7 @@
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 1fr 2fr;
             gap: 4rem;
             align-items: start;
         }
@@ -656,94 +657,36 @@
             border: 1px solid var(--border-color);
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s;
-            background: var(--bg-light);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background: white;
-        }
-
-        .contact-form button {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: var(--gradient-2);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .contact-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,102,204,0.3);
-        }
-
-        .contact-divider {
-            margin: 3rem 0 2rem;
-            position: relative;
-            text-align: center;
-        }
-
-        .contact-divider:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: var(--border-color);
-        }
-
-        .contact-divider span {
-            background: var(--bg-white);
-            padding: 0 1rem;
-            position: relative;
-            color: var(--text-light);
-        }
-
         .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
-            flex-wrap: wrap;
+            text-align: center;
         }
 
         .contact-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
             color: var(--text-dark);
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
         .contact-item a {
             color: var(--accent-color);
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 600;
         }
 
         .contact-item a:hover {
@@ -1083,7 +1026,7 @@
             }
 
             .contact-info {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1118,7 +1061,8 @@
 
             <div class="cta-buttons">
                 <a href="#about" class="btn btn-primary">About Me</a>
-                <a href="#projects" class="btn btn-secondary">View Projects Gallery</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+                <a href="assets/Sufyan_Iftikhar_CV.pdf" class="btn btn-secondary" download>Download CV</a>
                 <a href="#contact" class="btn btn-secondary">Let's Connect</a>
             </div>
         </div>
@@ -1130,7 +1074,7 @@
         
         <div class="about-content">
             <div class="about-image-container">
-                <img src="assets/general/data-analytics-role.png" alt="Data Analytics" class="rounded-2xl w-full max-h-96 object-cover shadow-lg">
+                <img src="assets/general/data-analytics-role.jpg" alt="Data Analytics" class="rounded-2xl w-full h-full object-contain shadow-lg">
             </div>
             <div class="about-text">
                 <h3>Driving Business Value Through Data</h3>
@@ -1344,7 +1288,7 @@
             <div class="projects-grid">
                 <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/property_portfolio_case_study.html'">
                     <div class="project-image">
-                        <img src="assets/projects/property_portfolio/property_portfolio_project_image.png" alt="Property Portfolio Project" class="w-full h-full object-contain">
+                        <img src="assets/projects/property_portfolio/property_portfolio_project_image.jpg" alt="Property Portfolio Project" class="w-full h-full object-contain">
                         <span class="project-type">Dashboard</span>
                     </div>
                     <div class="project-content">
@@ -1427,6 +1371,27 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="project-card" data-category="automation" onclick="window.location.href='blog/data_validation_blog.html'">
+                    <div class="project-image">
+                        <span class="project-type">Technical Article</span>
+                        ✔️
+                    </div>
+                    <div class="project-content">
+                        <h3>Automated Data Validation Framework</h3>
+                        <p>
+                           A Python-based solution that uses a centralized Excel data dictionary to automate data quality checks and generate actionable error reports.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Data Governance</span>
+                        </div>
+                        <a href="blog/data_validation_blog.html" class="project-link">
+                            Read Article →
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1436,36 +1401,18 @@
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-subtitle">Ready to transform your data into strategic insights?</p>
             
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-
-            <div class="contact-divider">
-                <span>Or connect via</span>
-            </div>
-
             <div class="contact-info">
                 <div class="contact-item">
-                    <img src="assets/logos/linkedin.png" alt="LinkedIn" style="height: 24px;">
+                    <img src="assets/logos/linkedin.png" alt="LinkedIn" style="height: 48px;">
                     <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
                 </div>
                 <div class="contact-item">
-                    📧 <a href="mailto:sufyaniftikhar1@gmail.com">Email</a>
+                    <span style="font-size: 48px;">📧</span>
+                    <a href="mailto:sufyaniftikhar1@gmail.com">Email</a>
                 </div>
                 <div class="contact-item">
-                    📍 Leeds, West Yorkshire, UK
+                    <span style="font-size: 48px;">📍</span>
+                    <span>Leeds, West Yorkshire, UK</span>
                 </div>
             </div>
         </div>
@@ -1610,7 +1557,7 @@
 
                         window.scrollTo({
                             top: offsetPosition,
-                            behavior: 'smooth'
+                            behaviour: 'smooth'
                         });
                     }
                 });
