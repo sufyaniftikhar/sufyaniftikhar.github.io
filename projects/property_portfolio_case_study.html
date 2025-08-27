@@ -3,360 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Portfolio Management Dashboard | Sufyan Iftikhar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #10b981;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-white: #ffffff;
-            --bg-light: #f9fafb;
-            --border-color: #e5e7eb;
-            --gradient-1: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --gradient-2: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            --section-padding: 5rem 2rem;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-white);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            color: var(--secondary-color);
-            transform: translateX(-5px);
-        }
-
-        .project-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 3rem 0;
-            background: var(--gradient-1);
-            color: white;
-            border-radius: 16px;
-        }
-
-        .project-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .project-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .project-meta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-            padding: 2rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-        }
-
-        .meta-item {
-            text-align: center;
-        }
-
-        .meta-label {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
-
-        .meta-value {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        .content-section {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-1);
-            border-radius: 2px;
-        }
-
-        .content-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight-box {
-            background: var(--bg-light);
-            border-left: 4px solid var(--accent-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .data-structure {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .data-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .data-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-
-        .data-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-1);
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .data-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .data-description {
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .data-fields {
-            background: #f3f4f6;
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            color: var(--text-light);
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .tech-tag {
-            background: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .star-schema {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .schema-diagram {
-            display: grid;
-            grid-template-areas: 
-                ". agents ."
-                "company fact tenancy"
-                ". mapping .";
-            gap: 2rem;
-            max-width: 600px;
-            margin: 2rem auto;
-            align-items: center;
-        }
-
-        .schema-table {
-            background: var(--bg-white);
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            font-size: 0.875rem;
-            min-width: 120px;
-        }
-
-        .schema-table.fact {
-            grid-area: fact;
-            border-color: var(--accent-color);
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-        }
-
-        .schema-table.dim1 { grid-area: company; }
-        .schema-table.dim2 { grid-area: agents; }
-        .schema-table.dim3 { grid-area: tenancy; }
-        .schema-table.dim4 { grid-area: mapping; }
-
-        .table-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .result-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-        }
-
-        .result-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .result-label {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .feature-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        @media (max-width: 768px) {
-            .project-title {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            .project-meta {
-                grid-template-columns: 1fr;
-            }
-            
-            .schema-diagram {
-                grid-template-areas: 
-                    "agents"
-                    "company"
-                    "fact"
-                    "tenancy"
-                    "mapping";
-            }
-        }
-    </style>
+    <title>Property Portfolio Management Dashboard - Sufyan Iftikhar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Portfolio</a>
-        
-        <div class="project-header">
-            <h1 class="project-title">Property Portfolio Management Dashboard</h1>
-            <p class="project-subtitle">A comprehensive analytics solution for managing 5,500+ properties across multiple regions with optimized data modeling and interactive visualizations</p>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
+                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+
+            <!-- Project Title -->
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Property Portfolio Management Dashboard</h2>
+            <p class="text-xl text-gray-600 mb-8">A Power BI dashboard designed to provide a comprehensive, 360-degree view of a large-scale residential property portfolio.</p>
+
+            <!-- Project Meta -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Context</h4>
+                    <p class="text-lg font-bold text-gray-900">Interview Technical Task</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Role</h4>
+                    <p class="text-lg font-bold text-gray-900">Assistant Data & Reporting Manager</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Tools Used</h4>
+                    <p class="text-lg font-bold text-gray-900">Power BI, DAX, Star Schema</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Properties Analysed</h4>
+                    <p class="text-lg font-bold text-gray-900">5,500+</p>
+                </div>
+            </div>
+
+            <!-- Project Overview -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Project Overview</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This project was undertaken as a technical assessment for an Assistant Data & Reporting Manager role. The task was to take raw, disconnected datasets related to a large property portfolio and transform them into a powerful, interactive Power BI dashboard. The goal was to demonstrate proficiency in data modeling, DAX, and creating visually compelling reports that deliver actionable business insights.
+                </p>
+            </section>
+
+            <!-- The Business Challenge -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    A property investment firm had its portfolio data spread across multiple CSV files: a master list of all owned properties (Company Stocklist), a list of properties managed by external agents (Agent Stocklist), tenancy agreement details, and a mapping file for agents and locations. This fragmented data structure made it impossible to get a holistic view of the portfolio's performance, leading to several challenges:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mt-4">
+                    <li>Inability to accurately track key metrics like portfolio-wide occupancy and vacancy rates.</li>
+                    <li>Difficulty in comparing the performance of different managing agents and regions.</li>
+                    <li>No straightforward way to analyse rental income against estimated market values (ERV).</li>
+                    <li>Time-consuming and error-prone manual data consolidation for any ad-hoc analysis.</li>
+                </ul>
+            </section>
+
+            <!-- The Solution -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">My Solution: An Integrated Analytics Dashboard</h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    I developed a comprehensive Power BI dashboard built on a robust and efficient data model. The solution involved two key stages:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Data Modeling -->
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-3">1. Data Modeling: The Star Schema</h4>
+                        <p class="text-gray-700 mb-4">
+                            The foundation of the report is a meticulously designed star schema data model. This approach is crucial for performance and scalability in Power BI.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Fact Table:</strong> A central 'Tenancy' table containing the core transactional data like rental amounts and dates.</li>
+                            <li><strong>Dimension Tables:</strong> Separate tables for 'Company Stocklist', 'Agent Stocklist', 'Agent Mapping', and a custom-built 'Date' table.</li>
+                            <li><strong>Relationships:</strong> Clean, single-direction relationships were established from dimension tables to the fact table, ensuring data integrity and query efficiency.</li>
+                        </ul>
+                    </div>
+                    <!-- Dashboard Development -->
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-3">2. Dashboard Development</h4>
+                        <p class="text-gray-700 mb-4">
+                           The front-end is an intuitive and interactive dashboard that allows stakeholders to explore the data effortlessly.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>KPI Cards:</strong> High-level metrics like Total Properties, Occupancy Rate, and Average Rent are displayed prominently.</li>
+                            <li><strong>Visualisations:</strong> Charts and maps show the distribution of properties, regional performance, and occupancy status.</li>
+                            <li><strong>Interactive Filters:</strong> Users can dynamically filter the entire report by region, managing agent, property type, number of bedrooms, and more.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Preview -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4 text-center">Dashboard Preview</h3>
+                <div class="mt-6">
+                    <a href="../assets/projects/property_portfolio/property_portfolio_dashboard.pdf" target="_blank" title="Click to view the full PDF dashboard">
+                        <img src="../assets/projects/property_portfolio/dashboard_preview.png" alt="Screenshot of the Property Portfolio Management Dashboard" class="rounded-lg shadow-2xl border border-gray-200 transform hover:scale-105 transition-transform duration-300">
+                    </a>
+                    <p class="text-center text-gray-600 mt-4">Click the image to view the full PDF in a new tab.</p>
+                </div>
+            </section>
+
+            <!-- Key Features & Insights -->
+            <section>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Features & Actionable Insights</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
+                    <li><strong class="font-semibold text-gray-900">Portfolio Health Overview:</strong> Provides an immediate, high-level summary of the entire portfolio's status and performance.</li>
+                    <li><strong class="font-semibold text-gray-900">Occupancy & Vacancy Analysis:</strong> Users can instantly see which regions or agents have the highest vacancy rates, enabling targeted intervention.</li>
+                    <li><strong class="font-semibold text-gray-900">Rental Performance Comparison:</strong> The dashboard clearly visualises the gap between the current Estimated Rental Value (ERV) and the actual achieved rent, highlighting opportunities for rent reviews.</li>
+                    <li><strong class="font-semibold text-gray-900">Geospatial Analysis:</strong> An integrated map shows property distribution across the UK, helping to identify regional concentrations and potential new investment areas.</li>
+                    <li><strong class="font-semibold text-gray-900">Compliance Monitoring:</strong> Key dates for compliance checks (e.g., Gas Certificate Expiry) are tracked to ensure regulatory adherence.</li>
+                </ul>
+            </section>
+
         </div>
 
-        <div class="project-meta">
-            <div class="meta-item">
-                <div class="meta-label">Project Type</div>
-                <div class="meta-value">Technical Assessment</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Properties Analyzed</div>
-                
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6">
+        <div class="container mx-auto text-center text-gray-500">
+            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
