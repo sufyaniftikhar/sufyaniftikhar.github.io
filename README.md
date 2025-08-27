@@ -17,25 +17,28 @@ My journey from **Civil Engineering (First Class Honours)** to data analytics ha
 ### 🔑 Key Skills
 
 **Technical Stack**
-- Power BI (DAX, Power Query, Dataflows)
-- SQL & Database Architecture
-- Python for Data Science
-- Power Automate & VBA
-- ETL Pipeline Design
+
+* Power BI (DAX, Power Query, Dataflows)
+* SQL
+* Python for Data Science
+* Power Automate & VBA
+* ETL Pipeline Development
 
 **Analytical Expertise**
-- Data Modelling & Architecture
-- KPI Design & Implementation
-- Self-Service Analytics
-- Executive Dashboard Development
-- Real-Time Performance Monitoring
+
+* Data Modelling & Architecture
+* KPI Design & Implementation
+* Self-Service Analytics
+* Executive Dashboard Development
+* Real-Time Performance Monitoring
 
 **Industry Focus**
-- Real Estate Finance & Analytics
-- Infrastructure Programme Management
-- Contract Performance Analysis
-- Regulatory Compliance Reporting
-- Financial Planning & Analysis
+
+* Real Estate Finance & Analytics
+* Infrastructure Programme Management
+* Contract Performance Analysis
+* Project Controls
+* Financial Planning & Analysis
 
 ---
 
@@ -62,30 +65,28 @@ My journey from **Civil Engineering (First Class Honours)** to data analytics ha
 - Led creation of interactive Tableau dashboards showcasing real-time KPIs  
 - Streamlined workflows through detailed data process mapping  
 
+### Assistant Project Manager
+
+**Oct 2021 – Mar 2023** • *WSP (Leeds, UK)*
+
+* Managed financial oversight for five major National Highway schemes, reducing budget variances to under 5%.
+* Oversaw change management processes for the £36 million A629 Salterhebble Scheme.
+* Acted as the primary client contact for the NCC PI Programme (£350k), efficiently addressing inquiries and driving solutions.
+* Recognised with the STAR Award for exceptional project management and rapid career advancement.
+
 ---
 
 ## 📊 Projects Gallery
 
-Explore enterprise-grade solutions powered by data:
+Explore enterprise-grade solutions and technical articles powered by data:
 
-| Project | Description |
-|---------|-------------|
-| **Lloyds Living Property Portfolio** | Unified Power BI solution delivering insights on 5,500+ properties—tracking occupancy, rental performance, and compliance. |
-| **NWG Contract Management System** | Dashboard for a £3 billion programme—reduced overdue compensations by 30% and saved 10+ hours monthly. |
-| **Executive Performance Dashboard** | C-level reporting dashboard consolidating KPIs, risk metrics, and financial data across multiple portfolios. |
-| **Financial Reporting Automation** | Automated monthly financial reports—reduced manual effort by 70% and minimised data entry errors. |
-| **Project Controls Platform** | Tableau-based solution monitoring performance, budget, and schedule across £350 million+ infrastructure projects. |
-| **Compliance & Risk Dashboard** | Real-time regulatory compliance monitoring with automated certificate tracking and risk assessment. |
-
----
-
-## 📝 Latest Insights (Blog)
-
-Sharing best practices in data analytics:
-
-- **August 2025** – *Building Scalable Data Models in Power BI* – Best practices for handling millions of rows while maintaining performance.  
-- **July 2025** – *Automating Report Distribution with Power Automate* – How to create workflows that deliver reports based on custom triggers.  
-- **June 2025** – *Advanced DAX Patterns for Financial Analysis* – Deep dive into time intelligence, dynamic segmentation, and variance analysis.
+| Project                         | Description                                                                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Property Portfolio Management** | Unified Power BI solution delivering insights on 5,500+ properties—tracking occupancy, rental performance, and compliance.      |
+| **NWG Contract Management System** | Dashboard for a £3 billion programme—reduced overdue compensations by 30% and saved 10+ hours monthly.                        |
+| **AI-Powered Documentation** | An innovative solution using AI to automatically generate intelligent data dictionaries for Power BI models.                  |
+| **Automated Email Data Pipeline** | An end-to-end pipeline that captures, validates, and processes email attachments into actionable BI.                          |
+| **Automated Data Validation** | A Python-based solution using an Excel data dictionary to automate data quality checks and generate error reports.            |
 
 ---
 
