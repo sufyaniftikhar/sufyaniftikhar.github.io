@@ -6,6 +6,7 @@
     <title>NWG Contract Management App - Sufyan Iftikhar</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
@@ -73,16 +74,18 @@
                 <p class="text-gray-700 leading-relaxed mb-6">
                     To address these challenges, I developed and deployed a comprehensive Power BI App. This app served as a central hub, hosting a suite of interconnected dashboards tailored to specific business needs. By connecting directly to the Contract Bee API and other data sources, the app provided a single source of truth for all contract-related data, enabling self-service analytics and eliminating information silos.
                 </p>
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 my-8">
+                    <p class="text-lg italic text-gray-800">This solution led to a <strong class="text-blue-700">30% reduction in overdue compensation events</strong> and saved over <strong class="text-blue-700">10 hours per week</strong> in manual reporting.</p>
+                </div>
                 <div class="bg-gray-100 p-6 rounded-lg">
                     <h4 class="text-2xl font-bold text-gray-800 mb-4">Dashboards within the App:</h4>
                     <div class="space-y-6">
-                        
+
                         <!-- Dashboard 1: Contracts Overview -->
                         <div class="p-4 border-l-4 border-blue-600">
                             <h5 class="text-xl font-semibold mb-2">1. Contracts Overview Dashboard</h5>
                             <p class="text-gray-600 mb-2"><strong class="font-semibold text-gray-800">Purpose:</strong> To provide project managers with a detailed, real-time view of contract compliance and performance.</p>
-                            <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Highlighted overdue actions and compliance metrics, enabling project managers to proactively address issues. This led to a <strong class="text-blue-700">30% reduction in overdue compensation events</strong> and saved over <strong class="text-blue-700">10 hours per week</strong> in manual reporting.
-                            </p>
+                            <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Highlighted overdue actions and compliance metrics, enabling project managers to proactively address issues.</p>
                         </div>
 
                         <!-- Dashboard 2: Executive Summary -->
@@ -100,7 +103,7 @@
                             <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Provided the evidence needed to address systemic issues, leading to a significant improvement in overall programme compliance and reducing the risk of contractual penalties.
                             </p>
                         </div>
-                        
+
                         <!-- Dashboard 4: Consultant Invoice Dashboard -->
                         <div class="p-4 border-l-4 border-purple-600">
                             <h5 class="text-xl font-semibold mb-2">4. Consultant Invoice Dashboard</h5>
@@ -155,9 +158,13 @@
     <!-- Footer -->
     <footer class="bg-white mt-12 py-6">
         <div class="container mx-auto text-center text-gray-500">
-            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+            <p id="copyright">&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        // Set current year in footer
+        document.getElementById('copyright').innerHTML = `&copy; ${new Date().getFullYear()} Sufyan Iftikhar. All rights reserved.`;
+    </script>
 
 </body>
 </html>
