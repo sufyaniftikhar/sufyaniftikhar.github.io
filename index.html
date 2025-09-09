@@ -25,7 +25,7 @@
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #0066cc 0%, #004499 100%);
             --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            --section-padding: 6rem 2rem;
+            --section-padding: 4rem 2rem; /* Reduced vertical padding */
         }
 
         body {
@@ -97,7 +97,7 @@
         /* Hero Section - Modern Gradient with Pattern */
         .hero {
             margin-top: 60px;
-            padding: 8rem 2rem 6rem;
+            padding: 6rem 2rem 4rem; /* Reduced padding */
             background: var(--gradient-dark);
             position: relative;
             overflow: hidden;
@@ -137,7 +137,7 @@
         }
 
         .hero-profile {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Reduced margin */
             animation: fadeInUp 0.6s ease;
         }
 
@@ -170,7 +170,7 @@
         .hero .credibility-line {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Reduced margin */
             font-style: italic;
             animation: fadeInUp 0.8s ease 0.35s both;
         }
@@ -179,7 +179,7 @@
             display: flex;
             justify-content: center;
             gap: 3rem;
-            margin: 3rem 0;
+            margin: 2rem 0; /* Reduced margin */
             animation: fadeInUp 0.8s ease 0.6s both;
         }
 
@@ -262,7 +262,7 @@
         .section-subtitle {
             text-align: center;
             color: var(--text-light);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem; /* Reduced margin */
             font-size: 1.1rem;
         }
 
@@ -270,7 +270,7 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+            gap: 2.5rem; /* Reduced gap */
             align-items: start;
         }
 
@@ -374,7 +374,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem; /* Reduced margin */
         }
 
         .skill-card {
@@ -444,7 +444,7 @@
         .timeline {
             position: relative;
             padding-left: 3rem;
-            margin-top: 3rem;
+            margin-top: 2rem; /* Reduced margin */
         }
 
         .timeline:before {
@@ -459,7 +459,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem; /* Reduced margin */
             background: var(--bg-white);
             padding: 2rem;
             border-radius: 16px;
@@ -526,7 +526,7 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem; /* Reduced margin */
             flex-wrap: wrap;
         }
 
@@ -610,7 +610,7 @@
         }
 
         .project-content {
-            padding: 2rem;
+            padding: 1.5rem; /* Reduced padding */
         }
 
         .project-content h3 {
@@ -658,7 +658,7 @@
         .contact {
             background: var(--bg-white);
             border-radius: 20px;
-            padding: 3rem;
+            padding: 2.5rem; /* Reduced padding */
             text-align: center;
             border: 1px solid var(--border-color);
         }
@@ -666,7 +666,7 @@
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem; /* Reduced gap */
             margin-top: 2rem;
             text-align: center;
         }
@@ -705,7 +705,7 @@
             background: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem; /* Reduced padding */
         }
 
         .footer-content {
@@ -717,7 +717,7 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Reduced margin */
         }
 
         .footer-links a {
@@ -761,90 +761,90 @@
         }
 
         
-/* Side Navigation - Left with Labels */
-.side-nav {
-    position: fixed;
-    left: 30px; /* moved to left */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+        /* Side Navigation - Left with Labels */
+        .side-nav {
+            position: fixed;
+            left: 30px; /* moved to left */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-.side-nav::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    bottom: 20px;
-    width: 2px;
-    background: rgba(0, 102, 204, 0.1);
-    left: 6px; /* aligns with dots */
-}
+        .side-nav::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: rgba(0, 102, 204, 0.1);
+            left: 6px; /* aligns with dots */
+        }
 
-.side-nav .progress-line {
-    position: absolute;
-    top: 20px;
-    width: 2px;
-    background: var(--accent-color);
-    left: 6px; 
-    height: 0;
-    transition: height 0.3s;
-}
+        .side-nav .progress-line {
+            position: absolute;
+            top: 20px;
+            width: 2px;
+            background: var(--accent-color);
+            left: 6px; 
+            height: 0;
+            transition: height 0.3s;
+        }
 
-.nav-dot {
-    position: relative;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        .nav-dot {
+            position: relative;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.nav-dot::before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid var(--accent-color);
-    display: block;
-    transition: all 0.3s;
-}
+        .nav-dot::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--accent-color);
+            display: block;
+            transition: all 0.3s;
+        }
 
-.nav-dot:hover::before {
-    transform: scale(1.3);
-    background: var(--accent-color);
-}
+        .nav-dot:hover::before {
+            transform: scale(1.3);
+            background: var(--accent-color);
+        }
 
-.nav-dot.active::before {
-    background: var(--accent-color);
-    width: 16px;
-    height: 16px;
-    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
-}
+        .nav-dot.active::before {
+            background: var(--accent-color);
+            width: 16px;
+            height: 16px;
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+        }
 
-.nav-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-light);
-    transition: all 0.3s;
-}
+        .nav-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
 
-.nav-dot.active .nav-label {
-    color: var(--accent-color);
-    font-weight: 700;
-}
+        .nav-dot.active .nav-label {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
 
-/* Hide on mobile */
-@media (max-width: 1024px) {
-    .side-nav {
-        display: none;
-    }
-}
+        /* Hide on mobile */
+        @media (max-width: 1024px) {
+            .side-nav {
+                display: none;
+            }
+        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -857,28 +857,13 @@
                 transform: translateY(0);
             }
         }
-
-        /* Logos Grid */
-        .logos-container {
-            margin: 3rem 0;
-        }
-
-        .logos-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
+        
         .logo-item {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 80px;
             transition: transform 0.3s;
-            flex: 0 1 150px;
         }
 
         .logo-item:hover {
@@ -893,19 +878,6 @@
             object-fit: contain;
         }
 
-        /* Tools Grid */
-        .tools-container {
-            margin: 3rem 0;
-        }
-
-        .tools-row {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
         .tool-card {
             text-align: center;
             padding: 2rem;
@@ -913,8 +885,6 @@
             border-radius: 16px;
             border: 1px solid var(--border-color);
             transition: all 0.3s;
-            flex: 1;
-            max-width: 280px;
         }
 
         .tool-card:hover {
@@ -939,35 +909,101 @@
             font-size: 0.9rem;
         }
 
+        /* Scrolling Ribbon Styles */
+        .scroller {
+            margin: 0;
+        }
+        .scroller__inner {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .scroller[data-animated="true"] {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+        .scroller[data-animated="true"] .scroller__inner {
+            width: max-content;
+            flex-wrap: nowrap;
+            animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+        }
+        .scroller[data-direction="right"] {
+          --_animation-direction: reverse;
+        }
+        .scroller[data-speed="fast"] {
+          --_animation-duration: 40s;
+        }
+        .scroller[data-speed="slow"] {
+          --_animation-duration: 80s;
+        }
+        @keyframes scroll {
+          to {
+            transform: translate(calc(-50% - 1rem)); /* -1rem matches half the gap */
+          }
+        }
+        
+        .scroller .logo-item {
+            flex: 0 0 auto;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .scroller .tool-card {
+            flex: 0 0 auto;
+            width: 280px;
+        }
+
+        /* Scroller Container & Buttons */
+        .scroller-container {
+            position: relative;
+            margin: 2rem auto 0;
+        }
+
+        .scroller-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--border-color);
+            color: var(--primary-color);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .scroller-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .scroller-btn.prev {
+            left: -22px;
+        }
+
+        .scroller-btn.next {
+            right: -22px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .logos-row {
-                flex-wrap: wrap;
+            :root {
+                --section-padding: 3rem 1.5rem;
             }
-            
-            .logo-item {
-                flex: 1 1 45%;
-                margin-bottom: 1rem;
-            }
-            
-            .logos-row .logo-item:nth-child(5) {
-                margin-left: 0;
-            }
-            
-            .tools-row {
-                flex-wrap: wrap;
-            }
-            
-            .tool-card {
-                flex: 1 1 45%;
-                max-width: none;
-                margin-bottom: 1rem;
-            }
-            
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .mobile-menu-toggle {
                 display: block;
             }
@@ -1033,6 +1069,14 @@
 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+
+            .scroller-btn.prev {
+                left: 5px;
+            }
+    
+            .scroller-btn.next {
+                right: 5px;
             }
         }
     </style>
@@ -1159,32 +1203,34 @@
             <h2 class="section-title">Trusted By Leading Organisations</h2>
             <p class="section-subtitle">Delivering data solutions for enterprise clients</p>
             
-            <div class="logos-container">
-                <div class="logos-row">
-                    <div class="logo-item">
-                        <img src="assets/logos/lloyds-banking-group.png" alt="Lloyds Banking Group logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/turner-townsend.png" alt="Turner & Townsend logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/wsp.png" alt="WSP logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/nwg.png" alt="Northumbrian Water Group logo" />
+            <div class="scroller-container">
+                <button class="scroller-btn prev" aria-label="Scroll left">&lt;</button>
+                <div class="scroller" data-speed="slow">
+                    <div class="scroller__inner">
+                        <div class="logo-item">
+                            <img src="assets/logos/lloyds-banking-group.png" alt="Lloyds Banking Group logo" />
+                        </div>
+                        <div class="logo-item">
+                            <img src="assets/logos/turner-townsend.png" alt="Turner & Townsend logo" />
+                        </div>
+                        <div class="logo-item">
+                            <img src="assets/logos/wsp.png" alt="WSP logo" />
+                        </div>
+                        <div class="logo-item">
+                            <img src="assets/logos/nwg.png" alt="Northumbrian Water Group logo" />
+                        </div>
+                        <div class="logo-item">
+                            <img src="assets/logos/canal-river-trust.png" alt="Canal & River Trust logo" />
+                        </div>
+                        <div class="logo-item">
+                            <img src="assets/logos/national-highways.png" alt="National Highways logo" />
+                        </div>
+                        <div class="logo-item">
+                            <img src="assets/logos/norfolk-council.png" alt="Norfolk County Council logo" />
+                        </div>
                     </div>
                 </div>
-                <div class="logos-row">
-                    <div class="logo-item">
-                        <img src="assets/logos/canal-river-trust.png" alt="Canal & River Trust logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/national-highways.png" alt="National Highways logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/logos/norfolk-council.png" alt="Norfolk County Council logo" />
-                    </div>
-                </div>
+                <button class="scroller-btn next" aria-label="Scroll right">&gt;</button>
             </div>
         </div>
     </section>
@@ -1194,46 +1240,48 @@
             <h2 class="section-title">Technologies & Tools</h2>
             <p class="section-subtitle">Leveraging industry-leading platforms for data excellence</p>
             
-            <div class="tools-container">
-                <div class="tools-row">
-                    <div class="tool-card">
-                        <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
-                        <h4>Power BI</h4>
-                        <p>Power Query, Advanced DAX, Data Modelling</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/sql.png" alt="SQL logo" style="height: 60px;" />
-                        <h4>SQL</h4>
-                        <p>Database Design, Custom Views, ETL</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
-                        <h4>Python</h4>
-                        <p>Data Science, Automation, Machine Learning</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/n8n.png" alt="n8n logo" style="height: 60px;" />
-                        <h4>n8n</h4>
-                        <p>Workflow Automation, LLM</p>
+            <div class="scroller-container">
+                <button class="scroller-btn prev" aria-label="Scroll left">&lt;</button>
+                <div class="scroller" data-speed="fast">
+                    <div class="scroller__inner">
+                        <div class="tool-card">
+                            <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
+                            <h4>Power BI</h4>
+                            <p>Power Query, Advanced DAX, Data Modelling</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/tools/sql.png" alt="SQL logo" style="height: 60px;" />
+                            <h4>SQL</h4>
+                            <p>Database Design, Custom Views, ETL</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
+                            <h4>Python</h4>
+                            <p>Data Science, Automation, Machine Learning</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/tools/n8n.png" alt="n8n logo" style="height: 60px;" />
+                            <h4>n8n</h4>
+                            <p>Workflow Automation, LLM</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
+                            <h4>Tableau</h4>
+                            <p>Interactive Dashboards, Visual Analytics</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
+                            <h4>Power Automate</h4>
+                            <p>Workflow Automation, Process Optimisation</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
+                            <h4>Excel & VBA</h4>
+                            <p>Pivot Tables, VBA Macro Development</p>
+                        </div>
                     </div>
                 </div>
-                <div class="tools-row">
-                    <div class="tool-card">
-                        <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
-                        <h4>Tableau</h4>
-                        <p>Interactive Dashboards, Visual Analytics</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
-                        <h4>Power Automate</h4>
-                        <p>Workflow Automation, Process Optimisation</p>
-                    </div>
-                    <div class="tool-card">
-                        <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
-                        <h4>Excel & VBA</h4>
-                        <p>Pivot Tables, VBA Macro Development</p>
-                    </div>
-                </div>
+                <button class="scroller-btn next" aria-label="Scroll right">&gt;</button>
             </div>
         </div>
     </section>
@@ -1529,6 +1577,54 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            // Scrolling ribbon animation
+            const scrollers = document.querySelectorAll(".scroller");
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                addAnimation();
+            }
+            function addAnimation() {
+                scrollers.forEach((scroller) => {
+                    scroller.setAttribute("data-animated", "true");
+                    const scrollerInner = scroller.querySelector(".scroller__inner");
+                    const scrollerContent = Array.from(scrollerInner.children);
+
+                    scrollerContent.forEach((item) => {
+                        const duplicatedItem = item.cloneNode(true);
+                        duplicatedItem.setAttribute("aria-hidden", true);
+                        scrollerInner.appendChild(duplicatedItem);
+                    });
+                });
+            }
+
+            // Scrolling ribbons with buttons
+            document.querySelectorAll('.scroller-container').forEach(container => {
+                const scroller = container.querySelector('.scroller');
+                const nextBtn = container.querySelector('.scroller-btn.next');
+                const prevBtn = container.querySelector('.scroller-btn.prev');
+
+                if (scroller) {
+                    // Pause animation on hover
+                    scroller.addEventListener('mouseenter', () => {
+                        scroller.style.animationPlayState = 'paused';
+                    });
+                    scroller.addEventListener('mouseleave', () => {
+                        scroller.style.animationPlayState = 'running';
+                    });
+
+                    // Button functionality
+                    nextBtn.addEventListener('click', () => {
+                        const itemWidth = scroller.querySelector('.scroller__inner > *:first-child').clientWidth;
+                        scroller.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                    });
+
+                    prevBtn.addEventListener('click', () => {
+                        const itemWidth = scroller.querySelector('.scroller__inner > *:first-child').clientWidth;
+                        scroller.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+                    });
+                }
+            });
+
             // Mobile menu toggle
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const navLinks = document.getElementById('navLinks');
@@ -1622,7 +1718,7 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card, .tool-card').forEach(el => {
+            document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
