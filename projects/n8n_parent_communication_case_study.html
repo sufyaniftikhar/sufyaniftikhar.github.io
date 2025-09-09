@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Parent Communication Agent - Sufyan Iftikhar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
+                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+
+            <!-- Project Title -->
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Automated Parent Communication Agent</h2>
+            <p class="text-xl text-gray-600 mb-8">An intelligent system that monitors student performance and behaviour, automatically drafting personalised emails to parents for timely intervention and praise.</p>
+
+            <!-- Project Meta -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Project Type</h4>
+                    <p class="text-lg font-bold text-gray-900">AI & Automation</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Core Technologies</h4>
+                    <p class="text-lg font-bold text-gray-900">n8n, LLMs, Excel, Outlook</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Sector</h4>
+                    <p class="text-lg font-bold text-gray-900">Education</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Impact</h4>
+                    <p class="text-lg font-bold text-gray-900">Proactive Communication</p>
+                </div>
+            </div>
+
+            <!-- The Business Challenge -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Teachers spend a significant amount of time manually tracking student progress and initiating communication with parents. This process can be reactive, inconsistent, and time-consuming, especially when managing large classes. Important opportunities for early intervention or positive reinforcement can be missed, and the administrative overhead contributes to teacher workload and burnout.
+                </p>
+            </section>
+
+            <!-- The Solution -->
+            <section class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Solution: An AI Communication Assistant</h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    I developed an automated workflow using n8n that acts as an AI-powered communication assistant. The solution connects to student data logs in Excel, identifies key events (such as low assessment scores, missed homework, or positive behaviour), and uses a Large Language Model (LLM) to draft context-aware, personalised emails. These are then saved as drafts in the teacher's Outlook account, ready for a quick review and sending.
+                </p>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">The Automated Workflow:</h4>
+                    <div class="space-y-6">
+                        
+                        <div class="p-4 border-l-4 border-blue-600">
+                            <h5 class="text-xl font-semibold mb-2">1. Scheduled Trigger & Data Ingestion</h5>
+                            <p class="text-gray-600">The workflow runs automatically every weekday afternoon. It connects to Microsoft Excel to read from multiple sheets containing student rosters and academic engagement logs.</p>
+                        </div>
+
+                        <div class="p-4 border-l-4 border-green-600">
+                            <h5 class="text-xl font-semibold mb-2">2. Data Filtering & Event Routing</h5>
+                            <p class="text-gray-600">The system filters for recent events and checks a communications log to ensure an email hasn't already been sent for a specific event. It then uses a switch to categorise and route each event (e.g., 'Assessment', 'Homework', 'Behaviour').</p>
+                        </div>
+
+                        <div class="p-4 border-l-4 border-yellow-600">
+                            <h5 class="text-xl font-semibold mb-2">3. Conditional Logic & Dynamic AI Prompting</h5>
+                            <p class="text-gray-600">For each event, specific rules are applied, such as identifying assessment scores below 60%, missed homework, or positive behaviour notes. Based on the event type and its details, a unique and detailed prompt is constructed to instruct the AI model (GPT-4) to write a supportive and professional email.</p>
+                        </div>
+                        
+                        <div class="p-4 border-l-4 border-purple-600">
+                            <h5 class="text-xl font-semibold mb-2">4. Email Generation & Logging</h5>
+                            <p class="text-gray-600">The LLM processes the prompt and generates a complete email. The workflow then creates a draft in the teacher's Microsoft Outlook account and appends a record to the communication log in Excel to prevent duplicate messages.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Workflow Image -->
+                <div class="mt-8">
+                    <img src="../assets/projects/parent_communication/n8n_workflow.PNG" alt="n8n Workflow for Parent Communication" class="w-full rounded-lg shadow-md">
+                </div>
+            </section>
+            
+            <!-- Key Outcomes -->
+            <section>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Outcomes & Business Impact</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
+                    <li><strong class="font-semibold text-gray-900">Proactive & Timely Communication:</strong> Ensures parents are informed promptly about both concerns and achievements, fostering a stronger home-school partnership.</li>
+                    <li><strong class="font-semibold text-gray-900">Reduced Administrative Burden:</strong> Frees up teachers from the repetitive task of manually tracking events and writing individual emails, allowing them to focus on teaching and planning.</li>
+                    <li><strong class="font-semibold text-gray-900">Improved Consistency & Quality:</strong> Standardises the tone, format, and quality of parent communications across the school, a professional and supportive voice.</li>
+                    <li><strong class="font-semibold text-gray-900">Data-Driven Intervention:</strong> Leverages real-time data to trigger communications, ensuring that interventions are timely, relevant, and well-documented.</li>
+                     <li><strong class="font-semibold text-gray-900">Enhanced Teacher Wellbeing:</strong> By automating a demanding and time-consuming administrative task, this solution directly contributes to reducing teacher workload and improving job satisfaction.</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6">
+        <div class="container mx-auto text-center text-gray-500">
+            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
