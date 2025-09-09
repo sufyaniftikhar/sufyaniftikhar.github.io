@@ -637,6 +637,14 @@
             font-weight: 600;
         }
 
+	.contact-icon-wrapper {
+    	    height: 50px;
+    	    width: 50px;
+    	    display: flex;
+    	    align-items: center;
+    	    justify-content: center;
+	}
+
         .contact-item a:hover {
             color: var(--primary-color);
             text-decoration: underline;
@@ -1464,15 +1472,21 @@
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <img src="assets/logos/linkedin.png" alt="LinkedIn" style="height: 48px;">
+                    <div class="contact-icon-wrapper">
+                        <img src="assets/logos/linkedin.png" alt="LinkedIn" style="height: 48px;">
+                    </div>
                     <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
                 </div>
                 <div class="contact-item">
-                    <span style="font-size: 48px;">📧</span>
+                    <div class="contact-icon-wrapper">
+                        <span style="font-size: 48px;">📧</span>
+                    </div>
                     <a href="mailto:sufyaniftikhar1@gmail.com">Email</a>
                 </div>
                 <div class="contact-item">
-                    <span style="font-size: 48px;">📍</span>
+                    <div class="contact-icon-wrapper">
+                        <span style="font-size: 48px;">📍</span>
+                    </div>
                     <span>Leeds, West Yorkshire, UK</span>
                 </div>
             </div>
