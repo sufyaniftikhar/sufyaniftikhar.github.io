@@ -94,7 +94,7 @@
             width: 100%;
         }
 
-        /* Hero Section - Modern Gradient with Pattern */
+        /* Hero Section */
         .hero {
             margin-top: 60px;
             padding: 6rem 2rem 4rem; /* Reduced padding */
@@ -175,39 +175,13 @@
             animation: fadeInUp 0.8s ease 0.35s both;
         }
 
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0; /* Reduced margin */
-            animation: fadeInUp 0.8s ease 0.6s both;
-        }
-
-        .stat-item {
-            color: white;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             animation: fadeInUp 0.8s ease 0.8s both;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .btn {
@@ -277,40 +251,7 @@
         .about-image-container {
             position: relative;
         }
-
-        .about-image {
-            background: var(--gradient-2);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .about-image .icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
+        
         .about-text h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
@@ -323,6 +264,7 @@
             line-height: 1.8;
         }
         
+        /* Certifications Section */
         .certification-badges-section {
             padding: var(--section-padding);
             background: var(--bg-light);
@@ -761,10 +703,10 @@
         }
 
         
-        /* Side Navigation - Left with Labels */
+        /* Side Navigation */
         .side-nav {
             position: fixed;
-            left: 30px; /* moved to left */
+            left: 30px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 999;
@@ -780,7 +722,7 @@
             bottom: 20px;
             width: 2px;
             background: rgba(0, 102, 204, 0.1);
-            left: 6px; /* aligns with dots */
+            left: 6px;
         }
 
         .side-nav .progress-line {
@@ -839,7 +781,6 @@
             font-weight: 700;
         }
 
-        /* Hide on mobile */
         @media (max-width: 1024px) {
             .side-nav {
                 display: none;
@@ -876,6 +817,14 @@
             width: auto;
             height: auto;
             object-fit: contain;
+        }
+
+        /* Tools Grid */
+        .tools-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .tool-card {
@@ -930,9 +879,6 @@
             flex-wrap: nowrap;
             animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
         }
-        .scroller[data-direction="right"] {
-          --_animation-direction: reverse;
-        }
         .scroller[data-speed="fast"] {
           --_animation-duration: 40s;
         }
@@ -941,7 +887,7 @@
         }
         @keyframes scroll {
           to {
-            transform: translate(calc(-50% - 1rem)); /* -1rem matches half the gap */
+            transform: translate(calc(-50% - 1rem));
           }
         }
         
@@ -953,11 +899,6 @@
             border-radius: 12px;
         }
         
-        .scroller .tool-card {
-            flex: 0 0 auto;
-            width: 280px;
-        }
-
         /* Scroller Container & Buttons */
         .scroller-container {
             position: relative;
@@ -1028,27 +969,11 @@
                 font-size: 2.5rem;
             }
 
-            .hero-certifications {
-                flex-direction: column;
-            }
-
-            .hero-stats {
-                gap: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
             .about-content {
                 grid-template-columns: 1fr;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
+            .skills-grid, .projects-grid, .contact-info, .tools-grid-container {
                 grid-template-columns: 1fr;
             }
 
@@ -1065,10 +990,6 @@
             .btn {
                 width: 100%;
                 text-align: center;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
             }
 
             .scroller-btn.prev {
@@ -1136,7 +1057,7 @@
                 <p>
                     I'm a Microsoft-certified BI & Data Analytics professional currently serving as an Assistant Data and 
                     Reporting Manager at Lloyds Banking Group - Lloyds Living, where I'm shaping the data strategy for 
-                    a rapidly growing portfolio of 5,500+ properties.
+                    a rapidly growing portfolio of over 5,500 properties.
                 </p>
                 <p>
                     With over 5 years of experience across infrastructure, utilities, and real estate finance, I specialise 
@@ -1240,48 +1161,42 @@
             <h2 class="section-title">Technologies & Tools</h2>
             <p class="section-subtitle">Leveraging industry-leading platforms for data excellence</p>
             
-            <div class="scroller-container">
-                <button class="scroller-btn prev" aria-label="Scroll left">&lt;</button>
-                <div class="scroller" data-speed="fast">
-                    <div class="scroller__inner">
-                        <div class="tool-card">
-                            <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
-                            <h4>Power BI</h4>
-                            <p>Power Query, Advanced DAX, Data Modelling</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="assets/tools/sql.png" alt="SQL logo" style="height: 60px;" />
-                            <h4>SQL</h4>
-                            <p>Database Design, Custom Views, ETL</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
-                            <h4>Python</h4>
-                            <p>Data Science, Automation, Machine Learning</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="assets/tools/n8n.png" alt="n8n logo" style="height: 60px;" />
-                            <h4>n8n</h4>
-                            <p>Workflow Automation, LLM</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
-                            <h4>Tableau</h4>
-                            <p>Interactive Dashboards, Visual Analytics</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
-                            <h4>Power Automate</h4>
-                            <p>Workflow Automation, Process Optimisation</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
-                            <h4>Excel & VBA</h4>
-                            <p>Pivot Tables, VBA Macro Development</p>
-                        </div>
-                    </div>
+            <div class="tools-grid-container">
+                <div class="tool-card">
+                    <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
+                    <h4>Power BI</h4>
+                    <p>Power Query, Advanced DAX, Data Modelling</p>
                 </div>
-                <button class="scroller-btn next" aria-label="Scroll right">&gt;</button>
+                <div class="tool-card">
+                    <img src="assets/tools/sql.png" alt="SQL logo" style="height: 60px;" />
+                    <h4>SQL</h4>
+                    <p>Database Design, Custom Views, ETL</p>
+                </div>
+                <div class="tool-card">
+                    <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
+                    <h4>Python</h4>
+                    <p>Data Science, Automation, Machine Learning</p>
+                </div>
+                <div class="tool-card">
+                    <img src="assets/tools/n8n.png" alt="n8n logo" style="height: 60px;" />
+                    <h4>n8n</h4>
+                    <p>Workflow Automation, LLM</p>
+                </div>
+                <div class="tool-card">
+                    <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
+                    <h4>Tableau</h4>
+                    <p>Interactive Dashboards, Visual Analytics</p>
+                </div>
+                <div class="tool-card">
+                    <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
+                    <h4>Power Automate</h4>
+                    <p>Workflow Automation, Process Optimisation</p>
+                </div>
+                <div class="tool-card">
+                    <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
+                    <h4>Excel & VBA</h4>
+                    <p>Pivot Tables, VBA Macro Development</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1718,23 +1633,12 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card').forEach(el => {
+            document.querySelectorAll('.skill-card, .timeline-item, .project-card, .blog-card, .tool-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
-
-            // Prevent form submission if using placeholder Formspree ID
-            const contactForm = document.querySelector('.contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    if (this.action.includes('YOUR_FORM_ID')) {
-                        e.preventDefault();
-                        alert('Please set up your Formspree form ID first. Visit formspree.io to create a free form.');
-                    }
-                });
-            }
         
             // Side Navigation functionality
             const sideNav = document.getElementById('sideNav');
@@ -1762,9 +1666,12 @@
                 const scrollPosition = window.scrollY + window.innerHeight / 2;
                 const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPercentage = (window.scrollY / totalHeight) * 100;
+                
+                if(sideNav){
+                    const maxLineHeight = sideNav.offsetHeight - 40;
+                    progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
+                }
 
-                const maxLineHeight = sideNav.offsetHeight - 40;
-                progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
 
                 sections.forEach((section) => {
                     const sectionTop = section.offsetTop;
