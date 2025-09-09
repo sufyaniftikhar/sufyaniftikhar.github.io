@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sufyan Iftikhar - Data Analytics Portfolio</title>
     <meta name="description" content="Sufyan Iftikhar's portfolio showcasing expertise in data analytics, Power BI, SQL, and Python for driving business value.">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;800&display=swap');
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
@@ -110,7 +111,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
@@ -123,7 +124,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background:
+            background: 
                 repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
                 repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
         }
@@ -165,7 +166,7 @@
             font-weight: 300;
             animation: fadeInUp 0.8s ease 0.3s both;
         }
-
+        
         .hero .credibility-line {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
@@ -509,44 +510,6 @@
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
-        
-        /* My Philosophy Section */
-        .philosophy-section {
-            background: var(--bg-light);
-        }
-        
-        .philosophy-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .philosophy-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Testimonials Section */
-        .testimonial {
-            background: var(--bg-light);
-            padding: 3rem;
-            border-radius: 16px;
-            text-align: center;
-            margin: 3rem auto 0;
-            border: 1px solid var(--border-color);
-        }
-        
-        .testimonial blockquote {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
-        
-        .testimonial cite {
-            font-weight: 600;
-            color: var(--text-light);
-        }
 
         /* Projects Gallery Section */
         .projects-section {
@@ -616,6 +579,12 @@
             font-size: 3rem;
             position: relative;
             overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-image::after {
@@ -791,91 +760,91 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
+        
+/* Side Navigation - Left with Labels */
+.side-nav {
+    position: fixed;
+    left: 30px; /* moved to left */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-    /* Side Navigation - Left with Labels */
+.side-nav::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: rgba(0, 102, 204, 0.1);
+    left: 6px; /* aligns with dots */
+}
+
+.side-nav .progress-line {
+    position: absolute;
+    top: 20px;
+    width: 2px;
+    background: var(--accent-color);
+    left: 6px; 
+    height: 0;
+    transition: height 0.3s;
+}
+
+.nav-dot {
+    position: relative;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-dot::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--accent-color);
+    display: block;
+    transition: all 0.3s;
+}
+
+.nav-dot:hover::before {
+    transform: scale(1.3);
+    background: var(--accent-color);
+}
+
+.nav-dot.active::before {
+    background: var(--accent-color);
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+}
+
+.nav-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.nav-dot.active .nav-label {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* Hide on mobile */
+@media (max-width: 1024px) {
     .side-nav {
-        position: fixed;
-        left: 30px; /* moved to left */
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        display: none;
     }
-
-    .side-nav::before {
-        content: '';
-        position: absolute;
-        top: 20px;
-        bottom: 20px;
-        width: 2px;
-        background: rgba(0, 102, 204, 0.1);
-        left: 6px; /* aligns with dots */
-    }
-
-    .side-nav .progress-line {
-        position: absolute;
-        top: 20px;
-        width: 2px;
-        background: var(--accent-color);
-        left: 6px;
-        height: 0;
-        transition: height 0.3s;
-    }
-
-    .nav-dot {
-        position: relative;
-        margin: 20px 0;
-        cursor: pointer;
-        transition: all 0.3s;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .nav-dot::before {
-        content: '';
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: white;
-        border: 2px solid var(--accent-color);
-        display: block;
-        transition: all 0.3s;
-    }
-
-    .nav-dot:hover::before {
-        transform: scale(1.3);
-        background: var(--accent-color);
-    }
-
-    .nav-dot.active::before {
-        background: var(--accent-color);
-        width: 16px;
-        height: 16px;
-        box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
-    }
-
-    .nav-label {
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--text-light);
-        transition: all 0.3s;
-    }
-
-    .nav-dot.active .nav-label {
-        color: var(--accent-color);
-        font-weight: 700;
-    }
-
-    /* Hide on mobile */
-    @media (max-width: 1024px) {
-        .side-nav {
-            display: none;
-        }
-    }
+}
 
         /* Animations */
         @keyframes fadeInUp {
@@ -975,26 +944,26 @@
             .logos-row {
                 flex-wrap: wrap;
             }
-
+            
             .logo-item {
                 flex: 1 1 45%;
                 margin-bottom: 1rem;
             }
-
+            
             .logos-row .logo-item:nth-child(5) {
                 margin-left: 0;
             }
-
+            
             .tools-row {
                 flex-wrap: wrap;
             }
-
+            
             .tool-card {
                 flex: 1 1 45%;
                 max-width: none;
                 margin-bottom: 1rem;
             }
-
+            
             .tools-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1054,15 +1023,12 @@
             .cta-buttons {
                 flex-direction: column;
                 width: 100%;
-                padding: 0;
-                gap: 0.75rem;
+                padding: 0 1rem;
             }
 
             .btn {
                 width: 100%;
                 text-align: center;
-                padding: 0.75rem 1.5rem;
-                font-size: 0.9rem;
             }
 
             .contact-info {
@@ -1095,7 +1061,7 @@
                 <img src="assets/profile-photo.jpg" alt="Sufyan Iftikhar professional photo">
             </div>
             <h1>Sufyan Iftikhar</h1>
-            <p class="tagline">I help businesses unlock the strategic value of their data through intuitive analytics and automation.</p>
+            <p class="tagline">Transforming Complex Data into Strategic Business Intelligence</p>
             <p class="credibility-line">A Microsoft-certified BI and Data Analytics specialist with 5+ years of experience transforming complex data into actionable insights.</p>
             <p class="credibility-line">Trusted by Lloyds Banking Group, Turner & Townsend, and leading UK enterprises</p>
 
@@ -1107,30 +1073,35 @@
             </div>
         </div>
     </section>
-
+    
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">From Engineering to Data Excellence</p>
-
+        
         <div class="about-content">
             <div class="about-image-container">
                 <img src="assets/general/data-analytics-role.png" alt="Data Analytics" class="rounded-2xl w-full h-full object-contain shadow-lg">
             </div>
             <div class="about-text">
-                <h3>My Journey: From Blueprint to Big Data</h3>
+                <h3>Driving Business Value Through Data</h3>
                 <p>
-                    I began my career with a First Class Honours degree in Civil Engineering, where I learned to appreciate the power of structure, precision, and a solid foundation. While I enjoyed designing physical structures, I found myself increasingly drawn to designing systems that could answer complex business questions. This curiosity led me to the world of data analytics, where I discovered a passion for building data models and visualisations that empower decision-makers.
+                    My journey from Civil Engineering (First Class Honours) to Data Analytics has equipped me with 
+                    both technical depth and business acumen, enabling me to bridge the gap between complex data systems 
+                    and actionable business insights.
                 </p>
                 <p>
-                    Today, as a Microsoft-certified BI & Data Analytics professional, I apply the same engineering principles to my work. I bridge the gap between technical data systems and strategic business needs, transforming raw data into clear, actionable insights.
+                    I'm a Microsoft-certified BI & Data Analytics professional currently serving as an Assistant Data and 
+                    Reporting Manager at Lloyds Banking Group - Lloyds Living, where I'm shaping the data strategy for 
+                    a rapidly growing portfolio of 5,500+ properties.
                 </p>
                 <p>
-                    Currently, as an Assistant Data and Reporting Manager at Lloyds Banking Group - Lloyds Living, I'm helping to shape the data strategy for a rapidly growing portfolio of over 5,500 properties. It's a role that allows me to combine my technical skills with my love for creating clarity and driving business value.
+                    With over 5 years of experience across infrastructure, utilities, and real estate finance, I specialise 
+                    in designing unified data models, creating self-service analytics tools, and automating complex reporting 
+                    workflows that save organisations many hours monthly.
                 </p>
-                 <a href="assets/cv/Sufyan Iftikhar CV.pdf" class="btn btn-primary" download style="margin-top: 1rem;">Download My CV</a>
             </div>
         </div>
-
+        
         <div class="skills-grid">
             <div class="skill-card">
                 <h4>⚡ Technical Excellence</h4>
@@ -1138,7 +1109,7 @@
                     <li>Power BI (DAX, Power Query, Dataflows)</li>
                     <li>SQL</li>
                     <li>Python for Data Science</li>
-                    <li>Power Automate & VBA</li>
+                    <li>Workflow Automation (n8n, Power Automate & VBA)</li>
                     <li>ETL Pipeline Development</li>
                 </ul>
             </div>
@@ -1165,22 +1136,10 @@
         </div>
     </section>
 
-    <section id="philosophy" class="philosophy-section">
-        <h2 class="section-title">My Approach</h2>
-        <div class="philosophy-content">
-            <h3>Start with 'Why'</h3>
-            <p class="text-light">I believe that the most effective data solutions are born from a deep understanding of the business problem. I always start by asking "Why?" to ensure that the final product not only answers the initial question but also provides insights that can drive strategic decisions.</p>
-            <h3 style="margin-top: 2rem;">Making the Complex Simple</h3>
-            <p class="text-light">Data can be complex, but its presentation shouldn't be. My goal is to create intuitive, user-friendly dashboards and reports that allow stakeholders to grasp key information at a glance, without needing a degree in data science.</p>
-             <h3 style="margin-top: 2rem;">Build for the Future</h3>
-            <p class="text-light">I design data models and reporting workflows that are not just effective for today's needs but are also scalable and maintainable for the future. This forward-thinking approach ensures that the solutions I build continue to provide value as the business evolves.</p>
-        </div>
-    </section>
-
     <section id="certifications" class="certification-badges-section">
         <h2 class="section-title">Professional Certifications</h2>
         <p class="section-subtitle">Validated skills in Business Intelligence and Machine Learning</p>
-
+        
         <div class="certification-grid">
             <a href="https://learn.microsoft.com/api/credentials/share/en-us/SufyanIftikhar-3613/C2F3A630FB8C5DA2?sharingId" target="_blank" class="certification-badge">
                 <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Power BI Data Analyst Certification Badge">
@@ -1199,7 +1158,7 @@
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Trusted By Leading Organisations</h2>
             <p class="section-subtitle">Delivering data solutions for enterprise clients</p>
-
+            
             <div class="logos-container">
                 <div class="logos-row">
                     <div class="logo-item">
@@ -1234,50 +1193,55 @@
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Technologies & Tools</h2>
             <p class="section-subtitle">Leveraging industry-leading platforms for data excellence</p>
-
+            
             <div class="tools-container">
                 <div class="tools-row">
                     <div class="tool-card">
                         <img src="assets/tools/powerbi.jpg" alt="Power BI logo" style="height: 80px;" />
                         <h4>Power BI</h4>
-                        <p>I build end-to-end solutions, from data modeling and DAX measures to user-friendly dashboards that empower stakeholders.</p>
+                        <p>Power Query, Advanced DAX, Data Modelling</p>
                     </div>
                     <div class="tool-card">
                         <img src="assets/tools/sql.png" alt="SQL logo" style="height: 60px;" />
                         <h4>SQL</h4>
-                        <p>I use SQL to efficiently query, transform, and integrate data from various sources, ensuring a solid foundation for analysis.</p>
+                        <p>Database Design, Custom Views, ETL</p>
                     </div>
                     <div class="tool-card">
                         <img src="assets/tools/python.png" alt="Python logo" style="height: 60px;" />
                         <h4>Python</h4>
-                        <p>I leverage Python for data automation, advanced analytics, and machine learning to tackle complex business problems.</p>
+                        <p>Data Science, Automation, Machine Learning</p>
+                    </div>
+                    <div class="tool-card">
+                        <img src="assets/tools/n8n.png" alt="n8n logo" style="height: 60px;" />
+                        <h4>n8n</h4>
+                        <p>Workflow Automation, LLM</p>
                     </div>
                 </div>
                 <div class="tools-row">
                     <div class="tool-card">
                         <img src="assets/tools/tableau.png" alt="Tableau logo" style="height: 60px;" />
                         <h4>Tableau</h4>
-                        <p>I create compelling, interactive visualisations in Tableau to uncover hidden patterns and communicate data stories effectively.</p>
+                        <p>Interactive Dashboards, Visual Analytics</p>
                     </div>
                     <div class="tool-card">
                         <img src="assets/tools/power-automate.png" alt="Power Automate logo" style="height: 60px;" />
                         <h4>Power Automate</h4>
-                        <p>I design automated workflows to streamline repetitive tasks, saving time and reducing the risk of human error.</p>
+                        <p>Workflow Automation, Process Optimisation</p>
                     </div>
                     <div class="tool-card">
                         <img src="assets/tools/excel.png" alt="Excel logo" style="height: 60px;" />
                         <h4>Excel & VBA</h4>
-                        <p>I harness the power of advanced Excel and VBA to create custom solutions for data manipulation and reporting.</p>
+                        <p>Pivot Tables, VBA Macro Development</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <section id="experience">
+    <section id="experience">
         <h2 class="section-title">Professional Journey</h2>
         <p class="section-subtitle">Building data-driven solutions for enterprise challenges</p>
-
+        
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-header">
@@ -1339,35 +1303,76 @@
                 </ul>
             </div>
         </div>
-         <div class="testimonial">
-            <blockquote>"The Contract Management Dashboard has transformed how our commercial team operates. What previously took hours of manual reporting now happens automatically, and the insights we're getting are helping us proactively manage contract performance across the entire programme. The real-time visibility into compensation events has been particularly valuable for maintaining programme budgets."</blockquote>
-            <cite>– Senior Commercial Manager, NWG AMP7 Programme</cite>
-        </div>
     </section>
 
     <section id="projects" class="projects-section">
         <div class="projects-container">
             <h2 class="section-title">Projects Gallery</h2>
             <p class="section-subtitle">Enterprise solutions and technical articles that drive real business impact</p>
-
+            
             <div class="projects-filter">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="powerbi">Power BI</button>
                 <button class="filter-btn" data-filter="automation">Automation</button>
-                <button class="filter-btn" data-filter="analytics">Analytics</button>
                 <button class="filter-btn" data-filter="ml">Machine Learning</button>
             </div>
 
             <div class="projects-grid">
+                
+                <div class="project-card" data-category="automation ml" onclick="window.location.href='projects/n8n_parent_communication_case_study.html'">
+                    <div class="project-image">
+                         <span style="font-size: 4rem;">📧🤖</span>
+                        <span class="project-type">AI & Automation</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automated Parent Communication</h3>
+                        <p>
+                            An AI agent that monitors student data and automatically drafts personalised emails to parents for timely intervention and praise.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <a href="projects/n8n_parent_communication_case_study.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="automation ml" onclick="window.location.href='projects/n8n_report_card_case_study.html'">
+                    <div class="project-image">
+                        <span style="font-size: 4rem;">📄✨</span>
+                        <span class="project-type">AI & Automation</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Report Card Generation</h3>
+                        <p>
+                           An AI-driven workflow that transforms raw student data into narrative-style term reports, saving hours of manual work.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">Excel</span>
+                        </div>
+                        <a href="projects/n8n_report_card_case_study.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+
                 <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/property_portfolio_case_study.html'">
                     <div class="project-image">
-                        <img src="assets/projects/property_portfolio/property_portfolio_project_image.png" alt="Property Portfolio Project" class="w-full h-full object-contain">
+                        <img src="assets/projects/property_portfolio/property_portfolio_project_image.png" alt="Property Portfolio Project">
                         <span class="project-type">Dashboard</span>
                     </div>
                     <div class="project-content">
                         <h3>Property Portfolio Management</h3>
                         <p>
-                           A Power BI solution that reduced ad-hoc reporting requests by 60% by providing real-time insights into a 5,500+ property portfolio.
+                            A unified Power BI solution providing real-time insights into a portfolio of properties,
+                            featuring occupancy tracking, rental performance, and compliance monitoring.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Power BI</span>
@@ -1382,13 +1387,13 @@
 
                 <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/nwg_case_study.html'">
                     <div class="project-image">
-                        <img src="assets/projects/nwg/contract_management_image.jpeg" alt="NWG Contract Management Project" class="w-full h-full object-contain">
+                        <img src="assets/projects/nwg/contract_management_image.jpeg" alt="NWG Contract Management Project">
                         <span class="project-type">Enterprise Solution</span>
                     </div>
                     <div class="project-content">
                         <h3>NWG Contract Management System</h3>
                         <p>
-                            A comprehensive dashboard for a £3B programme that reduced overdue compensation events
+                            A comprehensive dashboard for a £3B programme that reduced overdue compensation events 
                             by 30% and saved over 10 hours weekly in manual reporting.
                         </p>
                         <div class="project-tech">
@@ -1404,7 +1409,7 @@
 
                 <div class="project-card" data-category="ml" onclick="window.location.href='projects/house_prices_case_study.html'">
                     <div class="project-image">
-                        <img src="assets/projects/house_prices/housesbanner.png" alt="House Prices Project" class="w-full h-full object-contain">
+                        <img src="assets/projects/house_prices/housesbanner.png" alt="House Prices Project">
                         <span class="project-type">Personal Project</span>
                     </div>
                     <div class="project-content">
@@ -1423,7 +1428,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="analytics" onclick="window.location.href='blog/semantic_model_blog.html'">
+                <div class="project-card" data-category="powerbi automation" onclick="window.location.href='blog/semantic_model_blog.html'">
                     <div class="project-image">
                         <span class="project-type">Technical Article</span>
                         🧠
@@ -1493,7 +1498,7 @@
         <div class="contact">
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-subtitle">Ready to transform your data into strategic insights?</p>
-
+            
             <div class="contact-info">
                 <div class="contact-item">
                     <img src="assets/logos/linkedin.png" alt="LinkedIn" style="height: 48px;">
@@ -1518,15 +1523,12 @@
                 <a href="#projects">Projects</a>
                 <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
             </div>
-            <p id="copyright">&copy; 2025 Sufyan Iftikhar. All rights reserved.</p>
+            <p>&copy; 2025 Sufyan Iftikhar. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in footer
-            document.getElementById('copyright').innerHTML = `&copy; ${new Date().getFullYear()} Sufyan Iftikhar. All rights reserved.`;
-
             // Mobile menu toggle
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const navLinks = document.getElementById('navLinks');
@@ -1555,7 +1557,8 @@
                     const filter = btn.getAttribute('data-filter');
 
                     projectCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        const categories = card.getAttribute('data-category');
+                        if (filter === 'all' || (categories && categories.split(' ').includes(filter))) {
                             card.style.display = 'block';
                             setTimeout(() => {
                                 card.style.opacity = '1';
@@ -1636,13 +1639,13 @@
                     }
                 });
             }
-
+        
             // Side Navigation functionality
             const sideNav = document.getElementById('sideNav');
             const navDots = document.querySelectorAll('.nav-dot');
             const progressLine = document.querySelector('.progress-line');
             const sections = document.querySelectorAll('section[id], .hero');
-
+            
             navDots.forEach(dot => {
                 dot.addEventListener('click', () => {
                     const targetSection = document.getElementById(dot.dataset.section);
@@ -1673,7 +1676,7 @@
 
                     if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                         navDots.forEach(dot => dot.classList.remove('active'));
-
+                        
                         const activeDot = document.querySelector(`.nav-dot[data-section="${section.id}"]`);
                         if (activeDot) {
                             activeDot.classList.add('active');
