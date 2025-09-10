@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sufyan Iftikhar - Professional Experience</title>
+    <meta name="description" content="The professional journey and work experience of Sufyan Iftikhar, a Data Analytics specialist.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1f2937;
+            --accent-color: #0066cc;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            --section-padding: 4rem 2rem;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            padding-top: 80px; /* To offset fixed header */
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: var(--section-padding);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 2rem;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-color), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 0 0 3px var(--bg-light);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-header h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            background: var(--bg-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .company {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .timeline-item ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Sufyan Iftikhar</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="experience">
+            <h2 class="section-title">Professional Journey</h2>
+            <p class="section-subtitle">Building data-driven solutions for enterprise challenges</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Assistant Data and Reporting Manager</h3>
+                        <span class="timeline-date">May 2025 - Present</span>
+                    </div>
+                    <div class="company">Lloyds Banking Group - Lloyds Living | Leeds, UK</div>
+                    <ul>
+                        <li>Designed a unified Power BI data model, creating a single source of truth that enhanced data consistency across finance, development and operations teams.</li>
+                        <li>Collaborated with external data providers to automate ingestion pipelines, improving timeliness and quality of financial and operational reporting.</li>
+                        <li>Worked closely with business users to gather requirements, shape reporting solutions, and ensure alignment with Lloyds Living’s strategic goals.</li>
+                        <li>Automated manual processes using VBA and Power Query, reducing repetitive work and freeing time for value-add analysis.</li>
+                        <li>Contributed to the data strategy and reporting framework for Lloyds Living, the Group’s rapidly growing private rental business, with a portfolio of over 5,500 properties.</li>
+                    </ul>
+                </div>
+    
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Performance and Reporting Analyst</h3>
+                        <span class="timeline-date">Apr 2024 - May 2025</span>
+                    </div>
+                    <div class="company">Turner and Townsend | Leeds, UK</div>
+                    <ul>
+                        <li>Designed and deployed a suite of Power BI dashboards for Northumbrian Water’s £3 billion AMP7 Programme, automating reporting for over 300 contracts and enhancing real-time decision-making.</li>
+                        <li>Developed tailored dashboards—including Contracts Overview, Executive Summary, Consultant Invoicing, KPI, and Project Accounting—resulting in a 50% reduction in report generation time.</li>
+                        <li>Optimised DAX calculations and Power Query workflows to ensure efficient data processing and reporting accuracy.</li>
+                        <li>Collaborated with cross-functional stakeholders to align reporting solutions with operational goals and deliver actionable programme insights.</li>
+                        <li>Conducted training sessions for project teams, increasing proficiency in dashboard utilisation and data interpretation.</li>
+                    </ul>
+                </div>
+    
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Data Analyst and Solutions Engineer</h3>
+                        <span class="timeline-date">Mar 2023 - Mar 2024</span>
+                    </div>
+                    <div class="company">WSP | Remote, UK</div>
+                    <ul>
+                        <li>Used SQL to consolidate and manage complex data sets, ensuring comprehensive and accurate data integration across multiple sources.</li>
+                        <li>Developed automated Python scripts for data validation, enforcing data governance and ensuring 100% compliance with data quality standards.</li>
+                        <li>Created interactive Tableau dashboards that delivered real-time KPIs, enhancing decision-making processes for technical and management teams.</li>
+                        <li>Produced detailed process maps using Microsoft Visio, streamlining project execution and operational workflows.</li>
+                    </ul>
+                </div>
+    
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Assistant Project Manager</h3>
+                        <span class="timeline-date">Oct 2021 – Mar 2023</span>
+                    </div>
+                    <div class="company">WSP | Leeds, UK</div>
+                    <ul>
+                        <li>Managed financial oversight for five major National Highway schemes, reducing budget variances to under 5%.</li>
+                        <li>Oversaw change management processes for the £36 million A629 Salterhebble Scheme, ensuring timely submissions and adherence to NEC contract requirements.</li>
+                        <li>Acted as the primary client contact for the NCC PI Programme (£350k), efficiently addressing inquiries and driving solutions.</li>
+                        <li>Led bi-weekly coordination meetings with project managers and directors, enhancing communication and delivery standards.</li>
+                        <li>Managed an international team of 10, consistently meeting deadlines and maintaining high-quality output.</li>
+                        <li>Recognised with the STAR Award for exceptional project management and rapid career advancement.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 Sufyan Iftikhar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

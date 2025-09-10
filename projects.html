@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sufyan Iftikhar - Projects Gallery</title>
+    <meta name="description" content="A gallery of data analytics, automation, and machine learning projects by Sufyan Iftikhar.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1f2937;
+            --accent-color: #0066cc;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            --section-padding: 4rem 2rem;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light); /* Set background to light grey for this page */
+            padding-top: 80px; /* To offset fixed header */
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: var(--section-padding);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Projects Gallery Section */
+        .projects-section {
+            background: var(--bg-light);
+            padding-top: 2rem;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            height: 220px;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .project-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 1rem;
+        }
+
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand">Sufyan Iftikhar</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects" class="projects-section">
+            <div class="projects-container">
+                <h2 class="section-title">Projects Gallery</h2>
+                <p class="section-subtitle">Enterprise solutions and technical articles that drive real business impact</p>
+                
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                </div>
+    
+                <div class="projects-grid">
+                    
+                    <div class="project-card" data-category="automation ml" onclick="window.location.href='projects/n8n_parent_communication_case_study.html'">
+                        <div class="project-image">
+                             <span style="font-size: 4rem;">📧🤖</span>
+                            <span class="project-type">AI & Automation</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Automated Parent Communication</h3>
+                            <p>
+                                An AI agent that monitors student data and automatically drafts personalised emails to parents for timely intervention and praise.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">n8n</span>
+                                <span class="tech-tag">AI</span>
+                                <span class="tech-tag">LLM</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                            <a href="projects/n8n_parent_communication_case_study.html" class="project-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="automation ml" onclick="window.location.href='projects/n8n_report_card_case_study.html'">
+                        <div class="project-image">
+                            <span style="font-size: 4rem;">📄✨</span>
+                            <span class="project-type">AI & Automation</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Report Card Generation</h3>
+                            <p>
+                               An AI-driven workflow that transforms raw student data into narrative-style term reports, saving hours of manual work.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">n8n</span>
+                                <span class="tech-tag">AI</span>
+                                <span class="tech-tag">LLM</span>
+                                <span class="tech-tag">Excel</span>
+                            </div>
+                            <a href="projects/n8n_report_card_case_study.html" class="project-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/property_portfolio_case_study.html'">
+                        <div class="project-image">
+                            <img src="assets/projects/property_portfolio/property_portfolio_project_image.png" alt="Property Portfolio Project">
+                            <span class="project-type">Dashboard</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Property Portfolio Management</h3>
+                            <p>
+                                A unified Power BI solution providing real-time insights into a portfolio of properties,
+                                featuring occupancy tracking, rental performance, and compliance monitoring.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">DAX</span>
+                                <span class="tech-tag">Data Modelling</span>
+                            </div>
+                            <a href="projects/property_portfolio_case_study.html" class="project-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="powerbi" onclick="window.location.href='projects/nwg_case_study.html'">
+                        <div class="project-image">
+                            <img src="assets/projects/nwg/contract_management_image.jpeg" alt="NWG Contract Management Project">
+                            <span class="project-type">Enterprise Solution</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>NWG Contract Management System</h3>
+                            <p>
+                                A comprehensive dashboard for a £3B programme that reduced overdue compensation events 
+                                by 30% and saved over 10 hours weekly in manual reporting.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Contract Bee API</span>
+                                <span class="tech-tag">Time Series Analysis</span>
+                            </div>
+                            <a href="projects/nwg_case_study.html" class="project-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="ml" onclick="window.location.href='projects/house_prices_case_study.html'">
+                        <div class="project-image">
+                            <img src="assets/projects/house_prices/housesbanner.png" alt="House Prices Project">
+                            <span class="project-type">Personal Project</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>House Prices Regression</h3>
+                            <p>
+                                A personal project to predict house prices using advanced regression techniques and feature engineering.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Pandas</span>
+                            </div>
+                            <a href="projects/house_prices_case_study.html" class="project-link">
+                                View Case Study →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="powerbi automation" onclick="window.location.href='blog/semantic_model_blog.html'">
+                        <div class="project-image">
+                            <span class="project-type">Technical Article</span>
+                            🧠
+                        </div>
+                        <div class="project-content">
+                            <h3>AI-Powered Semantic Model Documentation</h3>
+                            <p>
+                               Leverage Power BI metadata, TMDL, and AI to automatically generate comprehensive data dictionaries that make your models truly self-documenting.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">AI</span>
+                                <span class="tech-tag">TMDL</span>
+                            </div>
+                            <a href="blog/semantic_model_blog.html" class="project-link">
+                                Read Article →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="automation" onclick="window.location.href='blog/email_automation_blog.html'">
+                        <div class="project-image">
+                            <span class="project-type">Technical Article</span>
+                            📧
+                        </div>
+                        <div class="project-content">
+                            <h3>Automated Data Pipelines from Email</h3>
+                            <p>
+                               A step-by-step guide to building an automated data pipeline using Power Automate, SharePoint, and Power BI to transform email attachments into insights.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Power Automate</span>
+                                <span class="tech-tag">SharePoint</span>
+                                <span class="tech-tag">ETL</span>
+                            </div>
+                            <a href="blog/email_automation_blog.html" class="project-link">
+                                Read Article →
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card" data-category="automation" onclick="window.location.href='blog/data_validation_blog.html'">
+                        <div class="project-image">
+                            <span class="project-type">Technical Article</span>
+                            ✔️
+                        </div>
+                        <div class="project-content">
+                            <h3>Automated Data Validation Framework</h3>
+                            <p>
+                               A Python-based solution that uses a centralised Excel data dictionary to automate data quality checks and generate actionable error reports.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Data Governance</span>
+                            </div>
+                            <a href="blog/data_validation_blog.html" class="project-link">
+                                Read Article →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html#about">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 Sufyan Iftikhar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Project filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        if (filter === 'all' || (categories && categories.split(' ').includes(filter))) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            projectCards.forEach(card => {
+                card.style.transition = 'opacity 0.3s, transform 0.3s';
+                observer.observe(card);
+            });
+
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.project-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+        });
+    </script>
+</body>
+</html>
