@@ -111,7 +111,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
@@ -124,7 +124,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
                 repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
         }
@@ -166,7 +166,7 @@
             font-weight: 300;
             animation: fadeInUp 0.8s ease 0.3s both;
         }
-        
+
         .hero .credibility-line {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
@@ -244,7 +244,7 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 2.5rem; /* Reduced gap */
+            gap: 2.5rem;
             align-items: start;
         }
 
@@ -263,7 +263,7 @@
             color: var(--text-light);
             line-height: 1.8;
         }
-        
+
         /* Certifications Section */
         .certification-badges-section {
             padding: var(--section-padding);
@@ -483,7 +483,7 @@
             margin: 5px 0;
             transition: 0.3s;
         }
-
+        
         .mobile-menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
@@ -495,92 +495,7 @@
         .mobile-menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
-
         
-        /* Side Navigation */
-        .side-nav {
-            position: fixed;
-            left: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .side-nav::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            width: 2px;
-            background: rgba(0, 102, 204, 0.1);
-            left: 6px;
-        }
-
-        .side-nav .progress-line {
-            position: absolute;
-            top: 20px;
-            width: 2px;
-            background: var(--accent-color);
-            left: 6px; 
-            height: 0;
-            transition: height 0.3s;
-        }
-
-        .nav-dot {
-            position: relative;
-            margin: 20px 0;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-dot::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--accent-color);
-            display: block;
-            transition: all 0.3s;
-        }
-
-        .nav-dot:hover::before {
-            transform: scale(1.3);
-            background: var(--accent-color);
-        }
-
-        .nav-dot.active::before {
-            background: var(--accent-color);
-            width: 16px;
-            height: 16px;
-            box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
-        }
-
-        .nav-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-light);
-            transition: all 0.3s;
-        }
-
-        .nav-dot.active .nav-label {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        @media (max-width: 1024px) {
-            .side-nav {
-                display: none;
-            }
-        }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -762,17 +677,9 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-
-            .about-content {
+            
+            .about-content, .skills-grid, .contact-info, .tools-grid-container {
                 grid-template-columns: 1fr;
-            }
-
-            .skills-grid, .projects-grid, .contact-info, .tools-grid-container {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline {
-                padding-left: 2rem;
             }
 
             .cta-buttons {
@@ -832,14 +739,14 @@
             </div>
         </div>
     </section>
-    
+
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">From Engineering to Data Excellence</p>
         
         <div class="about-content">
             <div class="about-image-container">
-                <img src="assets/general/data-analytics-role.png" alt="Data Analytics" class="rounded-2xl w-full h-full object-contain shadow-lg">
+                <img src="assets/general/data-analytics-role.png" alt="Data Analytics" style="border-radius: 1rem; width: 100%; height: 100%; object-fit: contain;">
             </div>
             <div class="about-text">
                 <h3>Driving Business Value Through Data</h3>
@@ -860,7 +767,11 @@
                 </p>
             </div>
         </div>
-        
+    </section>
+
+    <section id="skills" style="padding-top: 0;">
+        <h2 class="section-title">Core Competencies</h2>
+        <p class="section-subtitle">A blend of technical, analytical, and industry-specific skills</p>
         <div class="skills-grid">
             <div class="skill-card">
                 <h4>⚡ Technical Excellence</h4>
@@ -894,25 +805,7 @@
             </div>
         </div>
     </section>
-
-    <section id="certifications" class="certification-badges-section">
-        <h2 class="section-title">Professional Certifications</h2>
-        <p class="section-subtitle">Validated skills in Business Intelligence and Machine Learning</p>
-        
-        <div class="certification-grid">
-            <a href="https://learn.microsoft.com/api/credentials/share/en-us/SufyanIftikhar-3613/C2F3A630FB8C5DA2?sharingId" target="_blank" class="certification-badge">
-                <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Power BI Data Analyst Certification Badge">
-                <div class="badge-title">Microsoft Certified</div>
-                <div class="badge-name">Power BI Data Analyst</div>
-            </a>
-            <a href="https://www.udemy.com/certificate/UC-5c811af6-10a6-422f-a9fd-f3e31090a4db/" target="_blank" class="certification-badge">
-                <img src="assets/certifications/UC-5c811af6-10a6-422f-a9fd-f3e31090a4db.jpg" alt="Python for Data Science & Machine Learning Bootcamp Certification Badge" style="height: 160px; width: auto;">
-                <div class="badge-title">Udemy Certified</div>
-                <div class="badge-name">Python for Data Science & Machine Learning</div>
-            </a>
-        </div>
-    </section>
-
+    
     <section id="trusted-by" style="background: var(--bg-light); padding: 4rem 2rem;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Trusted By Leading Organisations</h2>
@@ -995,6 +888,24 @@
         </div>
     </section>
 
+    <section id="certifications" class="certification-badges-section">
+        <h2 class="section-title">Professional Certifications</h2>
+        <p class="section-subtitle">Validated skills in Business Intelligence and Machine Learning</p>
+        
+        <div class="certification-grid">
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/SufyanIftikhar-3613/C2F3A630FB8C5DA2?sharingId" target="_blank" class="certification-badge">
+                <img src="assets/certifications/powerbi-data-analyst.png" alt="Microsoft Power BI Data Analyst Certification Badge">
+                <div class="badge-title">Microsoft Certified</div>
+                <div class="badge-name">Power BI Data Analyst</div>
+            </a>
+            <a href="https://www.udemy.com/certificate/UC-5c811af6-10a6-422f-a9fd-f3e31090a4db/" target="_blank" class="certification-badge">
+                <img src="assets/certifications/UC-5c811af6-10a6-422f-a9fd-f3e31090a4db.jpg" alt="Python for Data Science & Machine Learning Bootcamp Certification Badge" style="height: 160px; width: auto;">
+                <div class="badge-title">Udemy Certified</div>
+                <div class="badge-name">Python for Data Science & Machine Learning</div>
+            </a>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="contact">
             <h2 class="section-title">Let's Connect</h2>
@@ -1026,7 +937,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
                 <a href="projects.html">Projects</a>
                 <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank">LinkedIn</a>
             </div>
@@ -1065,22 +976,30 @@
                 if (scroller) {
                     // Pause animation on hover
                     scroller.addEventListener('mouseenter', () => {
-                        scroller.style.animationPlayState = 'paused';
+                        if(scroller.style.animationPlayState) {
+                           scroller.style.animationPlayState = 'paused';
+                        }
                     });
                     scroller.addEventListener('mouseleave', () => {
-                        scroller.style.animationPlayState = 'running';
+                        if(scroller.style.animationPlayState) {
+                            scroller.style.animationPlayState = 'running';
+                        }
                     });
 
                     // Button functionality
-                    nextBtn.addEventListener('click', () => {
-                        const itemWidth = scroller.querySelector('.scroller__inner > *:first-child').clientWidth;
-                        scroller.scrollBy({ left: itemWidth, behavior: 'smooth' });
-                    });
-
-                    prevBtn.addEventListener('click', () => {
-                        const itemWidth = scroller.querySelector('.scroller__inner > *:first-child').clientWidth;
-                        scroller.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-                    });
+                    if(nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            const itemWidth = scroller.querySelector('.scroller__inner > *:first-child').clientWidth;
+                            scroller.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                        });
+                    }
+                    
+                    if(prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            const itemWidth = scroller.querySelector('.scroller__inner > *:first-child').clientWidth;
+                            scroller.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+                        });
+                    }
                 }
             });
 
@@ -1130,91 +1049,8 @@
                 }
             });
 
-            // Animate elements on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.skill-card, .timeline-item, .blog-card, .tool-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        
-            // Side Navigation functionality
-            const sideNav = document.getElementById('sideNav');
-            const navDots = document.querySelectorAll('.nav-dot');
-            const progressLine = document.querySelector('.progress-line');
-            const sections = document.querySelectorAll('section[id], .hero');
-            
-            navDots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    const href = dot.getAttribute('href');
-                    if (href && href.startsWith('#')) {
-                        e.preventDefault();
-                        const targetSection = document.getElementById(href.substring(1));
-                        if (targetSection) {
-                            const headerOffset = 70;
-                            const elementPosition = targetSection.offsetTop;
-                            const offsetPosition = elementPosition - headerOffset;
-
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            function updateSideNav() {
-                if (!sideNav) return;
-                const scrollPosition = window.scrollY + window.innerHeight / 2;
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercentage = (window.scrollY / totalHeight) * 100;
-                
-                const maxLineHeight = sideNav.offsetHeight - 40;
-                progressLine.style.height = (scrollPercentage / 100) * maxLineHeight + 'px';
-
-
-                sections.forEach((section) => {
-                    const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        navDots.forEach(dot => dot.classList.remove('active'));
-                        
-                        const activeDot = document.querySelector(`.nav-dot[data-section="${section.id}"]`);
-                        if (activeDot) {
-                            activeDot.classList.add('active');
-                        }
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateSideNav);
         });
     </script>
-
-    <div id="sideNav" class="side-nav">
-        <div class="progress-line"></div>
-        <a href="#home" class="nav-dot" data-section="home" aria-label="Go to Home section"><span class="nav-label">Home</span></a>
-        <a href="#about" class="nav-dot" data-section="about" aria-label="Go to About section"><span class="nav-label">About</span></a>
-        <a href="experience.html" class="nav-dot" aria-label="Go to Experience page"><span class="nav-label">Experience</span></a>
-        <a href="projects.html" class="nav-dot" aria-label="Go to Projects page"><span class="nav-label">Projects</span></a>
-        <a href="#contact" class="nav-dot" data-section="contact" aria-label="Go to Contact section"><span class="nav-label">Contact</span></a>
-    </div>
 
 </body>
 </html>
