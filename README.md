@@ -8,11 +8,11 @@ Transforming complex data into strategic business intelligence.
 
 ## 🚀 About Me
 
-I’m a Microsoft-certified BI & Data Analytics professional currently serving as **Assistant Data and Reporting Manager** at **Lloyds Banking Group – Lloyds Living**, where I'm shaping the data strategy for a growing portfolio of **5,500+ properties**.
+I'm a Microsoft-certified Data & Analytics professional currently serving as **Assistant Data and Reporting Manager** at **Lloyds Banking Group – Lloyds Living**, where I led the digital transformation of the data function from manual processes to a cloud-native Microsoft Fabric platform.
 
-With over **5 years of experience** across infrastructure, utilities, and real estate finance, I design robust data models, build self-service analytics tools, and automate reporting workflows that deliver deep insights and drive efficiencies.
+With **5 years of experience** across infrastructure, utilities, and real estate finance, I specialize in project controls analytics, data engineering, and building scalable data solutions. I've delivered performance reporting frameworks for a £3bn infrastructure programme and architected data solutions for a 7,500+ property portfolio valued at £1.5bn+.
 
-My journey from **Civil Engineering (First Class Honours)** to data analytics has given me a unique blend of technical depth and business acumen—enabling me to transform complex datasets into actionable insights.
+My journey from **Civil Engineering (First Class Honours)** to data analytics has given me a unique blend of technical depth and business acumen—enabling me to transform complex datasets into strategic business insights.
 
 ### 🔑 Key Skills
 
@@ -22,12 +22,14 @@ My journey from **Civil Engineering (First Class Honours)** to data analytics ha
 * SQL
 * Python for Data Science
 * Power Automate & VBA
-* ETL Pipeline Development
+* Microsoft Fabric (OneLake, Lakehouse, Data Warehouse, Data Factory)
+* ETL Pipeline Development & Medallion Architecture
 
 **Analytical Expertise**
 
+* Project Controls (Cost & Schedule Performance, KPI Frameworks, Variance Analysis)
 * Data Modelling & Architecture
-* KPI Design & Implementation
+* Data Engineering & Governance
 * Self-Service Analytics
 * Executive Dashboard Development
 * Real-Time Performance Monitoring
@@ -46,33 +48,27 @@ My journey from **Civil Engineering (First Class Honours)** to data analytics ha
 
 ### Assistant Data and Reporting Manager  
 **May 2025 – Present** • *Lloyds Banking Group – Lloyds Living (Leeds, UK)*  
-- Developed a unified Power BI data model serving as a single source of truth for 3,500+ properties  
-- Created scalable self-service dashboards that reduced ad hoc report requests by 60%  
-- Automated external data ingestion pipelines, enhancing reporting speed  
-- Led data strategy initiatives across finance, development, and operations teams  
+- Led end-to-end transformation of data function, migrating from manual Excel/CSV and Access-based processes to cloud-native Microsoft Fabric platform
+- Managed Fabric platform overseeing data lakehouse, warehouse, data factory, and real-time analytics infrastructure across dev/test/prod environments
+- Designed and implemented automated data pipelines using medallion architecture (Bronze-Silver-Gold), reducing manual processing time by 80%
+- Established comprehensive data governance framework with process documentation, data flow diagrams, and Collibra data dictionary
+- Delivered Power BI datasets and apps from curated Gold-layer models, establishing trusted single source of truth for 7,500+ property portfolio valued at £1.5bn+
 
-### Performance and Reporting Analyst  
+### Performance Reporting Analyst (Project Controls)
 **Apr 2024 – May 2025** • *Turner and Townsend (Leeds, UK)*  
-- Deployed five end-to-end Power BI dashboards for Northumbrian Water’s £3 billion AMP7 programme  
-- Automated reporting for 300+ contracts, cutting report generation time by 50%  
-- Optimised DAX and Power Query workflows for performance improvements  
-- Delivered training that increased team dashboard adoption by 40%  
+- Designed and deployed five end-to-end Power BI dashboards for Northumbrian Water's £3 billion AMP7 Programme, automating reporting for 300+ contracts
+- Reduced report refresh time by 50% through optimised DAX and Power Query transformations
+- Established KPI frameworks and variance reporting systems providing programme leadership with actionable insights
+- Conducted training sessions increasing proficiency in dashboard utilisation and data-driven performance management
 
-### Data Analyst and Solutions Engineer  
-**Mar 2023 – Mar 2024** • *WSP (Remote, UK)*  
-- Integrated complex datasets with SQL for comprehensive analysis  
-- Automated data validation using Python scripts, reaching 100% compliance  
-- Led creation of interactive Tableau dashboards showcasing real-time KPIs  
-- Streamlined workflows through detailed data process mapping  
-
-### Assistant Project Manager
-
-**Oct 2021 – Mar 2023** • *WSP (Leeds, UK)*
-
-* Managed financial oversight for five major National Highway schemes, reducing budget variances to under 5%.
-* Oversaw change management processes for the £36 million A629 Salterhebble Scheme.
-* Acted as the primary client contact for the NCC PI Programme (£350k), efficiently addressing inquiries and driving solutions.
-* Recognised with the STAR Award for exceptional project management and rapid career advancement.
+### Project Analyst / Assistant Project Manager  
+**Oct 2021 – Mar 2024** • *WSP (Remote, UK)*  
+- Consolidated and managed complex, multi-source datasets using SQL for programme-level reporting
+- Developed automated Python validation scripts, enforcing data governance and significantly improving data quality
+- Delivered KPI dashboards enabling real-time visibility of cost, schedule and performance metrics
+- Supported financial control and forecasting across five National Highways schemes, reducing budget variances to under 5%
+- Managed change control processes for £36m A629 Salterhebble Scheme
+- Recognised with STAR Award for exceptional project management and rapid career advancement
 
 ---
 
@@ -82,7 +78,7 @@ Explore enterprise-grade solutions and technical articles powered by data:
 
 | Project                         | Description                                                                                                                   |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Property Portfolio Management** | Unified Power BI solution delivering insights on 5,500+ properties - tracking occupancy, rental performance, and compliance.      |
+| **Property Portfolio Management** | Unified Power BI solution delivering insights on 7,500+ properties - tracking occupancy, rental performance, and compliance.      |
 | **NWG Contract Management System** | Dashboard for a £3 billion programme—reduced overdue compensations by 30% and saved 10+ hours monthly.                        |
 | **AI-Powered Documentation** | An innovative solution using AI to automatically generate intelligent data dictionaries for Power BI models.                  |
 | **Automated Email Data Pipeline** | An end-to-end pipeline that captures, validates, and processes email attachments into actionable BI.                          |
