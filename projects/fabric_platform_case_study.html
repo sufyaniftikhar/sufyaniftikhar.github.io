@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Fabric Platform Migration — Sufyan Iftikhar</title>
+    <meta name="description" content="Leading the migration from manual Excel/Access processes to a cloud-native Microsoft Fabric lakehouse with a Bronze–Silver–Gold medallion architecture at Lloyds Living.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
+</head>
+<body>
+    <div class="bg-decor"><span></span><span></span><span></span></div>
+
+    <header id="header">
+        <nav>
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+                    <svg class="icon moon" aria-hidden="true"><use href="../assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="../assets/icons.svg#i-sun"></use></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="cs-hero">
+        <div class="container-narrow">
+            <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-layers"></use></svg> Lloyds Living · Case study</span>
+            <h1 class="cs-title">Migrating to a Cloud-Native Microsoft Fabric Platform</h1>
+            <p class="cs-lede">Leading the transformation of the data function from manual Excel, CSV and Access-based processes to a governed Microsoft Fabric lakehouse with a Bronze–Silver–Gold medallion architecture — cutting manual processing time by roughly 80%.</p>
+            <div class="cs-meta">
+                <div><div class="k">Organisation</div><div class="v">Lloyds Living</div></div>
+                <div><div class="k">Role</div><div class="v">Assistant Data &amp; Reporting Manager</div></div>
+                <div><div class="k">Stack</div><div class="v">Microsoft Fabric · OneLake · Data Factory</div></div>
+                <div><div class="k">Architecture</div><div class="v">Medallion (Bronze–Silver–Gold)</div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-body">
+        <div class="container-narrow">
+
+            <h2>Context</h2>
+            <p>The data function had grown organically around spreadsheets and an Access database. It worked — but it didn't scale. Every monthly cycle meant manually pulling files together, re-keying and reconciling, with limited auditability and a single point of failure in the people who knew where everything lived.</p>
+            <p>I led the move to a cloud-native platform on <strong>Microsoft Fabric</strong>, designing the architecture and building the pipelines that now underpin all reporting for the portfolio.</p>
+
+            <h2>The challenge</h2>
+            <ul>
+                <li><strong>Manual, fragile processes</strong> — Excel/CSV and Access workflows that were slow, error-prone and hard to audit.</li>
+                <li><strong>No clear lineage</strong> — it was difficult to trace a number on a report back to its source.</li>
+                <li><strong>Scaling pains</strong> — a growing portfolio and more data sources made the manual approach unsustainable.</li>
+                <li><strong>Environments &amp; safety</strong> — changes were made directly against live data, with no real separation of dev, test and production.</li>
+            </ul>
+
+            <h2>The solution: a medallion lakehouse on Fabric</h2>
+            <p>I designed and implemented a Microsoft Fabric platform built around a medallion architecture, with automated pipelines moving data through clearly defined layers.</p>
+
+            <ol>
+                <li><strong>Bronze — raw landing.</strong> Source files and feeds (income, budgets, lettings, arrears, expenditure, stock, compliance, complaints) land in OneLake exactly as received, giving an immutable, auditable record.</li>
+                <li><strong>Silver — cleansed &amp; conformed.</strong> Data Factory pipelines validate, cleanse, deduplicate and standardise keys so multi-source data lines up consistently.</li>
+                <li><strong>Gold — curated &amp; analytics-ready.</strong> Business-ready tables modelled for reporting feed the Power BI semantic model as a single, trusted source.</li>
+            </ol>
+
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-git-branch"></use></svg></span>
+                <p><strong>Dev / test / prod.</strong> The lakehouse, warehouse, Data Factory and real-time analytics run across separate environments, so changes are built and validated safely before they ever touch production reporting.</p>
+            </div>
+
+            <h3>Automation &amp; orchestration</h3>
+            <p>Pipelines are scheduled and orchestrated in Data Factory, with validation and cleansing built in rather than bolted on. The result is a repeatable, scalable refresh that produces auditable, analytics-ready datasets every cycle — replacing the manual assembly that used to dominate the month.</p>
+
+            <h2>Results</h2>
+            <div class="cs-results">
+                <div class="cs-result"><div class="rn gradient-text">~80%</div><div class="rl">Less manual processing time</div></div>
+                <div class="cs-result"><div class="rn gradient-text">3</div><div class="rl">Governed environments (dev/test/prod)</div></div>
+                <div class="cs-result"><div class="rn gradient-text">End-to-end</div><div class="rl">Lineage &amp; auditability</div></div>
+                <div class="cs-result"><div class="rn gradient-text">Scalable</div><div class="rl">Foundation for new sources</div></div>
+            </div>
+            <ul>
+                <li><strong>From fragile to dependable</strong> — a repeatable pipeline replaced manual, error-prone steps.</li>
+                <li><strong>Auditable by design</strong> — raw-to-Gold lineage means any figure can be traced to its source.</li>
+                <li><strong>Room to grow</strong> — onboarding a new data source is now an extension of the platform, not a new spreadsheet.</li>
+            </ul>
+
+            <h2>Skills demonstrated</h2>
+            <div class="tag-row">
+                <span class="tech-tag">Microsoft Fabric</span>
+                <span class="tech-tag">OneLake &amp; Lakehouse</span>
+                <span class="tech-tag">Data Factory pipelines</span>
+                <span class="tech-tag">Medallion architecture</span>
+                <span class="tech-tag">ETL / ELT</span>
+                <span class="tech-tag">Solution architecture</span>
+                <span class="tech-tag">Data engineering</span>
+            </div>
+
+            <div class="cs-nav">
+                <a href="data_governance_case_study.html" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"></use></svg> Next: Governance &amp; semantic model</a>
+                <a href="../index.html#projects" class="btn btn-primary">All projects <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"></use></svg></a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-inner">
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="footer-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2026 Sufyan Iftikhar</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -7,7 +7,6 @@
     <meta name="description" content="Sufyan Iftikhar — Microsoft-certified Data &amp; AI professional. Assistant Data &amp; Reporting Manager at Lloyds Living and Co-Founder / CTO at NexAura. Power BI, Microsoft Fabric, Python, LLMs and AI solution design.">
     <meta name="author" content="Sufyan Iftikhar">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sufyan Iftikhar — Data &amp; AI Professional">
     <meta property="og:description" content="Enterprise data leadership at Lloyds Living and AI product building at NexAura. Power BI · Microsoft Fabric · Python · LLMs.">
@@ -17,537 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            /* Dark theme (default) */
-            --bg: #0a0b14;
-            --bg-elevated: #11121f;
-            --surface: rgba(255, 255, 255, 0.04);
-            --surface-hover: rgba(255, 255, 255, 0.07);
-            --border: rgba(255, 255, 255, 0.09);
-            --border-strong: rgba(255, 255, 255, 0.16);
-            --text: #f4f5fb;
-            --text-muted: #a4a8c0;
-            --text-faint: #6f748f;
-            --accent: #7c5cff;
-            --accent-2: #18d2c4;
-            --accent-glow: rgba(124, 92, 255, 0.45);
-            --gradient: linear-gradient(120deg, #7c5cff 0%, #18d2c4 100%);
-            --gradient-soft: linear-gradient(120deg, rgba(124,92,255,0.18), rgba(24,210,196,0.18));
-            --nav-bg: rgba(10, 11, 20, 0.72);
-            --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        }
-
-        html[data-theme="light"] {
-            --bg: #f6f7fb;
-            --bg-elevated: #ffffff;
-            --surface: #ffffff;
-            --surface-hover: #ffffff;
-            --border: rgba(15, 23, 42, 0.10);
-            --border-strong: rgba(15, 23, 42, 0.18);
-            --text: #131829;
-            --text-muted: #4d5573;
-            --text-faint: #828aa6;
-            --accent: #6a40ff;
-            --accent-2: #0bb3a6;
-            --accent-glow: rgba(106, 64, 255, 0.30);
-            --gradient: linear-gradient(120deg, #6a40ff 0%, #0bb3a6 100%);
-            --gradient-soft: linear-gradient(120deg, rgba(106,64,255,0.10), rgba(11,179,166,0.10));
-            --nav-bg: rgba(246, 247, 251, 0.78);
-            --shadow: 0 24px 60px rgba(20, 24, 50, 0.12);
-            --card-shadow: 0 10px 30px rgba(20, 24, 50, 0.07);
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.65;
-            overflow-x: hidden;
-            transition: background 0.4s ease, color 0.4s ease;
-        }
-
-        /* Ambient background glows */
-        .bg-decor {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .bg-decor span {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(110px);
-            opacity: 0.5;
-        }
-        .bg-decor span:nth-child(1) { width: 480px; height: 480px; background: var(--accent); top: -140px; left: -100px; }
-        .bg-decor span:nth-child(2) { width: 420px; height: 420px; background: var(--accent-2); top: 30%; right: -160px; opacity: 0.35; }
-        .bg-decor span:nth-child(3) { width: 380px; height: 380px; background: var(--accent); bottom: -120px; left: 35%; opacity: 0.25; }
-        html[data-theme="light"] .bg-decor span { opacity: 0.18; }
-
-        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
-        a { color: inherit; text-decoration: none; }
-
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
-
-        .gradient-text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* ---------- Navbar ---------- */
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease, background 0.4s ease;
-        }
-        header.scrolled { border-bottom-color: var(--border); }
-        nav {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-brand {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .nav-brand .mark {
-            width: 34px; height: 34px;
-            border-radius: 10px;
-            background: var(--gradient);
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 700;
-            box-shadow: 0 6px 18px var(--accent-glow);
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            transition: color 0.25s;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            left: 0; bottom: -6px;
-            width: 0; height: 2px;
-            background: var(--gradient);
-            border-radius: 2px;
-            transition: width 0.3s;
-        }
-        .nav-links a:hover { color: var(--text); }
-        .nav-links a:hover::after { width: 100%; }
-
-        .nav-actions { display: flex; align-items: center; gap: 0.9rem; }
-        .theme-toggle {
-            width: 40px; height: 40px;
-            border-radius: 11px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            color: var(--text);
-            cursor: pointer;
-            display: grid;
-            place-items: center;
-            transition: all 0.25s;
-        }
-        .theme-toggle:hover { border-color: var(--border-strong); transform: translateY(-1px); }
-        .theme-toggle svg { width: 18px; height: 18px; }
-        .theme-toggle .sun { display: none; }
-        html[data-theme="light"] .theme-toggle .sun { display: block; }
-        html[data-theme="light"] .theme-toggle .moon { display: none; }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            cursor: pointer;
-            transition: all 0.25s;
-            border: 1px solid transparent;
-            white-space: nowrap;
-        }
-        .btn-primary {
-            background: var(--gradient);
-            color: #fff;
-            box-shadow: 0 10px 30px var(--accent-glow);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px var(--accent-glow); }
-        .btn-ghost {
-            background: var(--surface);
-            color: var(--text);
-            border-color: var(--border);
-        }
-        .btn-ghost:hover { border-color: var(--border-strong); background: var(--surface-hover); transform: translateY(-2px); }
-        .nav-cta { padding: 0.6rem 1.2rem; }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none; border: none; cursor: pointer; padding: 6px;
-        }
-        .mobile-toggle span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-        .mobile-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .mobile-toggle.active span:nth-child(2) { opacity: 0; }
-        .mobile-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-        /* ---------- Section scaffolding ---------- */
-        section { padding: 6rem 0; }
-        .section-head { max-width: 660px; margin: 0 auto 3.5rem; text-align: center; }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--accent-2);
-            padding: 0.4rem 0.9rem;
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            background: var(--surface);
-            margin-bottom: 1.2rem;
-        }
-        .section-title { font-size: clamp(1.9rem, 4vw, 2.7rem); margin-bottom: 1rem; }
-        .section-sub { color: var(--text-muted); font-size: 1.05rem; }
-
-        /* ---------- Hero ---------- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 0 4rem;
-            position: relative;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.25fr 0.9fr;
-            gap: 3.5rem;
-            align-items: center;
-            width: 100%;
-        }
-        .hero-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            padding: 0.45rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            background: var(--surface);
-            margin-bottom: 1.8rem;
-        }
-        .pulse {
-            width: 9px; height: 9px; border-radius: 50%;
-            background: var(--accent-2);
-            box-shadow: 0 0 0 0 var(--accent-2);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(24,210,196,0.6); }
-            70% { box-shadow: 0 0 0 9px rgba(24,210,196,0); }
-            100% { box-shadow: 0 0 0 0 rgba(24,210,196,0); }
-        }
-        .hero h1 {
-            font-size: clamp(2.6rem, 6vw, 4.2rem);
-            margin-bottom: 1.2rem;
-        }
-        .hero h1 .role { display: block; }
-        .hero-tagline {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 540px;
-            margin-bottom: 2rem;
-        }
-        .hero-tagline strong { color: var(--text); font-weight: 600; }
-        .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.6rem; }
-        .hero-socials { display: flex; gap: 1.4rem; align-items: center; }
-        .hero-socials a { color: var(--text-faint); font-size: 0.9rem; font-weight: 500; transition: color 0.25s; }
-        .hero-socials a:hover { color: var(--accent-2); }
-
-        .hero-portrait { position: relative; display: grid; place-items: center; }
-        .hero-portrait .ring {
-            position: absolute;
-            width: 320px; height: 320px;
-            border-radius: 50%;
-            background: var(--gradient);
-            filter: blur(48px);
-            opacity: 0.5;
-        }
-        .hero-portrait img {
-            position: relative;
-            width: 280px; height: 280px;
-            border-radius: 28px;
-            object-fit: cover;
-            border: 1px solid var(--border-strong);
-            box-shadow: var(--shadow);
-        }
-        .hero-portrait .float-card {
-            position: absolute;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 0.75rem 1rem;
-            box-shadow: var(--card-shadow);
-            font-size: 0.82rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-        }
-        .float-card .dot { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 1rem; background: var(--gradient-soft); }
-        .float-card.one { top: 6%; left: -28px; animation: floaty 5s ease-in-out infinite; }
-        .float-card.two { bottom: 8%; right: -22px; animation: floaty 5s ease-in-out infinite 1.2s; }
-        @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-        /* ---------- Stats bar ---------- */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            padding: 2rem 0 0;
-            margin-top: 1rem;
-            border-top: 1px solid var(--border);
-            width: 100%;
-        }
-        .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; }
-        .stat .label { font-size: 0.85rem; color: var(--text-faint); margin-top: 0.2rem; }
-
-        /* ---------- Cards / grids ---------- */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s, border-color 0.3s, background 0.3s;
-        }
-        .card:hover { transform: translateY(-6px); border-color: var(--border-strong); }
-
-        /* Two strands */
-        .strands { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .strand { position: relative; overflow: hidden; }
-        .strand::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: var(--gradient-soft);
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .strand:hover::before { opacity: 1; }
-        .strand > * { position: relative; }
-        .strand .icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.5rem; background: var(--gradient); box-shadow: 0 8px 22px var(--accent-glow); margin-bottom: 1.2rem; }
-        .strand h3 { font-size: 1.4rem; margin-bottom: 0.35rem; }
-        .strand .strand-role { color: var(--accent-2); font-weight: 600; font-size: 0.92rem; margin-bottom: 1rem; }
-        .strand p { color: var(--text-muted); font-size: 0.96rem; margin-bottom: 1.2rem; }
-        .strand ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-        .strand ul li { position: relative; padding-left: 1.5rem; color: var(--text-muted); font-size: 0.92rem; }
-        .strand ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-
-        /* About */
-        .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: center; }
-        .about-photo { position: relative; }
-        .about-photo img { width: 100%; border-radius: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); }
-        .about-text p { color: var(--text-muted); margin-bottom: 1.2rem; }
-        .about-text p strong { color: var(--text); font-weight: 600; }
-        .about-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-        .chip { font-size: 0.82rem; font-weight: 500; padding: 0.45rem 0.9rem; border-radius: 50px; border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); }
-
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; }
-        .skill-card h4 { font-size: 1.15rem; margin-bottom: 1.3rem; display: flex; align-items: center; gap: 0.6rem; }
-        .skill-card h4 .badge { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; font-size: 1.1rem; background: var(--gradient-soft); }
-        .skill-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-        .skill-card ul li { position: relative; padding-left: 1.5rem; color: var(--text-muted); font-size: 0.93rem; }
-        .skill-card ul li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 7px; height: 7px; border-radius: 50%; background: var(--gradient); }
-
-        /* Experience timeline */
-        .timeline { max-width: 820px; margin: 0 auto; position: relative; }
-        .timeline::before { content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
-        .tl-item { position: relative; padding-left: 3.4rem; padding-bottom: 2.4rem; }
-        .tl-item:last-child { padding-bottom: 0; }
-        .tl-item .node {
-            position: absolute; left: 8px; top: 4px;
-            width: 24px; height: 24px; border-radius: 50%;
-            background: var(--bg); border: 2px solid var(--accent);
-            display: grid; place-items: center;
-        }
-        .tl-item .node::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gradient); }
-        .tl-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.2rem; }
-        .tl-head h3 { font-size: 1.2rem; }
-        .tl-date { font-size: 0.82rem; font-weight: 600; color: var(--accent-2); white-space: nowrap; }
-        .tl-company { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; margin-bottom: 0.9rem; }
-        .tl-company .tag { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 50px; background: var(--gradient-soft); color: var(--text); margin-left: 0.5rem; }
-        .tl-item ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-        .tl-item ul li { position: relative; padding-left: 1.4rem; color: var(--text-muted); font-size: 0.93rem; }
-        .tl-item ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
-
-        /* Projects */
-        .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-bottom: 2.6rem; }
-        .filter-btn {
-            padding: 0.55rem 1.2rem; border-radius: 50px; cursor: pointer;
-            border: 1px solid var(--border); background: var(--surface);
-            color: var(--text-muted); font-size: 0.88rem; font-weight: 500; font-family: inherit;
-            transition: all 0.25s;
-        }
-        .filter-btn:hover { color: var(--text); border-color: var(--border-strong); }
-        .filter-btn.active { background: var(--gradient); color: #fff; border-color: transparent; box-shadow: 0 8px 22px var(--accent-glow); }
-
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.5rem; }
-        .project-card { padding: 0; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; }
-        .project-visual {
-            height: 180px; position: relative; overflow: hidden;
-            display: grid; place-items: center;
-            background: var(--gradient-soft);
-        }
-        .project-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .project-card:hover .project-visual img { transform: scale(1.06); }
-        .project-visual .emoji { font-size: 3.2rem; }
-        .project-type {
-            position: absolute; top: 0.9rem; left: 0.9rem;
-            font-size: 0.72rem; font-weight: 600;
-            padding: 0.3rem 0.75rem; border-radius: 50px;
-            background: rgba(10,11,20,0.7); color: #fff; backdrop-filter: blur(6px);
-            border: 1px solid rgba(255,255,255,0.12);
-        }
-        .project-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
-        .project-body h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
-        .project-body p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.1rem; flex: 1; }
-        .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.1rem; }
-        .tech-tag { font-size: 0.72rem; font-weight: 500; padding: 0.28rem 0.65rem; border-radius: 6px; background: var(--surface-hover); border: 1px solid var(--border); color: var(--text-muted); }
-        .project-link { font-weight: 600; font-size: 0.88rem; color: var(--accent-2); display: inline-flex; align-items: center; gap: 0.35rem; transition: gap 0.25s; }
-        .project-card:hover .project-link { gap: 0.65rem; }
-
-        /* Stack / tools */
-        .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
-        .stack-item {
-            display: flex; flex-direction: column; align-items: center; gap: 0.7rem;
-            padding: 1.4rem 1rem; border-radius: 14px;
-            background: var(--surface); border: 1px solid var(--border);
-            transition: all 0.25s; text-align: center;
-        }
-        .stack-item:hover { transform: translateY(-4px); border-color: var(--border-strong); background: var(--surface-hover); }
-        .stack-item img { height: 38px; width: auto; object-fit: contain; }
-        html[data-theme="dark"] .stack-item img.invertable { filter: brightness(0) invert(1); opacity: 0.92; }
-        .stack-item .pill-icon { height: 38px; display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.5rem; }
-        .stack-item span.name { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
-        .stack-group-label { text-align: center; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin: 2.5rem 0 1.2rem; }
-        .stack-group-label:first-child { margin-top: 0; }
-
-        /* Certifications */
-        .cert-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
-        .cert-card { display: flex; flex-direction: column; align-items: center; text-align: center; width: 260px; }
-        .cert-card img { height: 140px; width: auto; margin-bottom: 1rem; }
-        .cert-card .cert-issuer { font-size: 0.78rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; }
-        .cert-card .cert-name { font-weight: 600; font-family: 'Space Grotesk', sans-serif; }
-        .honors { max-width: 760px; margin: 3rem auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; }
-        .honor { font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: 50px; border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); }
-        .honor span { color: var(--accent-2); margin-right: 0.4rem; }
-
-        /* Trusted by */
-        .scroller { overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-        .scroller-track { display: flex; gap: 3rem; width: max-content; animation: scroll 38s linear infinite; align-items: center; }
-        .scroller:hover .scroller-track { animation-play-state: paused; }
-        @keyframes scroll { to { transform: translateX(calc(-50% - 1.5rem)); } }
-        .logo-item { height: 56px; display: grid; place-items: center; }
-        .logo-item img { max-height: 48px; max-width: 150px; width: auto; object-fit: contain; opacity: 0.65; transition: opacity 0.3s; }
-        html[data-theme="dark"] .logo-item img { filter: brightness(0) invert(1); }
-        .logo-item img:hover { opacity: 1; }
-
-        /* Contact */
-        .contact-card { max-width: 880px; margin: 0 auto; text-align: center; padding: 3.5rem 2.5rem; background: var(--gradient-soft); border: 1px solid var(--border); }
-        .contact-card h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem; }
-        .contact-card p { color: var(--text-muted); max-width: 540px; margin: 0 auto 2.2rem; }
-        .contact-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
-        .contact-method { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; padding: 1.5rem; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); transition: all 0.25s; }
-        .contact-method:hover { transform: translateY(-4px); border-color: var(--border-strong); }
-        .contact-method .ci { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 1.3rem; background: var(--gradient); color: #fff; }
-        .contact-method .ci img { width: 22px; height: 22px; }
-        .contact-method .cm-label { font-size: 0.78rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; }
-        .contact-method a, .contact-method span.val { font-weight: 600; font-size: 0.92rem; word-break: break-word; }
-        .contact-method a:hover { color: var(--accent-2); }
-
-        /* Footer */
-        footer { padding: 3rem 0; border-top: 1px solid var(--border); }
-        .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
-        .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .footer-links a { color: var(--text-muted); font-size: 0.9rem; transition: color 0.25s; }
-        .footer-links a:hover { color: var(--text); }
-        .footer-copy { color: var(--text-faint); font-size: 0.85rem; }
-
-        /* Reveal animation */
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-            .scroller-track, .pulse, .float-card { animation: none !important; }
-            html { scroll-behavior: auto; }
-        }
-
-        /* ---------- Responsive ---------- */
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .hero-portrait { order: -1; }
-            .strands { grid-template-columns: 1fr; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-photo { max-width: 360px; margin: 0 auto; }
-        }
-        @media (max-width: 768px) {
-            section { padding: 4.5rem 0; }
-            .nav-links {
-                position: fixed; top: 68px; left: 0; right: 0;
-                flex-direction: column; gap: 1.5rem;
-                background: var(--bg-elevated); border-bottom: 1px solid var(--border);
-                padding: 2rem; transform: translateY(-120%); transition: transform 0.35s; align-items: flex-start;
-            }
-            .nav-links.active { transform: translateY(0); }
-            .nav-cta { display: none; }
-            .mobile-toggle { display: flex; }
-            .stats { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
-            .hero-portrait .float-card.one { left: 0; }
-            .hero-portrait .float-card.two { right: 0; }
-        }
-        @media (max-width: 420px) {
-            .projects-grid { grid-template-columns: 1fr; }
-            .hero-portrait img { width: 230px; height: 230px; }
-            .hero-portrait .ring { width: 250px; height: 250px; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 <body>
     <div class="bg-decor"><span></span><span></span><span></span></div>
@@ -567,11 +36,13 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
-                    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon moon" aria-hidden="true"><use href="assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="assets/icons.svg#i-sun"></use></svg>
                 </button>
                 <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-menu"></use></svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -592,21 +63,21 @@
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary">View my work</a>
                         <a href="assets/cv/Sufyan Iftikhar CV.pdf" class="btn btn-ghost" download>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-download"></use></svg>
                             Download CV
                         </a>
                     </div>
                     <div class="hero-socials">
-                        <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn ↗</a>
-                        <a href="mailto:sufyaniftikhar1@gmail.com">Email ↗</a>
-                        <a href="#contact">Leeds, UK</a>
+                        <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-external"></use></svg></a>
+                        <a href="mailto:sufyaniftikhar1@gmail.com">Email <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-external"></use></svg></a>
+                        <a href="#contact"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-map-pin"></use></svg> Leeds, UK</a>
                     </div>
                 </div>
                 <div class="hero-portrait">
                     <div class="ring"></div>
                     <img src="assets/profile-photo.jpg" alt="Sufyan Iftikhar">
-                    <div class="float-card one"><span class="dot">📊</span> 7,500+ properties</div>
-                    <div class="float-card two"><span class="dot">🤖</span> AI products shipped</div>
+                    <div class="float-card one"><span class="dot"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-trending-up"></use></svg></span> 7,500+ properties</div>
+                    <div class="float-card two"><span class="dot"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-cpu"></use></svg></span> AI products shipped</div>
                 </div>
             </div>
             <div class="stats reveal">
@@ -628,7 +99,7 @@
             </div>
             <div class="strands">
                 <div class="card strand reveal">
-                    <div class="icon">📈</div>
+                    <div class="icon-badge"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-trending-up"></use></svg></div>
                     <h3>Enterprise Data &amp; BI</h3>
                     <div class="strand-role">Lloyds Banking Group — Lloyds Living</div>
                     <p>I own the end-to-end data and BI function for a 7,500+ build-to-rent property portfolio (£1.5bn+), from ingestion and governance through to reporting and stakeholder delivery.</p>
@@ -639,7 +110,7 @@
                     </ul>
                 </div>
                 <div class="card strand reveal">
-                    <div class="icon">🤖</div>
+                    <div class="icon-badge"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-cpu"></use></svg></div>
                     <h3>AI Strategy &amp; Products</h3>
                     <div class="strand-role">NexAura — Co-Founder &amp; CTO</div>
                     <p>I co-founded an AI &amp; data consultancy, leading technical strategy, architecture and delivery — diagnosing inefficiencies and shipping custom AI solutions end-to-end.</p>
@@ -667,10 +138,10 @@
                     <p>At <strong>Lloyds Living</strong> I lead the data and BI function for a 7,500+ property portfolio, owning everything from ingestion and governance to Power BI reporting and stakeholder management. Alongside this, I co-founded <strong>NexAura</strong>, where as CTO I lead AI strategy and product development — helping organisations find where AI drives real efficiency and building the solutions to get there.</p>
                     <p>My journey from <strong>Civil &amp; Structural Engineering (BEng)</strong> into data has given me a rare blend of technical depth and commercial judgement — turning complex datasets into strategic decisions.</p>
                     <div class="about-chips">
-                        <span class="chip">📍 Greater Leeds Area, UK</span>
-                        <span class="chip">🎓 BEng, University of Bradford</span>
-                        <span class="chip">🏆 ICE Student Prize 2020</span>
-                        <span class="chip">⭐ STAR Award</span>
+                        <span class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-map-pin"></use></svg> Greater Leeds Area, UK</span>
+                        <span class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-building"></use></svg> BEng, University of Bradford</span>
+                        <span class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-award"></use></svg> ICE Student Prize 2020</span>
+                        <span class="chip"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-award"></use></svg> STAR Award</span>
                     </div>
                 </div>
             </div>
@@ -687,7 +158,7 @@
             </div>
             <div class="skills-grid">
                 <div class="card skill-card reveal">
-                    <h4><span class="badge">⚡</span> Data &amp; BI Engineering</h4>
+                    <h4><span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-database"></use></svg></span> Data &amp; BI Engineering</h4>
                     <ul>
                         <li>Power BI — Advanced DAX, Power Query, Dataflows</li>
                         <li>Microsoft Fabric — OneLake, Lakehouse, Warehouse, Data Factory</li>
@@ -697,7 +168,7 @@
                     </ul>
                 </div>
                 <div class="card skill-card reveal">
-                    <h4><span class="badge">🧠</span> Applied AI &amp; Automation</h4>
+                    <h4><span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-cpu"></use></svg></span> Applied AI &amp; Automation</h4>
                     <ul>
                         <li>LLM APIs &amp; prompt / solution design (Anthropic, OpenAI)</li>
                         <li>Agentic workflows &amp; intelligent data processing</li>
@@ -707,7 +178,7 @@
                     </ul>
                 </div>
                 <div class="card skill-card reveal">
-                    <h4><span class="badge">📊</span> Analytics &amp; Project Controls</h4>
+                    <h4><span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-trending-up"></use></svg></span> Analytics &amp; Project Controls</h4>
                     <ul>
                         <li>Cost &amp; schedule performance, KPI frameworks</li>
                         <li>Forecasting &amp; variance analysis</li>
@@ -717,7 +188,7 @@
                     </ul>
                 </div>
                 <div class="card skill-card reveal">
-                    <h4><span class="badge">🎯</span> Strategy &amp; Domain</h4>
+                    <h4><span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-target"></use></svg></span> Strategy &amp; Domain</h4>
                     <ul>
                         <li>AI adoption &amp; solution architecture</li>
                         <li>Real estate finance &amp; analytics</li>
@@ -816,6 +287,7 @@
             </div>
             <div class="filters reveal">
                 <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="data">Data Platform</button>
                 <button class="filter-btn" data-filter="ai">AI</button>
                 <button class="filter-btn" data-filter="powerbi">Power BI</button>
                 <button class="filter-btn" data-filter="automation">Automation</button>
@@ -823,33 +295,53 @@
             </div>
             <div class="projects-grid" id="projectsGrid">
 
+                <div class="card project-card reveal" data-category="data powerbi" onclick="window.location.href='projects/property_portfolio_case_study.html'">
+                    <div class="project-visual"><img src="assets/projects/property_portfolio/property_portfolio_project_image.png" alt="Property Portfolio dashboard"><span class="project-type">Lloyds Living</span></div>
+                    <div class="project-body">
+                        <h3>BTR Portfolio Analytics</h3>
+                        <p>A unified Power BI model giving finance, operations and investment teams a single source of truth across a 7,500+ build-to-rent portfolio — occupancy, arrears, ERV and compliance.</p>
+                        <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">RLS</span></div>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
+                    </div>
+                </div>
+
+                <div class="card project-card reveal" data-category="data" onclick="window.location.href='projects/fabric_platform_case_study.html'">
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-layers"></use></svg><span class="project-type">Lloyds Living</span></div>
+                    <div class="project-body">
+                        <h3>Microsoft Fabric Platform Migration</h3>
+                        <p>Led the move from manual Excel/Access processes to a cloud-native Microsoft Fabric lakehouse with a Bronze–Silver–Gold medallion architecture — cutting manual processing time by ~80%.</p>
+                        <div class="project-tech"><span class="tech-tag">Microsoft Fabric</span><span class="tech-tag">Medallion</span><span class="tech-tag">Data Factory</span></div>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
+                    </div>
+                </div>
+
+                <div class="card project-card reveal" data-category="data powerbi" onclick="window.location.href='projects/data_governance_case_study.html'">
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-shield-check"></use></svg><span class="project-type">Lloyds Living</span></div>
+                    <div class="project-body">
+                        <h3>Data Governance &amp; Semantic Model</h3>
+                        <p>Built a governed single semantic model with row-level security, an audit-ready data dictionary and monthly data-quality governance with external managing agents.</p>
+                        <div class="project-tech"><span class="tech-tag">Governance</span><span class="tech-tag">Semantic Model</span><span class="tech-tag">Data Dictionary</span></div>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
+                    </div>
+                </div>
+
                 <div class="card project-card reveal" data-category="ai" onclick="window.open('https://www.nexauragroup.co.uk','_blank')">
-                    <div class="project-visual"><span class="emoji">🎧🧠</span><span class="project-type">NexAura · AI Product</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-headphones"></use></svg><span class="project-type">NexAura · AI Product</span></div>
                     <div class="project-body">
                         <h3>Bilingual AI Call-Centre QA</h3>
                         <p>An LLM-powered platform that evaluates customer interactions in English and Urdu — real-time voice transcription with structured scoring for quality assurance at scale.</p>
-                        <div class="project-tech"><span class="tech-tag">LLMs</span><span class="tech-tag">LiveKit</span><span class="tech-tag">Voice AI</span><span class="tech-tag">Next.js</span></div>
-                        <span class="project-link">Visit NexAura →</span>
+                        <div class="project-tech"><span class="tech-tag">LLMs</span><span class="tech-tag">LiveKit</span><span class="tech-tag">Voice AI</span></div>
+                        <span class="project-link">Visit NexAura <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-external"></use></svg></span>
                     </div>
                 </div>
 
                 <div class="card project-card reveal" data-category="ai" onclick="window.open('https://www.nexauragroup.co.uk','_blank')">
-                    <div class="project-visual"><span class="emoji">🏥📝</span><span class="project-type">NexAura · AI Product</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-activity"></use></svg><span class="project-type">NexAura · AI Product</span></div>
                     <div class="project-body">
                         <h3>AI Hospital Management System</h3>
                         <p>Clinical transcription that converts multilingual patient–clinician conversations into structured records — reducing administrative burden and supporting clinical workflow efficiency.</p>
-                        <div class="project-tech"><span class="tech-tag">LLMs</span><span class="tech-tag">Transcription</span><span class="tech-tag">Supabase</span><span class="tech-tag">MCP</span></div>
-                        <span class="project-link">Visit NexAura →</span>
-                    </div>
-                </div>
-
-                <div class="card project-card reveal" data-category="powerbi" onclick="window.location.href='projects/property_portfolio_case_study.html'">
-                    <div class="project-visual"><img src="assets/projects/property_portfolio/property_portfolio_project_image.png" alt="Property Portfolio dashboard"><span class="project-type">Dashboard</span></div>
-                    <div class="project-body">
-                        <h3>Property Portfolio Management</h3>
-                        <p>A unified Power BI solution delivering real-time insight across 7,500+ properties — occupancy, rental performance and compliance monitoring.</p>
-                        <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Data Modelling</span></div>
-                        <span class="project-link">View case study →</span>
+                        <div class="project-tech"><span class="tech-tag">LLMs</span><span class="tech-tag">Transcription</span><span class="tech-tag">Supabase</span></div>
+                        <span class="project-link">Visit NexAura <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-external"></use></svg></span>
                     </div>
                 </div>
 
@@ -859,27 +351,27 @@
                         <h3>NWG Contract Management</h3>
                         <p>A dashboard for a £3bn programme that reduced overdue compensation events by 30% and saved 10+ hours of manual reporting weekly.</p>
                         <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">Contract Bee API</span><span class="tech-tag">Time Series</span></div>
-                        <span class="project-link">View case study →</span>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
                 <div class="card project-card reveal" data-category="automation ai" onclick="window.location.href='projects/n8n_parent_communication_case_study.html'">
-                    <div class="project-visual"><span class="emoji">📧🤖</span><span class="project-type">AI &amp; Automation</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg><span class="project-type">AI &amp; Automation</span></div>
                     <div class="project-body">
                         <h3>Automated Parent Communication</h3>
                         <p>An AI agent that monitors student data and automatically drafts personalised emails to parents for timely intervention and praise.</p>
                         <div class="project-tech"><span class="tech-tag">n8n</span><span class="tech-tag">LLM</span><span class="tech-tag">Automation</span></div>
-                        <span class="project-link">View case study →</span>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
                 <div class="card project-card reveal" data-category="automation ai" onclick="window.location.href='projects/n8n_report_card_case_study.html'">
-                    <div class="project-visual"><span class="emoji">📄✨</span><span class="project-type">AI &amp; Automation</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-file-text"></use></svg><span class="project-type">AI &amp; Automation</span></div>
                     <div class="project-body">
                         <h3>AI Report Card Generation</h3>
                         <p>An AI-driven workflow that transforms raw student data into narrative-style term reports, saving hours of manual work.</p>
                         <div class="project-tech"><span class="tech-tag">n8n</span><span class="tech-tag">LLM</span><span class="tech-tag">Excel</span></div>
-                        <span class="project-link">View case study →</span>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
@@ -889,37 +381,37 @@
                         <h3>House Prices Regression</h3>
                         <p>A personal project predicting house prices using advanced regression techniques and feature engineering.</p>
                         <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">Pandas</span></div>
-                        <span class="project-link">View case study →</span>
+                        <span class="project-link">View case study <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
                 <div class="card project-card reveal" data-category="powerbi automation" onclick="window.location.href='blog/semantic_model_blog.html'">
-                    <div class="project-visual"><span class="emoji">🧠</span><span class="project-type">Technical Article</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-sparkles"></use></svg><span class="project-type">Technical Article</span></div>
                     <div class="project-body">
                         <h3>AI-Powered Data Dictionaries</h3>
                         <p>Using AI to automatically generate intelligent, audit-ready data dictionaries for Power BI semantic models.</p>
                         <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">AI</span><span class="tech-tag">Governance</span></div>
-                        <span class="project-link">Read article →</span>
+                        <span class="project-link">Read article <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
                 <div class="card project-card reveal" data-category="automation" onclick="window.location.href='blog/email_automation_blog.html'">
-                    <div class="project-visual"><span class="emoji">📥⚙️</span><span class="project-type">Technical Article</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-workflow"></use></svg><span class="project-type">Technical Article</span></div>
                     <div class="project-body">
                         <h3>Automated Email Data Pipeline</h3>
                         <p>An end-to-end pipeline that captures, validates and processes email attachments into actionable BI.</p>
                         <div class="project-tech"><span class="tech-tag">Automation</span><span class="tech-tag">Python</span><span class="tech-tag">ETL</span></div>
-                        <span class="project-link">Read article →</span>
+                        <span class="project-link">Read article <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
                 <div class="card project-card reveal" data-category="automation ml" onclick="window.location.href='blog/data_validation_blog.html'">
-                    <div class="project-visual"><span class="emoji">✅🐍</span><span class="project-type">Technical Article</span></div>
+                    <div class="project-visual"><svg class="visual-icon" aria-hidden="true"><use href="assets/icons.svg#i-check-circle"></use></svg><span class="project-type">Technical Article</span></div>
                     <div class="project-body">
                         <h3>Automated Data Validation</h3>
                         <p>A Python solution that uses an Excel data dictionary to automate data-quality checks and generate error reports.</p>
                         <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">Data Quality</span></div>
-                        <span class="project-link">Read article →</span>
+                        <span class="project-link">Read article <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg></span>
                     </div>
                 </div>
 
@@ -941,21 +433,21 @@
                 <div class="stack-item"><img src="assets/tools/powerbi.png" alt="Power BI"><span class="name">Power BI</span></div>
                 <div class="stack-item"><img src="assets/tools/sql.png" alt="SQL"><span class="name">SQL</span></div>
                 <div class="stack-item"><img src="assets/tools/python.png" alt="Python"><span class="name">Python</span></div>
-                <div class="stack-item"><span class="pill-icon gradient-text">Fabric</span><span class="name">Microsoft Fabric</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-layers"></use></svg></span><span class="name">Microsoft Fabric</span></div>
                 <div class="stack-item"><img src="assets/tools/tableau.png" alt="Tableau"><span class="name">Tableau</span></div>
                 <div class="stack-item"><img src="assets/tools/excel.png" alt="Excel"><span class="name">Excel &amp; VBA</span></div>
             </div>
 
             <p class="stack-group-label reveal">AI &amp; Automation</p>
             <div class="stack-grid reveal">
-                <div class="stack-item"><span class="pill-icon gradient-text">A</span><span class="name">Anthropic</span></div>
-                <div class="stack-item"><span class="pill-icon gradient-text">AI</span><span class="name">OpenAI</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-sparkles"></use></svg></span><span class="name">Anthropic</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-cpu"></use></svg></span><span class="name">OpenAI</span></div>
                 <div class="stack-item"><img src="assets/tools/n8n.png" alt="n8n"><span class="name">n8n</span></div>
                 <div class="stack-item"><img src="assets/tools/power-automate.png" alt="Power Automate"><span class="name">Power Automate</span></div>
-                <div class="stack-item"><span class="pill-icon gradient-text">⚡</span><span class="name">Supabase</span></div>
-                <div class="stack-item"><span class="pill-icon gradient-text">▲</span><span class="name">Next.js · Vercel</span></div>
-                <div class="stack-item"><span class="pill-icon gradient-text">◉</span><span class="name">LiveKit</span></div>
-                <div class="stack-item"><span class="pill-icon gradient-text">MCP</span><span class="name">Model Context Protocol</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-database"></use></svg></span><span class="name">Supabase</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-triangle"></use></svg></span><span class="name">Next.js · Vercel</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-mic"></use></svg></span><span class="name">LiveKit</span></div>
+                <div class="stack-item"><span class="stack-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-share"></use></svg></span><span class="name">MCP</span></div>
             </div>
         </div>
     </section>
@@ -981,10 +473,10 @@
                 </a>
             </div>
             <div class="honors reveal">
-                <span class="honor"><span>🏅</span>ICE Student Prize 2020</span>
-                <span class="honor"><span>🏅</span>IStructE Raymond Corrigan Memorial Prize</span>
-                <span class="honor"><span>🏅</span>ICE Local Branch Prize</span>
-                <span class="honor"><span>⭐</span>STAR Award</span>
+                <span class="honor"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-award"></use></svg> ICE Student Prize 2020</span>
+                <span class="honor"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-award"></use></svg> IStructE Raymond Corrigan Memorial Prize</span>
+                <span class="honor"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-award"></use></svg> ICE Local Branch Prize</span>
+                <span class="honor"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-award"></use></svg> STAR Award</span>
             </div>
         </div>
     </section>
@@ -1002,7 +494,6 @@
                     <div class="logo-item"><img src="assets/logos/canal-river-trust.png" alt="Canal & River Trust"></div>
                     <div class="logo-item"><img src="assets/logos/national-highways.png" alt="National Highways"></div>
                     <div class="logo-item"><img src="assets/logos/norfolk-council.png" alt="Norfolk County Council"></div>
-                    <!-- duplicate for seamless loop -->
                     <div class="logo-item"><img src="assets/logos/lloyds-banking-group.png" alt=""></div>
                     <div class="logo-item"><img src="assets/logos/turner-townsend.png" alt=""></div>
                     <div class="logo-item"><img src="assets/logos/wsp.png" alt=""></div>
@@ -1024,22 +515,22 @@
                 <p>Whether you need a trusted data platform, executive reporting or an AI solution that drives real efficiency — I'd love to hear from you.</p>
                 <div class="contact-methods">
                     <a class="contact-method" href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">
-                        <span class="ci"><img src="assets/logos/linkedin.png" alt="LinkedIn"></span>
+                        <span class="ci"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-linkedin"></use></svg></span>
                         <span class="cm-label">LinkedIn</span>
                         <span class="val">/in/sufyaniftikhar</span>
                     </a>
                     <a class="contact-method" href="mailto:sufyaniftikhar1@gmail.com">
-                        <span class="ci">✉️</span>
+                        <span class="ci"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg></span>
                         <span class="cm-label">Personal</span>
                         <span class="val">sufyaniftikhar1@gmail.com</span>
                     </a>
                     <a class="contact-method" href="mailto:sufyan.iftikhar@nexauragroup.co.uk">
-                        <span class="ci">🤝</span>
+                        <span class="ci"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-briefcase"></use></svg></span>
                         <span class="cm-label">Business — NexAura</span>
                         <span class="val">sufyan.iftikhar@nexauragroup.co.uk</span>
                     </a>
                     <div class="contact-method">
-                        <span class="ci">📍</span>
+                        <span class="ci"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-map-pin"></use></svg></span>
                         <span class="cm-label">Location</span>
                         <span class="val">Leeds, West Yorkshire, UK</span>
                     </div>
@@ -1061,59 +552,6 @@
         </div>
     </footer>
 
-    <script>
-        (function () {
-            // ----- Theme -----
-            const root = document.documentElement;
-            const stored = localStorage.getItem('theme');
-            if (stored) root.setAttribute('data-theme', stored);
-            else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.setAttribute('data-theme', 'light');
-
-            document.getElementById('themeToggle').addEventListener('click', () => {
-                const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                root.setAttribute('data-theme', next);
-                localStorage.setItem('theme', next);
-            });
-
-            // ----- Mobile menu -----
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navLinks = document.getElementById('navLinks');
-            mobileToggle.addEventListener('click', () => {
-                mobileToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            }));
-
-            // ----- Header shadow on scroll -----
-            const header = document.getElementById('header');
-            const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
-            onScroll();
-            window.addEventListener('scroll', onScroll, { passive: true });
-
-            // ----- Reveal on scroll -----
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-            // ----- Project filters -----
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('#projectsGrid .project-card');
-            filterBtns.forEach(btn => btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const f = btn.dataset.filter;
-                cards.forEach(c => {
-                    const show = f === 'all' || c.dataset.category.includes(f);
-                    c.style.display = show ? '' : 'none';
-                });
-            }));
-        })();
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

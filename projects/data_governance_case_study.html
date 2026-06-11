@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Governance &amp; Unified Semantic Model — Sufyan Iftikhar</title>
+    <meta name="description" content="Building a governed single semantic model with row-level security, an audit-ready data dictionary and monthly data-quality governance with external managing agents at Lloyds Living.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
+</head>
+<body>
+    <div class="bg-decor"><span></span><span></span><span></span></div>
+
+    <header id="header">
+        <nav>
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+                    <svg class="icon moon" aria-hidden="true"><use href="../assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="../assets/icons.svg#i-sun"></use></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="cs-hero">
+        <div class="container-narrow">
+            <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"></use></svg> Lloyds Living · Case study</span>
+            <h1 class="cs-title">Data Governance &amp; a Unified Semantic Model</h1>
+            <p class="cs-lede">Establishing the governance framework behind the portfolio's analytics — a single, trusted semantic model with row-level security, an audit-ready data dictionary, documented data flows, and a monthly governance rhythm that holds external managing agents accountable for data quality.</p>
+            <div class="cs-meta">
+                <div><div class="k">Organisation</div><div class="v">Lloyds Living</div></div>
+                <div><div class="k">Role</div><div class="v">Assistant Data &amp; Reporting Manager</div></div>
+                <div><div class="k">Focus</div><div class="v">Governance · Semantic model · RLS</div></div>
+                <div><div class="k">Stakeholders</div><div class="v">Internal teams &amp; external agents</div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-body">
+        <div class="container-narrow">
+
+            <h2>Context</h2>
+            <p>A trusted reporting platform needs more than good pipelines — it needs governance: clear definitions, controlled access, documented lineage, and accountability for the quality of incoming data. With data arriving from multiple internal teams and several external managing agents, inconsistent submissions were a constant risk to the integrity of every report.</p>
+            <p>I established the governance framework that wraps around the analytics — defining the model, the rules, the documentation and the operating rhythm that keep the numbers dependable.</p>
+
+            <h2>The challenge</h2>
+            <ul>
+                <li><strong>Inconsistent definitions.</strong> The same metric meant different things to different teams, eroding trust.</li>
+                <li><strong>Variable data quality.</strong> External agents submitted data to different standards, completeness and timeliness.</li>
+                <li><strong>Access control.</strong> Audiences needed tailored views without seeing data outside their remit.</li>
+                <li><strong>Limited documentation.</strong> Business logic lived in people's heads, not in an auditable reference.</li>
+            </ul>
+
+            <h2>What I built</h2>
+
+            <h3>1 · One governed semantic model</h3>
+            <p>A single Power BI semantic model is the canonical definition of every metric. Measures are written once in DAX and reused across all report areas — financial performance, lettings, arrears, rent changes, compliance, EDLP and complaints — so figures reconcile by construction rather than by reconciliation.</p>
+
+            <h3>2 · Row-level security &amp; audience-based access</h3>
+            <p>The model is distributed through a governed Power BI app. <strong>Row-level security</strong> and audience-based access ensure each team sees exactly the slice relevant to them — the same trusted source, tailored and secured per role.</p>
+
+            <h3>3 · An audit-ready data dictionary</h3>
+            <p>I built a full data dictionary documenting every table, column and Power BI metric, including how each measure is calculated. Designed for audit, it turns the model from a "black box" into a transparent, self-describing asset — and dramatically lowers the barrier for new team members and report builders.</p>
+
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-file-text"></use></svg></span>
+                <p><strong>Documented lineage.</strong> Process documentation and end-to-end data flow diagrams map data from source submission through to the metric on the report — so anyone can see where a number comes from.</p>
+            </div>
+
+            <h3>4 · A monthly governance rhythm</h3>
+            <p>I lead monthly data governance meetings with external managing agents — setting submission standards, running the agenda, and holding agents accountable for the quality and completeness of what they provide. Automated validation built into the pipeline flags issues early, turning data quality into a managed, visible process rather than a surprise at month-end.</p>
+
+            <h2>Results</h2>
+            <div class="cs-results">
+                <div class="cs-result"><div class="rn gradient-text">1</div><div class="rl">Canonical semantic model</div></div>
+                <div class="cs-result"><div class="rn gradient-text">RLS</div><div class="rl">Secure, audience-based access</div></div>
+                <div class="cs-result"><div class="rn gradient-text">100%</div><div class="rl">Tables &amp; metrics documented</div></div>
+                <div class="cs-result"><div class="rn gradient-text">Monthly</div><div class="rl">Agent governance cadence</div></div>
+            </div>
+            <ul>
+                <li><strong>Trusted by default</strong> — one definition per metric removed conflicting numbers.</li>
+                <li><strong>Accountable data quality</strong> — agents are held to clear submission standards, improving completeness and timeliness.</li>
+                <li><strong>Faster onboarding</strong> — the data dictionary lets new analysts and report builders understand the model without reverse-engineering DAX.</li>
+            </ul>
+
+            <h2>Skills demonstrated</h2>
+            <div class="tag-row">
+                <span class="tech-tag">Data governance</span>
+                <span class="tech-tag">Semantic modelling</span>
+                <span class="tech-tag">Row-level security</span>
+                <span class="tech-tag">Data dictionaries</span>
+                <span class="tech-tag">Data flow documentation</span>
+                <span class="tech-tag">Stakeholder management</span>
+                <span class="tech-tag">Data quality assurance</span>
+            </div>
+
+            <div class="cs-nav">
+                <a href="property_portfolio_case_study.html" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-trending-up"></use></svg> Next: BTR portfolio analytics</a>
+                <a href="../index.html#projects" class="btn btn-primary">All projects <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"></use></svg></a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-inner">
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="footer-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2026 Sufyan Iftikhar</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+</body>
+</html>

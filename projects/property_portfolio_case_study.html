@@ -1,147 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Portfolio Management Dashboard - Sufyan Iftikhar</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Build-to-Rent Portfolio Analytics — Sufyan Iftikhar</title>
+    <meta name="description" content="A unified Power BI analytics product giving finance, operations and investment teams a single source of truth across a 7,500+ property build-to-rent portfolio at Lloyds Living.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
+    <div class="bg-decor"><span></span><span></span><span></span></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
-                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+    <header id="header">
+        <nav>
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+                    <svg class="icon moon" aria-hidden="true"><use href="../assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="../assets/icons.svg#i-sun"></use></svg>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <section class="cs-hero">
+        <div class="container-narrow">
+            <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-trending-up"></use></svg> Lloyds Living · Case study</span>
+            <h1 class="cs-title">Build-to-Rent Portfolio Analytics</h1>
+            <p class="cs-lede">A unified Power BI product that gives finance, operations and investment teams a single, trusted source of truth across a 7,500+ property build-to-rent portfolio — covering occupancy, lettings, arrears, rental performance and compliance.</p>
+            <div class="cs-meta">
+                <div><div class="k">Organisation</div><div class="v">Lloyds Living</div></div>
+                <div><div class="k">Role</div><div class="v">Assistant Data &amp; Reporting Manager</div></div>
+                <div><div class="k">Stack</div><div class="v">Power BI · DAX · Microsoft Fabric</div></div>
+                <div><div class="k">Scope</div><div class="v">7,500+ homes · £1.5bn+</div></div>
+            </div>
+        </div>
+    </section>
 
-        <div class="bg-white p-8 rounded-xl shadow-lg">
+    <div class="cs-body">
+        <div class="container-narrow">
 
-            <!-- Project Title -->
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Property Portfolio Management Dashboard</h2>
-            <p class="text-xl text-gray-600 mb-8">A Power BI dashboard designed to provide a comprehensive, 360-degree view of a large-scale residential property portfolio.</p>
+            <h2>Context</h2>
+            <p>Lloyds Living operates a large, growing build-to-rent (BTR) portfolio with homes managed across a mix of in-house teams and external managing agents. Performance data — income, budgets, lettings, arrears, expenditure, stock and compliance — arrived in different shapes, on different cadences, from different sources. Reporting was largely manual, which made a single, reconciled view of the portfolio slow to produce and hard to trust.</p>
+            <p>As <strong>Assistant Data &amp; Reporting Manager</strong>, I own the analytics product that sits on top of this data — translating raw operational and financial feeds into the metrics the business actually steers by.</p>
 
-            <!-- Project Meta -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Context</h4>
-                    <p class="text-lg font-bold text-gray-900">Interview Technical Task</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Role</h4>
-                    <p class="text-lg font-bold text-gray-900">Assistant Data & Reporting Manager</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Tools Used</h4>
-                    <p class="text-lg font-bold text-gray-900">Power BI, DAX, Star Schema</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Properties Analysed</h4>
-                    <p class="text-lg font-bold text-gray-900">5,500+</p>
-                </div>
+            <h2>The challenge</h2>
+            <ul>
+                <li><strong>No single source of truth.</strong> Finance, operations and investment teams each maintained their own numbers, so the same metric could be reported three different ways.</li>
+                <li><strong>Fragmented, multi-source data.</strong> Income, arrears, lettings, ERV, expenditure and compliance lived in separate files and systems with inconsistent keys.</li>
+                <li><strong>Slow, manual reporting.</strong> The monthly cycle absorbed significant effort before anyone could ask a question of the data.</li>
+                <li><strong>Governed access.</strong> Different audiences needed different views — without exposing data they shouldn't see.</li>
+            </ul>
+
+            <h2>What I built</h2>
+            <p>A single, governed Power BI analytics product built on a curated Gold-layer model, distributed as a managed app with role-level security. The work spanned the full lifecycle — data modelling, DAX, report design, and rollout.</p>
+
+            <h3>1 · A unified semantic model</h3>
+            <p>At the core is one star-schema semantic model — conformed dimensions for property, agent, region, time and tenancy, with fact tables for income, arrears, lettings and expenditure. A single model means every report area calculates metrics the same way, so occupancy on the executive page reconciles exactly with occupancy on the lettings page.</p>
+
+            <h3>2 · Report areas the business steers by</h3>
+            <ul>
+                <li><strong>Financial performance</strong> — rental income vs budget, ERV vs achieved rent, net income and variance.</li>
+                <li><strong>Lettings &amp; occupancy</strong> — occupancy, void loss, time-to-let and pipeline.</li>
+                <li><strong>Arrears</strong> — current and historic arrears with ageing and trend.</li>
+                <li><strong>Compliance</strong> — certificate status (e.g. gas, electrical) and upcoming expiries.</li>
+                <li><strong>Rent changes, EDLP &amp; complaints</strong> — additional governed views for specialist teams.</li>
+            </ul>
+
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"></use></svg></span>
+                <p><strong>Governed distribution.</strong> The model is published through a Power BI app with row-level security and audience-based access, so each team sees a tailored, trusted view from the same single source of truth.</p>
             </div>
 
-            <!-- Project Overview -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Project Overview</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    This project was undertaken as a technical assessment for an Assistant Data & Reporting Manager role. The task was to take raw, disconnected datasets related to a large property portfolio and transform them into a powerful, interactive Power BI dashboard. The goal was to demonstrate proficiency in data modeling, DAX, and creating visually compelling reports that deliver actionable business insights.
-                </p>
-            </section>
+            <h3>3 · Trusted, automated metrics</h3>
+            <p>Key measures — occupancy, void loss, rental income vs budget, ERV vs achieved rent, time-to-let, arrears and compliance status — are defined once in DAX and reused everywhere. Supporting automation (Python, VBA) streamlines the monthly refresh so the model is dependable rather than hand-assembled.</p>
 
-            <!-- The Business Challenge -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    A property investment firm had its portfolio data spread across multiple CSV files: a master list of all owned properties (Company Stocklist), a list of properties managed by external agents (Agent Stocklist), tenancy agreement details, and a mapping file for agents and locations. This fragmented data structure made it impossible to get a holistic view of the portfolio's performance, leading to several challenges:
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-gray-700 mt-4">
-                    <li>Inability to accurately track key metrics like portfolio-wide occupancy and vacancy rates.</li>
-                    <li>Difficulty in comparing the performance of different managing agents and regions.</li>
-                    <li>No straightforward way to analyse rental income against estimated market values (ERV).</li>
-                    <li>Time-consuming and error-prone manual data consolidation for any ad-hoc analysis.</li>
-                </ul>
-            </section>
-
-            <!-- The Solution -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">My Solution: An Integrated Analytics Dashboard</h3>
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    I developed a comprehensive Power BI dashboard built on a robust and efficient data model. The solution involved two key stages:
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Data Modeling -->
-                    <div class="bg-gray-100 p-6 rounded-lg">
-                        <h4 class="text-2xl font-bold text-gray-800 mb-3">1. Data Modeling: The Star Schema</h4>
-                        <p class="text-gray-700 mb-4">
-                            The foundation of the report is a meticulously designed star schema data model. This approach is crucial for performance and scalability in Power BI.
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li><strong>Fact Table:</strong> A central 'Tenancy' table containing the core transactional data like rental amounts and dates.</li>
-                            <li><strong>Dimension Tables:</strong> Separate tables for 'Company Stocklist', 'Agent Stocklist', 'Agent Mapping', and a custom-built 'Date' table.</li>
-                            <li><strong>Relationships:</strong> Clean, single-direction relationships were established from dimension tables to the fact table, ensuring data integrity and query efficiency.</li>
-                        </ul>
-                    </div>
-                    <!-- Dashboard Development -->
-                    <div class="bg-gray-100 p-6 rounded-lg">
-                        <h4 class="text-2xl font-bold text-gray-800 mb-3">2. Dashboard Development</h4>
-                        <p class="text-gray-700 mb-4">
-                           The front-end is an intuitive and interactive dashboard that allows stakeholders to explore the data effortlessly.
-                        </p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li><strong>KPI Cards:</strong> High-level metrics like Total Properties, Occupancy Rate, and Average Rent are displayed prominently.</li>
-                            <li><strong>Visualisations:</strong> Charts and maps show the distribution of properties, regional performance, and occupancy status.</li>
-                            <li><strong>Interactive Filters:</strong> Users can dynamically filter the entire report by region, managing agent, property type, number of bedrooms, and more.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Dashboard Preview -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4 text-center">Dashboard Preview</h3>
-                <div class="mt-6 flex flex-col items-center">
-                    <a href="../assets/projects/property_portfolio/property_portfolio_dashboard.pdf" 
-                   target="_blank" 
-                   title="Click to view the full PDF dashboard" 
-                   class="flex flex-col items-center">
-                    <img src="../assets/projects/property_portfolio/dashboard_preview.png" 
-                         alt="Screenshot of the Property Portfolio Management Dashboard" 
-                         class="rounded-lg shadow-2xl border border-gray-200 transform hover:scale-105 transition-transform duration-300">
-                    <span class="text-center text-gray-600 mt-4">Click to view the full PDF in a new tab.</span>
+            <figure class="cs-figure">
+                <a href="../assets/projects/property_portfolio/property_portfolio_dashboard.pdf" target="_blank" rel="noopener">
+                    <img src="../assets/projects/property_portfolio/dashboard_preview.png" alt="Preview of the portfolio analytics dashboard">
                 </a>
-            </div>
-        </section>
+                <figcaption>Representative dashboard view — click to open the full PDF.</figcaption>
+            </figure>
 
-            <!-- Key Features & Insights -->
-            <section>
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Features & Actionable Insights</h3>
-                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
-                    <li><strong class="font-semibold text-gray-900">Portfolio Health Overview:</strong> Provides an immediate, high-level summary of the entire portfolio's status and performance.</li>
-                    <li><strong class="font-semibold text-gray-900">Occupancy & Vacancy Analysis:</strong> Users can instantly see which regions or agents have the highest vacancy rates, enabling targeted intervention.</li>
-                    <li><strong class="font-semibold text-gray-900">Rental Performance Comparison:</strong> The dashboard clearly visualises the gap between the current Estimated Rental Value (ERV) and the actual achieved rent, highlighting opportunities for rent reviews.</li>
-                    <li><strong class="font-semibold text-gray-900">Geospatial Analysis:</strong> An integrated map shows property distribution across the UK, helping to identify regional concentrations and potential new investment areas.</li>
-                    <li><strong class="font-semibold text-gray-900">Compliance Monitoring:</strong> Key dates for compliance checks (e.g., Gas Certificate Expiry) are tracked to ensure regulatory adherence.</li>
-                </ul>
-            </section>
+            <h2>Results</h2>
+            <div class="cs-results">
+                <div class="cs-result"><div class="rn gradient-text">7,500+</div><div class="rl">Homes covered by one model</div></div>
+                <div class="cs-result"><div class="rn gradient-text">1</div><div class="rl">Single source of truth</div></div>
+                <div class="cs-result"><div class="rn gradient-text">~80%</div><div class="rl">Less manual processing</div></div>
+                <div class="cs-result"><div class="rn gradient-text">Self-serve</div><div class="rl">Analytics across the business</div></div>
+            </div>
+            <ul>
+                <li><strong>One reconciled view</strong> across finance, operations and investment — debates moved from "whose number is right" to "what do we do about it".</li>
+                <li><strong>Faster cycle</strong> — automation and a curated model cut the manual effort that used to dominate each month.</li>
+                <li><strong>Self-service</strong> — teams answer their own questions through governed reports instead of raising ad-hoc requests.</li>
+            </ul>
+
+            <h2>Skills demonstrated</h2>
+            <div class="tag-row">
+                <span class="tech-tag">Data modelling (star schema)</span>
+                <span class="tech-tag">Advanced DAX</span>
+                <span class="tech-tag">Power BI service &amp; apps</span>
+                <span class="tech-tag">Row-level security</span>
+                <span class="tech-tag">Stakeholder management</span>
+                <span class="tech-tag">Automation (Python / VBA)</span>
+                <span class="tech-tag">Real estate finance</span>
+            </div>
+
+            <div class="cs-nav">
+                <a href="fabric_platform_case_study.html" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-layers"></use></svg> Next: Fabric platform migration</a>
+                <a href="../index.html#projects" class="btn btn-primary">All projects <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"></use></svg></a>
+            </div>
 
         </div>
+    </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white mt-12 py-6">
-        <div class="container mx-auto text-center text-gray-500">
-            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+    <footer>
+        <div class="container footer-inner">
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="footer-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2026 Sufyan Iftikhar</p>
         </div>
     </footer>
 
+    <script src="../assets/js/site.js"></script>
 </body>
 </html>

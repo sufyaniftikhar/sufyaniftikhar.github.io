@@ -1,170 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NWG Contract Management App - Sufyan Iftikhar</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <title>NWG Contract Performance App — Sufyan Iftikhar</title>
+    <meta name="description" content="An enterprise Power BI application centralising contract management for Northumbrian Water Group's £3 billion AMP7 programme — reducing overdue compensation events by 30%.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
+    <div class="bg-decor"><span></span><span></span><span></span></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
-                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+    <header id="header">
+        <nav>
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+                    <svg class="icon moon" aria-hidden="true"><use href="../assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="../assets/icons.svg#i-sun"></use></svg>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <section class="cs-hero">
+        <div class="container-narrow">
+            <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-briefcase"></use></svg> Turner &amp; Townsend · Case study</span>
+            <h1 class="cs-title">NWG Contract Performance Power BI App</h1>
+            <p class="cs-lede">An enterprise Power BI application that centralised and streamlined contract management for Northumbrian Water Group's £3 billion AMP7 programme — automating reporting for 300+ contracts and giving commercial teams real-time visibility.</p>
+            <div class="cs-meta">
+                <div><div class="k">Client</div><div class="v">Northumbrian Water Group</div></div>
+                <div><div class="k">Role</div><div class="v">Performance Reporting Analyst</div></div>
+                <div><div class="k">Stack</div><div class="v">Power BI · DAX · Power Automate</div></div>
+                <div><div class="k">Programme</div><div class="v">£3bn · 300+ contracts</div></div>
+            </div>
+        </div>
+    </section>
 
-        <div class="bg-white p-8 rounded-xl shadow-lg">
+    <div class="cs-body">
+        <div class="container-narrow">
 
-            <!-- Project Title -->
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">NWG Contract Performance Power BI App</h2>
-            <p class="text-xl text-gray-600 mb-8">An enterprise-level Power BI application designed to centralise and streamline contract management for Northumbrian Water Group's £3 billion AMP7 programme.</p>
+            <h2>Project overview</h2>
+            <p>Northumbrian Water Group (NWG) needed enhanced visibility into contract performance across their AMP7 (2020–2025) and AMP8 (2025–2030) Asset Management Periods. While their existing Contract Bee system captured comprehensive contract data, it lacked the analytical depth and custom visualisation needed for strategic decision-making.</p>
+            <p>I designed and deployed a comprehensive Power BI solution that transformed how NWG's commercial teams monitor contract performance, manage compensation events, and ensure regulatory compliance across the £3 billion infrastructure programme.</p>
 
-            <!-- Project Meta -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Client</h4>
-                    <p class="text-lg font-bold text-gray-900">Northumbrian Water Group</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Role</h4>
-                    <p class="text-lg font-bold text-gray-900">Lead Data Analyst</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Tools Used</h4>
-                    <p class="text-lg font-bold text-gray-900">Power BI, Power Automate, DAX</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Programme Value</h4>
-                    <p class="text-lg font-bold text-gray-900">£3 Billion</p>
-                </div>
+            <h2>The business challenge</h2>
+            <p>Contract Bee's standard reporting couldn't provide the custom analytics, interactive filtering and real-time insights needed by commercial managers, project teams and compliance officers overseeing 300+ active contracts. This led to fragmented, manual reporting, limited visibility, delayed compliance tracking, and no quick high-level overview of programme health for senior management.</p>
+
+            <h2>The solution: a centralised Power BI app</h2>
+            <p>I developed and deployed a Power BI App that served as a central hub hosting a suite of interconnected dashboards. By connecting directly to the Contract Bee API and other sources, the app provided a single source of truth for all contract data — enabling self-service analytics and eliminating information silos.</p>
+
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-gauge"></use></svg></span>
+                <p>The solution led to a <strong>30% reduction in overdue compensation events</strong> and saved over <strong>10 hours per week</strong> in manual reporting.</p>
             </div>
 
-            <!-- Project Overview -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Project Overview</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    Northumbrian Water Group (NWG) required enhanced visibility into contract performance across their AMP7 (2020-2025) and AMP8 (2025-2030) Asset Management Periods. While their existing Contract Bee system captured comprehensive contract data, it lacked the analytical depth and custom visualisation capabilities needed for strategic decision-making.
-                </p>
-                <p class="text-gray-700 leading-relaxed">
-                    As the lead data analyst, I designed and deployed a comprehensive Power BI solution that transformed how NWG's commercial teams monitor contract performance, manage compensation events, and ensure regulatory compliance across their £3 billion infrastructure programme.
-                </p>
-            </section>
+            <h3>Dashboards within the app</h3>
+            <ul>
+                <li><strong>Contracts Overview</strong> — a real-time view of contract compliance and performance, surfacing overdue actions so project managers can act proactively.</li>
+                <li><strong>Executive Summary</strong> — a high-level, aggregated view with weekly/monthly/quarterly trend analysis to support strategic decisions.</li>
+                <li><strong>Compliance Deep-Dive</strong> — granular analysis pinpointing bottlenecks and root causes, reducing the risk of contractual penalties.</li>
+                <li><strong>Consultant Invoicing</strong> — visibility over consultant rates, hours and resource allocation, improving control over consultancy costs.</li>
+            </ul>
 
-            <!-- The Challenge -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    Contract Bee's standard reporting couldn't provide the custom analytics, interactive filtering, and real-time insights needed by commercial managers, project teams, and compliance officers to effectively oversee 300+ active contracts. This resulted in fragmented, manual reporting processes, a lack of visibility, delayed compliance tracking, and an inability for senior management to get a quick, high-level overview of programme health.
-                </p>
-            </section>
+            <h2>Development methodology</h2>
+            <p>Following agile principles, the project was delivered through a structured, five-phase approach with stakeholder engagement throughout.</p>
+            <ol>
+                <li><strong>Requirements gathering</strong> — workshops with senior commercial and project managers to define metrics and success criteria.</li>
+                <li><strong>Data integration &amp; modelling</strong> — Contract Bee API connectivity, optimal data models and custom DAX measures.</li>
+                <li><strong>Dashboard development</strong> — interactive visuals with advanced filtering, drill-down and role-appropriate design.</li>
+                <li><strong>User testing &amp; refinement</strong> — iterative sessions with end users to optimise the experience.</li>
+                <li><strong>Deployment &amp; training</strong> — rollout with security controls and training to drive adoption.</li>
+            </ol>
 
-            <!-- The Solution: Power BI App -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Solution: A Centralised Power BI App</h3>
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    To address these challenges, I developed and deployed a comprehensive Power BI App. This app served as a central hub, hosting a suite of interconnected dashboards tailored to specific business needs. By connecting directly to the Contract Bee API and other data sources, the app provided a single source of truth for all contract-related data, enabling self-service analytics and eliminating information silos.
-                </p>
-                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 my-8">
-                    <p class="text-lg italic text-gray-800">This solution led to a <strong class="text-blue-700">30% reduction in overdue compensation events</strong> and saved over <strong class="text-blue-700">10 hours per week</strong> in manual reporting.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Dashboards within the App:</h4>
-                    <div class="space-y-6">
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-users"></use></svg></span>
+                <p>"The Contract Management Dashboard has transformed how our commercial team operates. What previously took hours of manual reporting now happens automatically… the real-time visibility into compensation events has been particularly valuable for maintaining programme budgets." — <em>Senior Commercial Manager, NWG AMP7 Programme</em></p>
+            </div>
 
-                        <!-- Dashboard 1: Contracts Overview -->
-                        <div class="p-4 border-l-4 border-blue-600">
-                            <h5 class="text-xl font-semibold mb-2">1. Contracts Overview Dashboard</h5>
-                            <p class="text-gray-600 mb-2"><strong class="font-semibold text-gray-800">Purpose:</strong> To provide project managers with a detailed, real-time view of contract compliance and performance.</p>
-                            <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Highlighted overdue actions and compliance metrics, enabling project managers to proactively address issues.</p>
-                        </div>
+            <h2>Key outcomes &amp; business impact</h2>
+            <div class="cs-results">
+                <div class="cs-result"><div class="rn gradient-text">30%</div><div class="rl">Fewer overdue compensation events</div></div>
+                <div class="cs-result"><div class="rn gradient-text">10+ hrs</div><div class="rl">Saved weekly on reporting</div></div>
+                <div class="cs-result"><div class="rn gradient-text">50%</div><div class="rl">Faster report generation</div></div>
+                <div class="cs-result"><div class="rn gradient-text">40%+</div><div class="rl">Increase in dashboard adoption</div></div>
+            </div>
+            <ul>
+                <li><strong>Enhanced decision-making</strong> through clear, concise visualisations of critical insights.</li>
+                <li><strong>Improved efficiency</strong> via automation and centralised reporting, reducing manual effort and errors.</li>
+                <li><strong>Proactive risk management</strong> — real-time dashboards enabled early identification and resolution of risks.</li>
+                <li><strong>Increased adoption</strong> — targeted training embedded a data-driven culture across the programme.</li>
+            </ul>
 
-                        <!-- Dashboard 2: Executive Summary -->
-                        <div class="p-4 border-l-4 border-green-600">
-                            <h5 class="text-xl font-semibold mb-2">2. Executive Summary Dashboard</h5>
-                            <p class="text-gray-600 mb-2"><strong class="font-semibold text-gray-800">Purpose:</strong> To offer senior management a high-level, aggregated view of programme performance with time-based analysis capabilities.</p>
-                            <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Enabled leadership to quickly assess performance trends (weekly, monthly, quarterly), aiding in strategic decision-making and the optimisation of contract administration.
-                            </p>
-                        </div>
+            <h2>Skills demonstrated</h2>
+            <div class="tag-row">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Advanced DAX</span>
+                <span class="tech-tag">API integration</span>
+                <span class="tech-tag">Power Automate</span>
+                <span class="tech-tag">KPI frameworks</span>
+                <span class="tech-tag">Stakeholder workshops</span>
+                <span class="tech-tag">Training &amp; adoption</span>
+            </div>
 
-                        <!-- Dashboard 3: Compliance Deep-Dive -->
-                        <div class="p-4 border-l-4 border-yellow-600">
-                            <h5 class="text-xl font-semibold mb-2">3. Compliance Deep-Dive Dashboard</h5>
-                            <p class="text-gray-600 mb-2"><strong class="font-semibold text-gray-800">Purpose:</strong> To allow for granular analysis of compliance data, identifying specific bottlenecks and root causes for delays.</p>
-                            <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Provided the evidence needed to address systemic issues, leading to a significant improvement in overall programme compliance and reducing the risk of contractual penalties.
-                            </p>
-                        </div>
-
-                        <!-- Dashboard 4: Consultant Invoice Dashboard -->
-                        <div class="p-4 border-l-4 border-purple-600">
-                            <h5 class="text-xl font-semibold mb-2">4. Consultant Invoice Dashboard</h5>
-                            <p class="text-gray-600 mb-2"><strong class="font-semibold text-gray-800">Purpose:</strong> To create visibility over consultant invoices, tracking rates, hours worked, and resource allocation across projects.</p>
-                            <p class="text-gray-600"><strong class="font-semibold text-gray-800">Impact:</strong> Improved transparency and control over consultancy costs, ensuring accurate financial reporting and more effective resource management.
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- Development Methodology -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Development Methodology</h3>
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    Following agile principles, the project was delivered through a structured five-phase approach, ensuring stakeholder engagement and iterative refinement throughout the development lifecycle.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-100 p-6 rounded-lg"><strong>1. Requirements Gathering:</strong> Conducted stakeholder workshops with Senior Commercial Managers and Project Managers to define reporting requirements, identify key metrics, and establish success criteria.</div>
-                    <div class="bg-gray-100 p-6 rounded-lg"><strong>2. Data Integration & Modeling:</strong> Established Contract Bee API connectivity, designed optimal data models, and created custom DAX measures for performance calculations.</div>
-                    <div class="bg-gray-100 p-6 rounded-lg"><strong>3. Dashboard Development:</strong> Built interactive visualisations with advanced filtering, drill-down capabilities, and a responsive design for various user roles.</div>
-                    <div class="bg-gray-100 p-6 rounded-lg"><strong>4. User Testing & Refinement:</strong> Conducted iterative testing sessions with end-users, gathered feedback, and implemented optimisations to enhance user experience.</div>
-                    <div class="bg-gray-100 p-6 rounded-lg col-span-1 md:col-span-2"><strong>5. Deployment & Training:</strong> Deployed the solution, implemented security controls, and delivered comprehensive training to ensure successful adoption.</div>
-                </div>
-            </section>
-
-            <!-- Stakeholder Feedback -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Stakeholder Feedback</h3>
-                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <p class="text-lg italic text-gray-800">"The Contract Management Dashboard has transformed how our commercial team operates. What previously took hours of manual reporting now happens automatically, and the insights we're getting are helping us proactively manage contract performance across the entire programme. The real-time visibility into compensation events has been particularly valuable for maintaining programme budgets."</p>
-                    <p class="text-right font-semibold text-gray-700 mt-4">- Senior Commercial Manager, NWG AMP7 Programme</p>
-                </div>
-            </section>
-
-            <!-- Key Outcomes -->
-            <section>
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Outcomes & Business Impact</h3>
-                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
-                    <li><strong class="font-semibold text-gray-900">Enhanced Decision-Making:</strong> Executives gained confidence in strategic decisions through clear, concise data visualisations that highlighted critical insights.</li>
-                    <li><strong class="font-semibold text-gray-900">Improved Operational Efficiency:</strong> Automation and centralised reporting significantly reduced manual effort, minimising errors and allowing teams to focus on higher-value tasks.</li>
-                    <li><strong class="font-semibold text-gray-900">Proactive Risk Management:</strong> The real-time nature of the dashboards enabled early identification and resolution of project risks, ensuring smoother project delivery.</li>
-                    <li><strong class="font-semibold text-gray-900">Increased User Adoption:</strong> Delivered targeted training programs that increased team dashboard utilisation by over 40%, embedding a data-driven culture within the programme.</li>
-                </ul>
-            </section>
+            <div class="cs-nav">
+                <a href="../index.html#projects" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to projects</a>
+                <a href="../index.html#contact" class="btn btn-primary">Get in touch <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"></use></svg></a>
+            </div>
 
         </div>
+    </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white mt-12 py-6">
-        <div class="container mx-auto text-center text-gray-500">
-            <p id="copyright">&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+    <footer>
+        <div class="container footer-inner">
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="footer-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2026 Sufyan Iftikhar</p>
         </div>
     </footer>
-    <script>
-        // Set current year in footer
-        document.getElementById('copyright').innerHTML = `&copy; ${new Date().getFullYear()} Sufyan Iftikhar. All rights reserved.`;
-    </script>
 
+    <script src="../assets/js/site.js"></script>
 </body>
 </html>

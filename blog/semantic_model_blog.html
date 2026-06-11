@@ -1,118 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Semantic Model Documentation - Sufyan Iftikhar</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>AI-Powered Semantic Model Documentation — Sufyan Iftikhar</title>
+    <meta name="description" content="Using AI to automatically generate intelligent, audit-ready data dictionaries for Power BI semantic models — cutting documentation time by over 75%.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
+    <div class="bg-decor"><span></span><span></span><span></span></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
-                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+    <header id="header">
+        <nav>
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+                    <svg class="icon moon" aria-hidden="true"><use href="../assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="../assets/icons.svg#i-sun"></use></svg>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <section class="cs-hero">
+        <div class="container-narrow">
+            <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-sparkles"></use></svg> Technical Article</span>
+            <h1 class="cs-title">AI-Powered Semantic Model Documentation</h1>
+            <p class="cs-lede">An innovative approach that uses AI to automatically generate intelligent, self-updating data dictionaries for Power BI semantic models — turning "black box" models into transparent, trusted assets.</p>
+            <div class="cs-meta">
+                <div><div class="k">Type</div><div class="v">AI &amp; Automation</div></div>
+                <div><div class="k">Stack</div><div class="v">Power BI · TMDL · LLMs</div></div>
+                <div><div class="k">Impact</div><div class="v">75%+ less documentation time</div></div>
+            </div>
+        </div>
+    </section>
 
-        <div class="bg-white p-8 rounded-xl shadow-lg">
+    <div class="cs-body">
+        <div class="container-narrow">
 
-            <!-- Project Title -->
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">AI-Powered Semantic Model Documentation</h2>
-            <p class="text-xl text-gray-600 mb-8">An innovative solution that leverages AI to automatically generate intelligent, self-updating data dictionaries for Power BI semantic models.</p>
+            <h2>The challenge</h2>
+            <p>In most organisations, Power BI model documentation is a major pain point. It's manual, time-consuming and often neglected — leading to "black box" models that are hard to understand, maintain and trust. The result:</p>
+            <ul>
+                <li>Hours wasted reverse-engineering complex DAX measures.</li>
+                <li>Inconsistent or incorrect use of data fields by report builders.</li>
+                <li>A significant barrier to onboarding new team members.</li>
+                <li>A lack of trust in the data, because the business logic is unclear.</li>
+            </ul>
 
-            <!-- Project Meta -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12 border-t border-b border-gray-200 py-6">
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Project Type</h4>
-                    <p class="text-lg font-bold text-gray-900">AI & Automation</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Core Technologies</h4>
-                    <p class="text-lg font-bold text-gray-900">Power BI, TMDL, LLMs</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Impact</h4>
-                    <p class="text-lg font-bold text-gray-900">75% Reduction in Documentation Time</p>
-                </div>
+            <h2>The solution: an AI documentation engine</h2>
+            <p>I developed a solution that automates the creation of a comprehensive data dictionary by combining Power BI's metadata capabilities with the analytical power of LLMs. It extracts the model's structure, sends it to an AI for analysis, and uses the generated insight to build a user-friendly dictionary.</p>
+
+            <h3>The automated workflow</h3>
+            <ol>
+                <li><strong>Metadata &amp; TMDL extraction</strong> — programmatically extract all model metadata (tables, columns, measures, relationships) using Power BI's <code class="inline-code">INFO.VIEW</code> functions and the Tabular Model Definition Language (TMDL).</li>
+                <li><strong>AI analysis &amp; description generation</strong> — pass the structured metadata to a model (e.g. Claude or GPT-4) with a carefully crafted prompt to produce business-friendly descriptions, explain calculation logic, and recommend usage.</li>
+                <li><strong>Interactive data dictionary</strong> — populate a detailed dictionary (a Power BI report or formatted Excel file) as a central reference for all model users.</li>
+                <li><strong>AI Q&amp;A interface</strong> — use the enriched dictionary as a knowledge base for a Q&amp;A bot, so users can ask natural-language questions (e.g. "How is customer lifetime value calculated?") and get instant, context-aware answers.</li>
+            </ol>
+
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-refresh"></use></svg></span>
+                <p>Because it runs from live metadata, the dictionary becomes a <strong>living document</strong> — automatically refreshed as the model evolves, so documentation is never out of date.</p>
             </div>
 
-            <!-- The Business Challenge -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                   In most organisations, Power BI model documentation is a major pain point. It's a manual, time-consuming process that is often neglected, leading to "black box" data models that are difficult to understand, maintain, and trust. This lack of clear documentation results in:
-                </p>
-                 <ul class="list-disc list-inside space-y-2 text-gray-700">
-                    <li>Wasted hours reverse-engineering complex DAX measures.</li>
-                    <li>Inconsistent or incorrect use of data fields by report builders.</li>
-                    <li>A significant barrier to onboarding new team members.</li>
-                    <li>A lack of trust in the data, as the underlying business logic is unclear.</li>
-                </ul>
-            </section>
+            <h2>Key outcomes &amp; impact</h2>
+            <div class="cs-results">
+                <div class="cs-result"><div class="rn gradient-text">75%+</div><div class="rl">Less documentation time</div></div>
+                <div class="cs-result"><div class="rn gradient-text">50%</div><div class="rl">Faster report development</div></div>
+                <div class="cs-result"><div class="rn gradient-text">Living</div><div class="rl">Always-current docs</div></div>
+            </div>
+            <ul>
+                <li><strong>Massive efficiency gains</strong> — documenting a complex model takes a fraction of the time.</li>
+                <li><strong>Better data understanding</strong> — business users grasp the model without reading DAX.</li>
+                <li><strong>Improved governance</strong> — an auto-updating reference keeps documentation trustworthy.</li>
+                <li><strong>Faster development</strong> — builders discover and understand fields and measures quickly.</li>
+            </ul>
 
-            <!-- The Solution -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Solution: An AI-Powered Documentation Engine</h3>
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    I developed a solution that automates the creation of a comprehensive data dictionary by integrating Power BI's metadata capabilities with the analytical power of Large Language Models (LLMs). This system extracts the model's structure, sends it to an AI for analysis, and then uses the generated insights to build a user-friendly data dictionary.
-                </p>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4">The Automated Workflow:</h4>
-                    <div class="space-y-6">
-                        
-                        <div class="p-4 border-l-4 border-blue-600">
-                            <h5 class="text-xl font-semibold mb-2">1. Metadata & TMDL Extraction</h5>
-                            <p class="text-gray-600">The process begins by programmatically extracting all model metadata—tables, columns, measures, and relationships—using Power BI's built-in `INFO.VIEW` functions and the Tabular Model Definition Language (TMDL).</p>
-                        </div>
+            <h2>Skills demonstrated</h2>
+            <div class="tag-row">
+                <span class="tech-tag">Power BI / TMDL</span>
+                <span class="tech-tag">LLM prompting</span>
+                <span class="tech-tag">Metadata extraction</span>
+                <span class="tech-tag">Data governance</span>
+                <span class="tech-tag">RAG / Q&amp;A</span>
+            </div>
 
-                        <div class="p-4 border-l-4 border-green-600">
-                            <h5 class="text-xl font-semibold mb-2">2. AI Analysis & Description Generation</h5>
-                            <p class="text-gray-600">This structured metadata is then passed to an AI model (like GPT-4 or Claude) with a carefully crafted prompt. The AI analyses the DAX expressions, column names, and relationships to generate business-friendly descriptions, explain calculation logic, and provide usage recommendations.</p>
-                        </div>
-
-                        <div class="p-4 border-l-4 border-yellow-600">
-                            <h5 class="text-xl font-semibold mb-2">3. Creation of an Interactive Data Dictionary</h5>
-                            <p class="text-gray-600">The AI-generated content is used to populate a detailed data dictionary, typically in an interactive format like a Power BI report or a formatted Excel file. This serves as a central reference for all model users.</p>
-                        </div>
-                        
-                        <div class="p-4 border-l-4 border-purple-600">
-                            <h5 class="text-xl font-semibold mb-2">4. Building an AI Q&A Interface</h5>
-                            <p class="text-gray-600">As a final step, the enriched data dictionary is used as a knowledge base for a Q&A bot. This allows users to ask natural language questions about the data model (e.g., "How is customer lifetime value calculated?") and receive instant, context-aware answers.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- Key Outcomes -->
-            <section>
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Outcomes & Business Impact</h3>
-                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
-                    <li><strong class="font-semibold text-gray-900">Massive Efficiency Gains:</strong> Reduced the time required to document a complex data model by over 75%, freeing up developers to focus on creating value.</li>
-                    <li><strong class="font-semibold text-gray-900">Data Understanding:</strong> Empowered business users to understand and correctly use the semantic model without needing to read complex DAX code.</li>
-                    <li><strong class="font-semibold text-gray-900">Improved Data Governance:</strong> Created a "living document" that can be automatically updated as the data model evolves, ensuring documentation is never out of date.</li>
-                    <li><strong class="font-semibold text-gray-900">Accelerated Development:</strong> Report builders can now develop new reports and analytics up to 50% faster, as they can quickly discover and understand the available data fields and measures.</li>
-                </ul>
-            </section>
+            <div class="cs-nav">
+                <a href="../index.html#projects" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to projects</a>
+                <a href="../index.html#contact" class="btn btn-primary">Get in touch <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"></use></svg></a>
+            </div>
 
         </div>
+    </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white mt-12 py-6">
-        <div class="container mx-auto text-center text-gray-500">
-            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+    <footer>
+        <div class="container footer-inner">
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="footer-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2026 Sufyan Iftikhar</p>
         </div>
     </footer>
 
+    <script src="../assets/js/site.js"></script>
 </body>
 </html>

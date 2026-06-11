@@ -1,116 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automated Student Report Card Generation - Sufyan Iftikhar</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Automated Student Report Card Generation — Sufyan Iftikhar</title>
+    <meta name="description" content="An AI-driven n8n workflow that transforms raw student data into narrative-style term reports, cutting report-writing time by over 80%.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
+    <div class="bg-decor"><span></span><span></span><span></span></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900">Sufyan Iftikhar</h1>
-                <a href="../index.html" class="text-blue-600 hover:underline">← Back to Portfolio</a>
+    <header id="header">
+        <nav>
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="nav-actions">
+                <a href="../index.html#projects" class="nav-back"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-left"></use></svg> Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+                    <svg class="icon moon" aria-hidden="true"><use href="../assets/icons.svg#i-moon"></use></svg>
+                    <svg class="icon sun" aria-hidden="true"><use href="../assets/icons.svg#i-sun"></use></svg>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <section class="cs-hero">
+        <div class="container-narrow">
+            <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-file-text"></use></svg> AI &amp; Automation · Case study</span>
+            <h1 class="cs-title">Automated Student Report Card Generation</h1>
+            <p class="cs-lede">An AI-driven n8n workflow that turns raw student data from spreadsheets into structured, narrative-style term reports — saving educators hours of manual work each term.</p>
+            <div class="cs-meta">
+                <div><div class="k">Type</div><div class="v">AI &amp; Automation</div></div>
+                <div><div class="k">Stack</div><div class="v">n8n · LLM · Excel</div></div>
+                <div><div class="k">Sector</div><div class="v">Education</div></div>
+                <div><div class="k">Impact</div><div class="v">80%+ time saving</div></div>
+            </div>
+        </div>
+    </section>
 
-        <div class="bg-white p-8 rounded-xl shadow-lg">
+    <div class="cs-body">
+        <div class="container-narrow">
 
-            <!-- Project Title -->
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Automated Student Report Card Generation</h2>
-            <p class="text-xl text-gray-600 mb-8">An AI-driven system that transforms raw student data from spreadsheets into narrative-style term reports, saving hours of manual work for educators.</p>
+            <h2>The business challenge</h2>
+            <p>The end of term brings a heavy administrative burden: writing student report cards. It's time-consuming and repetitive, requiring teachers to synthesise months of data — assessments, homework logs, behavioural notes — into a coherent, constructive, personalised narrative for each student. That overhead directly impacts wellbeing and takes time away from teaching.</p>
 
-            <!-- Project Meta -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-t border-b border-gray-200 py-6">
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Project Type</h4>
-                    <p class="text-lg font-bold text-gray-900">AI & Automation</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Core Technologies</h4>
-                    <p class="text-lg font-bold text-gray-900">n8n, LLMs, Excel</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Sector</h4>
-                    <p class="text-lg font-bold text-gray-900">Education</p>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Impact</h4>
-                    <p class="text-lg font-bold text-gray-900">80%+ Time Saving</p>
-                </div>
+            <h2>The solution: an AI report-writing assistant</h2>
+            <p>I built an automated n8n workflow that acts as an AI teaching assistant. It ingests a simple log of student interactions and performance from Excel and uses an LLM to generate high-quality, structured reports for every student, ready for teacher review.</p>
+
+            <h3>The automated workflow</h3>
+            <ol>
+                <li><strong>Data ingestion</strong> — connects to an Excel workbook containing a term's worth of student records: dates, record types, scores and qualitative comments.</li>
+                <li><strong>Data structuring</strong> — groups records by individual student, building a complete performance history per pupil.</li>
+                <li><strong>Dynamic AI prompting</strong> — constructs a tailored prompt per student instructing the model to produce a five-section report (overall summary, assessment performance, and more) from the data.</li>
+                <li><strong>Report generation</strong> — iterates through each student, generating a complete, well-written report card for export and final teacher approval.</li>
+            </ol>
+
+            <div class="cs-callout">
+                <span class="icon-soft"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-clock"></use></svg></span>
+                <p>Reduces the time spent writing report cards by <strong>over 80%</strong>, freeing teachers to focus on high-impact educational activities.</p>
             </div>
 
-            <!-- The Business Challenge -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Business Challenge</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    For educators, the end of a term brings a significant administrative burden: writing student report cards. This process is incredibly time-consuming, repetitive, and often involves manually synthesising months of data from various sources—assessments, homework logs, and behavioural notes—into a coherent, constructive, and personalised narrative for each student. This administrative overhead directly impacts teacher wellbeing and takes valuable time away from lesson planning and student support.
-                </p>
-            </section>
+            <h2>Key outcomes &amp; impact</h2>
+            <ul>
+                <li><strong>Drastic workload reduction</strong> — a fraction of the manual effort, with the teacher retaining final editorial control.</li>
+                <li><strong>Quality &amp; consistency</strong> — every report is well-structured and maintains a professional tone across the school.</li>
+                <li><strong>Data-driven narratives</strong> — the AI synthesises all available data points into a true reflection of each student's term.</li>
+                <li><strong>Improved morale</strong> — automating one of the most demanding admin tasks reduces burnout.</li>
+            </ul>
 
-            <!-- The Solution -->
-            <section class="mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">The Solution: An AI Report Writing Assistant</h3>
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    I developed an automated workflow using n8n that acts as an AI-powered teaching assistant. The solution ingests a simple log of student interactions and performance data from an Excel sheet and uses a Large Language Model (LLM) to generate high-quality, structured reports for every student, ready for teacher review.
-                </p>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4">The Automated Workflow:</h4>
-                    <div class="space-y-6">
-                        
-                        <div class="p-4 border-l-4 border-blue-600">
-                            <h5 class="text-xl font-semibold mb-2">1. Data Ingestion</h5>
-                            <p class="text-gray-600">The workflow begins by connecting to a Microsoft Excel workbook that contains a detailed log of all student records for the term. This includes dates, record types (e.g., assessment, homework), scores, and qualitative teacher comments.</p>
-                        </div>
+            <h2>Skills demonstrated</h2>
+            <div class="tag-row">
+                <span class="tech-tag">n8n</span>
+                <span class="tech-tag">LLM prompting</span>
+                <span class="tech-tag">Data structuring</span>
+                <span class="tech-tag">Batch processing</span>
+                <span class="tech-tag">Workflow automation</span>
+            </div>
 
-                        <div class="p-4 border-l-4 border-green-600">
-                            <h5 class="text-xl font-semibold mb-2">2. Data Structuring</h5>
-                            <p class="text-gray-600">The raw data is then programmatically grouped by each individual student, creating a complete, structured history of every student's performance over the term.</p>
-                        </div>
-
-                        <div class="p-4 border-l-4 border-yellow-600">
-                            <h5 class="text-xl font-semibold mb-2">3. Dynamic AI Prompting</h5>
-                            <p class="text-gray-600">For each student, a detailed prompt is dynamically constructed. This prompt instructs the AI model (e.g., GPT-4) to act as a teacher and generate a five-section report (Overall Summary, Assessment Performance, etc.), synthesising the provided data into a supportive and professional narrative.</p>
-                        </div>
-                        
-                        <div class="p-4 border-l-4 border-purple-600">
-                            <h5 class="text-xl font-semibold mb-2">4. Report Generation</h5>
-                            <p class="text-gray-600">The workflow iterates through each student, sending the customised prompt to the AI. The LLM processes the data and generates a complete, well-written report card for each student, which can then be exported for teacher review and final approval.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Key Outcomes -->
-            <section>
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Key Outcomes & Business Impact</h3>
-                <ul class="list-disc list-inside space-y-3 text-gray-700 leading-relaxed">
-                    <li><strong class="font-semibold text-gray-900">Drastic Reduction in Workload:</strong> Reduces the time spent on writing report cards by over 80%, freeing up teachers to focus on high-impact educational activities.</li>
-                    <li><strong class="font-semibold text-gray-900">Improved Report Quality & Consistency:</strong> Ensures that every report is well-structured, comprehensive, and maintains a consistent, professional tone across the entire school.</li>
-                    <li><strong class="font-semibold text-gray-900">Data-Driven Narratives:</strong> The AI synthesises all available data points, ensuring that the reports are a true reflection of a student's journey throughout the term, including both quantitative scores and qualitative comments.</li>
-                     <li><strong class="font-semibold text-gray-900">Enhanced Teacher Morale:</strong> By automating one of the most demanding administrative tasks, this solution directly contributes to reducing teacher burnout and improving job satisfaction.</li>
-                </ul>
-            </section>
+            <div class="cs-nav">
+                <a href="n8n_parent_communication_case_study.html" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-mail"></use></svg> Next: Parent communication agent</a>
+                <a href="../index.html#projects" class="btn btn-primary">All projects <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"></use></svg></a>
+            </div>
 
         </div>
+    </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white mt-12 py-6">
-        <div class="container mx-auto text-center text-gray-500">
-            <p>&copy; 2025 Sufyan Iftikhar. All Rights Reserved.</p>
+    <footer>
+        <div class="container footer-inner">
+            <a href="../index.html" class="nav-brand"><span class="mark">SI</span><span>Sufyan Iftikhar</span></a>
+            <div class="footer-links">
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/sufyaniftikhar" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2026 Sufyan Iftikhar</p>
         </div>
     </footer>
 
+    <script src="../assets/js/site.js"></script>
 </body>
 </html>
